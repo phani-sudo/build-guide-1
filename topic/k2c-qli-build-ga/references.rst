@@ -1,6 +1,7 @@
-************
+.. rst_class:: flattenforhtml
+
 References
-************
+=================
 
 .. include:: workspace_view.rst
 

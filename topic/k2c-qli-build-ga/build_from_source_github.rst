@@ -1,12 +1,12 @@
 .. _build_from_source_github:
 
 Build with standalone commands
-==============================
+------------------------------------
 
 .. _section_vh2_rqf_v1c_vinayjk_03-22-24-1509-40-643:
 
 Ubuntu host setup
------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 The Ubuntu host machine needs a few setup operations to ensure that the
 required software tools are ready.
@@ -32,25 +32,23 @@ required software tools are ready.
       # The last line in this output is the token, which can be used to access
       # Qualcomm Proprietary repositories. This token expires in two weeks.
 
-   **Note:**
 
-   user@hostname:/local/mnt/workspace$ qsc-cli pat –get
-
-   [Info]: Starting qsc-cli version 0.0.0.9
-
-   **5LThNlklb55mMVLB5C2KqUGU2jCF**
+   .. note::
+        | user@hostname:/local/mnt/workspace$ qsc-cli pat –get
+        | [Info]: Starting qsc-cli version 0.0.0.9
+        | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
    ::
 
-      vim ~/.netrc # add the following entries
+        vim ~/.netrc # add the following entries
 
-      machine chipmaster2.qti.qualcomm.com
-      login <your Qualcomm login id>
-      password <your PAT token>
+        machine chipmaster2.qti.qualcomm.com
+        login <your Qualcomm login id>
+        password <your PAT token>
 
-      machine qpm-git.qualcomm.com
-      login <your Qualcomm login id>
-      password <your PAT token>
+        machine qpm-git.qualcomm.com
+        login <your Qualcomm login id>
+        password <your PAT token>
 
 3. Set up the locales (if not set up already):
 
@@ -89,7 +87,7 @@ required software tools are ready.
 .. _section_y32_1zy_v1c:
 
 Sync
-----
+^^^^^^^
 
 This section uses the Repo tool installed in the previous section to
 download a list of git repositories and additional attributes from the
@@ -101,53 +99,58 @@ The following table shows an example mapping of Yocto layers to the
 manifest release tags that are used to download and build Qualcomm
 Linux:
 
-=============== ==================== =========================
-Yocto layers    Manifest release tag Distribution (``DISTRO``)
-=============== ==================== =========================
-- ``meta-qcom``                      
-=============== ==================== =========================
+  .. list-table::
+     :header-rows: 1
 
--  ``meta-qcom-hwe``
+     * - Yocto layers
+       - Manifest release tag
+       - Distribution (``DISTRO``)
+     * - 
+         - ``meta-qcom``
+         - ``meta-qcom-hwe``
+       - Base build: High-level OS and prebuilt firmware (GPS only)
+         
+         ``qcom-6.6.28-QLI.1.1-Ver.1.1.xml``
+       - ``qcom-wayland``
+     * - 
+         - ``meta-qcom``
+         - ``meta-qcom-hwe``
+         - ``meta-qcom-qim-product-sdk``
+       - Base build + QIMP SDK build:
+         
+         ``qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.xml``
+       - ``qcom-wayland``
+     * - 
+         - ``meta-qcom``
+         - ``meta-qcom-hwe``
+         - ``meta-qcom-realtime``
+       - Base build + Real-time kernel build:
+         
+         ``qcom-6.6.28-QLI.1.1-Ver.1.1_realtime-linux-1.0.xml``
+       - ``qcom-wayland``
+     * - 
+         - ``meta-qcom``
+         - ``meta-qcom-hwe``
+         - ``meta-ros``
+         - ``meta-qcom-robotics``
+         - ``meta-qcom-robotics-distro``
+         - ``meta-qcom-robotics-sdk``
+         - ``meta-qcom-qim-product-sdk``
+       - Base build + QIRP SDK build:
+         
+         ``qcom-6.6.28-QLI.1.1-Ver.1.1_robotics-product-sdk-1.1.xml``
+       - ``qcom-robotics-ros2-humble``
 
-\|Base build: High-level OS and prebuilt firmware (GPS only)
 
-``qcom-6.6.28-QLI.1.1-Ver.1.1.xml``
+For Yocto layer descriptions, see :ref:`Table : 1. Qualcomm Linux Yocto layers <host_machine_qsc_Launcher>`.
 
-\|\ ``qcom-wayland``\ \| \|- ``meta-qcom`` - ``meta-qcom-hwe`` -
-``meta-qcom-qim-product-sdk``
-
-\|Base build + QIMP SDK build:
-
-``qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.xml``
-
-\|\ ``qcom-wayland``\ \| \|- ``meta-qcom`` - ``meta-qcom-hwe`` -
-``meta-qcom-realtime``
-
-\|Base build + Real-time kernel build:
-
-``qcom-6.6.28-QLI.1.1-Ver.1.1_realtime-linux-1.0.xml``
-
-\|\ ``qcom-wayland``\ \| \|- ``meta-qcom`` - ``meta-qcom-hwe`` -
-``meta-ros`` - ``meta-qcom-robotics`` - ``meta-qcom-robotics-distro`` -
-``meta-qcom-robotics-sdk`` - ``meta-qcom-qim-product-sdk``
-
-\|Base build + QIRP SDK build:
-
-``qcom-6.6.28-QLI.1.1-Ver.1.1_robotics-product-sdk-1.1.xml``
-
-\|\ ``qcom-robotics-ros2-humble``\ \|
-
-For Yocto layer descriptions, see `Table
-1 <qsc_launcher.rst#Yocto_layer_descriptions>`__.
-
-**Note:** For information on building the ``meta-qcom-extras`` add-on
-layer and select firmware sources, see `GitHub workflow (firmware and
-extras) <build_addn_info.rst>`__.
+.. note:: For information on building the ``meta-qcom-extras`` add-on
+          layer and select firmware sources, see :doc:`GitHub workflow (firmware and extras) <build_addn_info>`.
 
 .. _section_sk2_xk2_fbc:
 
 Build base image
-----------------
+^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers:
 
@@ -160,9 +163,9 @@ Build base image
       # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
       repo sync
 
-   **Note:** For the latest ``<manifest release tag>``, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note:: For the latest ``<manifest release tag>``, see the
+             *Build-critical release tags* section in the `Release
+             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Set up the build environment:
 
@@ -174,9 +177,8 @@ Build base image
 
 3. Build the software image:
 
-   **Note:** For supported image recipes, see `What are the image
-   recipes supported as part of the GitHub
-   workflow? <howto_build.rst#section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`__.
+   .. note:: 
+      For supported image recipes, see :ref:`What are the image recipes supported as part of the GitHub workflow? <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
 
    ::
 
@@ -196,13 +198,13 @@ Build base image
 .. _section_lrb_1nd_fbc:
 
 Build QIMP SDK image
---------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers:
 
-   **Note:** The ``<manifest release tag>`` for QIMP SDK build is the
-   same as the base build. QIMP SDK layer must be cloned on top of the
-   base build.
+   .. note:: The ``<manifest release tag>`` for QIMP SDK build is the
+             same as the base build. QIMP SDK layer must be cloned on top of the
+             base build.
 
    ::
 
@@ -213,9 +215,9 @@ Build QIMP SDK image
       # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
       repo sync
 
-   **Note:** For the latest ``<manifest release tag>``, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note:: For the latest ``<manifest release tag>``, see the
+             *Build-critical release tags* section in the `Release
+             Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Clone QIMP SDK layer into the workspace:
 
@@ -259,13 +261,13 @@ Build QIMP SDK image
 .. _section_gv3_czl_qbc_vinayjk_06-06-24-1402-32-392:
 
 Build QIRP SDK image
---------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers:
 
-   **Note:** The ``<manifest release tag>`` for QIRP SDK build is the
-   same as the base build. QIRP SDK layers must be cloned on top of the
-   base build.
+   .. note:: The ``<manifest release tag>`` for QIRP SDK build is the
+             same as the base build. QIRP SDK layers must be cloned on top of the
+             base build.
 
    ::
 
@@ -276,9 +278,9 @@ Build QIRP SDK image
       # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
       repo sync
 
-   **Note:** For the latest ``<manifest release tag>``, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note::  For the latest ``<manifest release tag>``, see the
+              *Build-critical release tags* section in the `Release
+              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Download the QIRP SDK layers into the base build ``<WORKSPACE DIR>``
    directory:
@@ -319,13 +321,13 @@ Build QIRP SDK image
 .. _section_k51_23b_wbc_vinayjk_06-26-24-1344-54-418:
 
 Build real-time Linux image
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers:
 
-   **Note:** The ``<manifest release tag>`` for real-time Linux image is
-   the same as the base build. Real-time Linux must be cloned on top of
-   the base build.
+   .. note:: The ``<manifest release tag>`` for real-time Linux image is
+             the same as the base build. Real-time Linux must be cloned on top of
+             the base build.
 
    ::
 
@@ -336,9 +338,9 @@ Build real-time Linux image
       # Example, <manifest release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1.xml
       repo sync
 
-   **Note:** For the latest ``<manifest release tag>``, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note::  For the latest ``<manifest release tag>``, see the
+              *Build-critical release tags* section in the `Release
+              Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Clone real-time Linux layer into the workspace:
 
@@ -380,9 +382,8 @@ Build real-time Linux image
 .. _section_x2k_vnf_w1c:
 
 Flash
------
+^^^^^^^
 
-Flash software images to the device using `Flash images for registered
-users <flash_images.rst>`__.
+Flash software images to the device using :doc:`Flash images for registered users <flash_images>`.
 
 

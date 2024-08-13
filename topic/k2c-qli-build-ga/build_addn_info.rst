@@ -1,12 +1,13 @@
 .. _annexure_sync_build:
 
-**************************************
-GitHub workflow (firmware and extras)
-**************************************
+.. rst_class:: flattenforhtml
 
-**Note:** These steps are applicable only for authorized users. To
-upgrade your access, go to
-http://www.qualcomm.com/support/working-with-qualcomm.
+GitHub workflow (firmware and extras)
+=========================================
+
+.. note:: These steps are applicable only for authorized users. To
+          upgrade your access, go to http://www.qualcomm.com/support/working-with-qualcomm.
+
 
 To build various Qualcomm Linux Yocto layers including
 ``meta-qcom-hwe``, ``meta-qcom-extras``, ``meta-qcom-qim-product-sdk``,

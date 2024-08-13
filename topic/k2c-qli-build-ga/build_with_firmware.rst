@@ -1,350 +1,190 @@
 .. _build_private_distribution_with_extras:
 
 Build with firmware sources
-===========================
+------------------------------------
 
 .. _section_q4d_4gq_p1c_vinayjk_03-02-24-1519-18-136:
 
 Sync firmware
--------------
+^^^^^^^^^^^^^^
 
 The following table describes the Qualcomm Yocto layers and release
 tags:
 
-+--------------------+------------------+------------------+-----------+
-| Access level       | Yocto layer      | Release tag      | Example   |
-+====================+==================+==================+===========+
-| Registered         | `                | manifest release | qcom      |
-| developer with any | `meta-qcom-hwe`` | tag              | -6.6.28-Q |
-| email address      |                  |                  | LI.1.1-Ve |
-|                    |                  |                  | r.1.1.xml |
-+--------------------+------------------+------------------+-----------+
-| ``meta-qcom        | manifest release | qcom-            |           |
-| -qim-product-sdk`` | tag              | 6.6.28-QLI.1.1-V |           |
-|                    |                  | er.1.1_qim-produ |           |
-|                    |                  | ct-sdk-1.1.3.xml |           |
-+--------------------+------------------+------------------+-----------+
-| ``meta-q           | manifest release | qcom-6.6         |           |
-| com-robotics-sdk`` | tag              | .28-QLI.1.1-Ver. |           |
-|                    |                  | 1.1_robotics-pro |           |
-|                    |                  | duct-sdk-1.1.xml |           |
-+--------------------+------------------+------------------+-----------+
-| Registered         | ``me             | meta-qcom-extras | r1.       |
-| developer from a   | ta-qcom-extras`` | release tag      | 0_00041.0 |
-| verified           |                  |                  |           |
-| organization       |                  |                  |           |
-+--------------------+------------------+------------------+-----------+
-| See `Table         | NA               | firmware release | r1.       |
-| 2 <#mapping_       |                  | tag              | 0_00039.2 |
-| access_levels>`__. |                  |                  |           |
-+--------------------+------------------+------------------+-----------+
+.. flat-table:: Table : Qualcomm Yocto layers and manifest tags
+   :header-rows: 1
+
+   * - Access level
+     - Yocto layer
+     - Release tag
+     - Example
+	 
+   * - :rspan:`2` Registered developer with any email address
+     - ``meta-qcom-hwe``
+     - manifest release tag
+     - qcom-6.6.28-QLI.1.1-Ver.1.1.xml
+   *  
+     - ``meta-qcom-qim-product-sdk``
+     - manifest release tag
+     - qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.xml
+   *  
+     - ``meta-qcom-robotics-sdk``
+     - manifest release tag
+     - qcom-6.6.28-QLI.1.1-Ver.1.1_robotics-product-sdk-1.1.xml
+   * - Registered developer from a verified organization
+     - ``meta-qcom-extras``
+     - meta-qcom-extras release tag
+     - r1.0_00041.0 
+   * - see :ref:`Table :Mapping access levels. <build_mapping_access_levels>`.
+     - NA
+     - firmware release tag
+     - r1.0_00039.2
 
 The following tables describe the available distributions for firmware
 that can be downloaded according to the need and entitlements:
 
-+-------------------------+-------------------------+------------------+
-| **Access level**        | **Distribution**        | Yocto layers     |
-+=========================+=========================+==================+
-| Registered developer    | Base build: High-level  |                  |
-| from a verified         | OS and firmware source  |                  |
-| organization            | (GPS                    |                  |
-|                         | only)\ ``Qu             |                  |
-|                         | alcomm_Linux.SPF.1.0|AP |                  |
-|                         | |Standard|OEM|NoModem`` |                  |
-+-------------------------+-------------------------+------------------+
+.. _build_mapping_access_levels:
 
-\|\ ``meta-qcom``
+.. flat-table:: Table : Mapping access levels
+   :widths: 24 24 24
+   :header-rows: 1
 
-``meta-qcom-hwe``
+   * - **Access level**
+     - **Distribution**
+     - Yocto layers
+   * - :rspan:`2` Registered developer from a verified organization
+     - Base build: High-level OS and firmware source (GPS only)
+       
+       ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem``
+     - 
+       ``meta-qcom``
+       
+       ``meta-qcom-hwe``
+       
+       ``meta-qcom-extras``
+   *  
+     - Base build + QIMP SDK
+      
+        ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK``
+     - ``meta-qcom``
 
-``meta-qcom-extras``
+       ``meta-qcom-hwe``
 
-| 
+       ``meta-qcom-extras``
 
-\|Base build + QIMP
-SDK\ ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK``
+       ``meta-qcom-qim-product-sdk``  
+   *  
+     - Base build + QIMP SDK + QIRP SDK
+      
+        ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK``
+     - ``meta-qcom``
 
-\|\ ``meta-qcom``
+       ``meta-qcom-hwe``
 
-``meta-qcom-hwe``
+       ``meta-qcom-extras``
 
-``meta-qcom-extras``
+       ``meta-qcom-robotics-extras``
 
-``meta-qcom-qim-product-sdk``
+       ``meta-ros``   
 
-| 
+       ``meta-qcom-robotics``
 
-\|Base build + QIMP SDK + QIRP
-SDK\ ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK``
+       ``meta-qcom-robotics-distro``
 
-\|\ ``meta-qcom``
+       ``meta-qcom-robotics-sdk``
 
-``meta-qcom-hwe``
+       ``meta-qcom-qim-product-sdk``
+   * - :rspan:`3` Licensed developer with additional access
+     - Base build: High-level OS and firmware (GPS only) source
+       
+       ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|``
+     - 
+       ``meta-qcom``
 
-``meta-qcom-extras``
+       ``meta-qcom-hwe``
 
-``meta-qcom-robotics-extras``
+       ``meta-qcom-extras``
+   *  
+     - Base build + QIMP SDK (GPS only)
+      
+        ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK``
+     - ``meta-qcom``
 
-``meta-ros``
+       ``meta-qcom-hwe`
 
-``meta-qcom-robotics``
+       ``meta-qcom-extras``
 
-``meta-qcom-robotics-distro``
+       ``meta-qcom-robotics-extras``
 
-``meta-qcom-robotics-sdk``
+       ``meta-qcom-qim-product-sdk``
+   *  
+     - Base build: High-level OS and firmware (GPS and modem) source
+      
+        ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|``
+     - ``meta-qcom``
 
-``meta-qcom-qim-product-sdk``
+       ``meta-qcom-hwe``
 
-| 
+       ``meta-qcom-extras``
+   *  
+     - Base build + QIMP SDK (GPS and modem)
+      
+        ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK``
+     - ``meta-qcom``
 
-\|Licensed developer with additional access|Base build: High-level OS
-and firmware (GPS only)
-source\ ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|``
+       ``meta-qcom-hwe``
 
-\|\ ``meta-qcom``
+       ``meta-qcom-extras``
 
-``meta-qcom-hwe``
+       ``meta-qcom-qim-product-sdk`` 
 
-``meta-qcom-extras``
 
-| 
 
-\|Base build + QIMP SDK (GPS
-only)\ ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK``
+For Yocto layer descriptions, see :ref:`Table : 1. Qualcomm Linux Yocto layers <host_machine_qsc_Launcher>`.
 
-\|\ ``meta-qcom``
+.. _Mapping_firmware_table:
 
-``meta-qcom-hwe``
+      .. list-table:: Table : Mapping of firmware distributions and git repositories
+         :header-rows: 1
 
-``meta-qcom-extras``
+         * - Firmware distribution
+           - Git command
+           - Directory into which firmware gets synced on git clone
 
-``meta-qcom-qim-product-sdk``
+         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nomodem.git``
+           - ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem``
 
-| 
+         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIMPSDK
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git``
+           - ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk``
 
-\|Base build: High-level OS and firmware (GPS and modem)
-source\ ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|``
+         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NM_QIRPSDK
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk.git``
+           - ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``
 
-\|\ ``meta-qcom``
+         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM\|
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem.git``
+           - ``qualcomm-linux-spf-1-0_ap_standard_oem``
 
-``meta-qcom-hwe``
+         * - Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|QIMPSDK
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_qimpsdk.git``
+           - ``qualcomm-linux-spf-1-0_ap_standard_oem_qimpsdk``
 
-``meta-qcom-extras``
+         * - Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM\|
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem.git``
+           - ``qualcomm-linux-spf-1-0_amss_standard_oem``
 
-| 
+         * - Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK
+           - ``git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk.git``
+           - ``qualcomm-linux-spf-1-0_amss_standard_oem_qimpsdk``
+  
 
-\|Base build + QIMP SDK (GPS and
-modem)\ ``Qualcomm_Linux.SPF.1.0|AMSS|Standard|OEM|QIMPSDK``
+.. note:: Commands in the following sections are based on binary and
+          source for firmware images without modem and GPS (see the command in :ref:`Table : Mapping of firmware distributions and git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you
+          use any other distribution, then update the directory accordingly.
 
-\|\ ``meta-qcom``
-
-``meta-qcom-hwe``
-
-``meta-qcom-extras``
-
-``meta-qcom-qim-product-sdk``
-
-| 
-
-For Yocto layer descriptions, see `Table
-1 <qsc_launcher.rst#Yocto_layer_descriptions>`__.
-
-+----------------+--------+--------------------------------------------+
-| Firmware       | Git    | Directory into which firmware gets synced  |
-| distribution   | c      | on git clone                               |
-|                | ommand |                                            |
-+================+========+============================================+
-| Qual           | ``gi   | ``qualco                                   |
-| comm_Linux.SPF | t clon | mm-linux-spf-1-0_ap_standard_oem_nomodem`` |
-| .1.0|AP|Standa | e -b < |                                            |
-| rd|OEM|NoModem | firmwa |                                            |
-|                | re rel |                                            |
-|                | ease t |                                            |
-|                | ag> -- |                                            |
-|                | depth  |                                            |
-|                | 1 http |                                            |
-|                | s://qp |                                            |
-|                | m-git. |                                            |
-|                | qualco |                                            |
-|                | mm.com |                                            |
-|                | /home2 |                                            |
-|                | /git/q |                                            |
-|                | ualcom |                                            |
-|                | m/qual |                                            |
-|                | comm-l |                                            |
-|                | inux-s |                                            |
-|                | pf-1-0 |                                            |
-|                | _ap_st |                                            |
-|                | andard |                                            |
-|                | _oem_n |                                            |
-|                | omodem |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-| Qualcom        | `      | ``qualcomm-                                |
-| m_Linux.SPF.1. | `git c | linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` |
-| 0|AP|Standard| | lone - |                                            |
-| OEM|NM_QIMPSDK | b <fir |                                            |
-|                | mware  |                                            |
-|                | releas |                                            |
-|                | e tag> |                                            |
-|                |  --dep |                                            |
-|                | th 1 h |                                            |
-|                | ttps:/ |                                            |
-|                | /qpm-g |                                            |
-|                | it.qua |                                            |
-|                | lcomm. |                                            |
-|                | com/ho |                                            |
-|                | me2/gi |                                            |
-|                | t/qual |                                            |
-|                | comm/q |                                            |
-|                | ualcom |                                            |
-|                | m-linu |                                            |
-|                | x-spf- |                                            |
-|                | 1-0_ap |                                            |
-|                | _stand |                                            |
-|                | ard_oe |                                            |
-|                | m_nm-q |                                            |
-|                | impsdk |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-| Qualcom        | `      | ``qualcomm-                                |
-| m_Linux.SPF.1. | `git c | linux-spf-1-0_ap_standard_oem_nm-qirpsdk`` |
-| 0|AP|Standard| | lone - |                                            |
-| OEM|NM_QIRPSDK | b <fir |                                            |
-|                | mware  |                                            |
-|                | releas |                                            |
-|                | e tag> |                                            |
-|                |  --dep |                                            |
-|                | th 1 h |                                            |
-|                | ttps:/ |                                            |
-|                | /qpm-g |                                            |
-|                | it.qua |                                            |
-|                | lcomm. |                                            |
-|                | com/ho |                                            |
-|                | me2/gi |                                            |
-|                | t/qual |                                            |
-|                | comm/q |                                            |
-|                | ualcom |                                            |
-|                | m-linu |                                            |
-|                | x-spf- |                                            |
-|                | 1-0_ap |                                            |
-|                | _stand |                                            |
-|                | ard_oe |                                            |
-|                | m_nm-q |                                            |
-|                | irpsdk |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-| Qualcomm_Lin   | ``     | ``qualcomm-linux-spf-1-0_ap_standard_oem`` |
-| ux.SPF.1.0|AP| | git cl |                                            |
-| Standard|OEM\| | one -b |                                            |
-|                |  <firm |                                            |
-|                | ware r |                                            |
-|                | elease |                                            |
-|                |  tag>  |                                            |
-|                | --dept |                                            |
-|                | h 1 ht |                                            |
-|                | tps:// |                                            |
-|                | qpm-gi |                                            |
-|                | t.qual |                                            |
-|                | comm.c |                                            |
-|                | om/hom |                                            |
-|                | e2/git |                                            |
-|                | /qualc |                                            |
-|                | omm/qu |                                            |
-|                | alcomm |                                            |
-|                | -linux |                                            |
-|                | -spf-1 |                                            |
-|                | -0_ap_ |                                            |
-|                | standa |                                            |
-|                | rd_oem |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-| Qual           | ``gi   | ``qualco                                   |
-| comm_Linux.SPF | t clon | mm-linux-spf-1-0_ap_standard_oem_qimpsdk`` |
-| .1.0|AP|Standa | e -b < |                                            |
-| rd|OEM|QIMPSDK | firmwa |                                            |
-|                | re rel |                                            |
-|                | ease t |                                            |
-|                | ag> -- |                                            |
-|                | depth  |                                            |
-|                | 1 http |                                            |
-|                | s://qp |                                            |
-|                | m-git. |                                            |
-|                | qualco |                                            |
-|                | mm.com |                                            |
-|                | /home2 |                                            |
-|                | /git/q |                                            |
-|                | ualcom |                                            |
-|                | m/qual |                                            |
-|                | comm-l |                                            |
-|                | inux-s |                                            |
-|                | pf-1-0 |                                            |
-|                | _ap_st |                                            |
-|                | andard |                                            |
-|                | _oem_q |                                            |
-|                | impsdk |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-| Qualcomm_Linux | ``gi   | ``                                         |
-| .SPF.1.0|AMSS| | t clon | qualcomm-linux-spf-1-0_amss_standard_oem`` |
-| Standard|OEM\| | e -b < |                                            |
-|                | firmwa |                                            |
-|                | re rel |                                            |
-|                | ease t |                                            |
-|                | ag> -- |                                            |
-|                | depth  |                                            |
-|                | 1 http |                                            |
-|                | s://qp |                                            |
-|                | m-git. |                                            |
-|                | qualco |                                            |
-|                | mm.com |                                            |
-|                | /home2 |                                            |
-|                | /git/q |                                            |
-|                | ualcom |                                            |
-|                | m/qual |                                            |
-|                | comm-l |                                            |
-|                | inux-s |                                            |
-|                | pf-1-0 |                                            |
-|                | _amss_ |                                            |
-|                | standa |                                            |
-|                | rd_oem |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-| Qualco         | ``git  | ``qualcomm                                 |
-| mm_Linux.SPF.1 | clone  | -linux-spf-1-0_amss_standard_oem_qimpsdk`` |
-| .0|AMSS|Standa | -b <fi |                                            |
-| rd|OEM|QIMPSDK | rmware |                                            |
-|                |  relea |                                            |
-|                | se tag |                                            |
-|                | > --de |                                            |
-|                | pth 1  |                                            |
-|                | https: |                                            |
-|                | //qpm- |                                            |
-|                | git.qu |                                            |
-|                | alcomm |                                            |
-|                | .com/h |                                            |
-|                | ome2/g |                                            |
-|                | it/qua |                                            |
-|                | lcomm/ |                                            |
-|                | qualco |                                            |
-|                | mm-lin |                                            |
-|                | ux-spf |                                            |
-|                | -1-0_a |                                            |
-|                | mss_st |                                            |
-|                | andard |                                            |
-|                | _oem_q |                                            |
-|                | impsdk |                                            |
-|                | .git`` |                                            |
-+----------------+--------+--------------------------------------------+
-
-**Note:** Commands in the following sections are based on binary and
-source for firmware images without modem and GPS (see the command in
-`distributions for firmware <#distributions_firmware>`__). Hence,
-``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you
-use any other distribution, then update the directory accordingly.
-
-The **Git command** column (see `distributions for
-firmware <#distributions_firmware>`__) provides the git repository,
+The **Git command** column (see :ref:`Table : Mapping of firmware distributions and git repositories <Mapping_firmware_table>`) provides the git repository,
 which contains the firmware sources. These repositories are hosted on
 Qualcomm servers. Clone the appropriate repositories based on your
 access profile and use case. The following git clone command downloads
@@ -357,18 +197,14 @@ the selected firmware components in source, except the modem:
    git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git
    # Example, <firmware release tag> is r1.0_00039.2
 
-**Note:** The ``git clone`` command clones the content into the
-``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk``
-directory.
-
-For the latest ``<firmware release tag>``, see the *Build-critical
-release tags* section in the `Release
-Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+.. note:: 
+    | The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
+    | For the latest ``<firmware release tag>``, see the *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 .. _section_v5m_4gq_p1c_vinayjk_03-02-24-1519-24-381:
 
 Build firmware
---------------
+^^^^^^^^^^^^^^^^^^^^^
 
 -  **Prerequisites**
 
@@ -427,7 +263,7 @@ Build firmware
          export SECTOOLS_DIR=<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/<product>/common/sectoolsv2/ext/Linux
          # An example <product> is QCM6490.LE.1.0, see the latest [Release Notes](https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/).
 
-   -  Install and set up Qualcomm® Hexagon™:
+   -  Install and set up Qualcomm\ :sup:`®` Hexagon\ :sup:`™`:
 
       ::
 
@@ -435,11 +271,8 @@ Build firmware
          export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
          echo $HEXAGON_ROOT
 
-      **Note:** Set the environment variable HEXAGON_ROOT to the path
-      where the Hexagon SDK is installed. To change the install path
-      when using ``qpm-cli``, see `How can I change the Hexagon tool
-      install
-      path? <howto_build.rst#section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`__.
+      .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path
+                when using ``qpm-cli``, see :ref:`How can I change the Hexagon tool install path? <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
 
 -  **Build cDSP**
 
@@ -447,7 +280,9 @@ Build firmware
 
    -  Compiler version – Hexagon 8.4.07
    -  Python version – Python 3.10.2
-   -  Install libffi6 **Build steps**
+   -  Install libffi6 
+  
+   **Build steps**
 
    1. Navigate to the following directory:
 
@@ -473,7 +308,9 @@ Build firmware
 
    -  Compiler version – Hexagon 8.4.07
    -  Python version – Python 3.10.2
-   -  Install libffi6 **Nanopb integration (only one-time setup)**
+   -  Install libffi6 
+  
+   **Nanopb integration (only one-time setup)**
 
    ::
 
@@ -508,8 +345,8 @@ Build firmware
 
    -  Compiler version – LLVM version must be updated to 10.0.3
 
-      **Note:** To avoid build errors, ensure that there is a ``/`` at
-      the end of the command.
+      .. note:: 
+         To avoid build errors, ensure that there is a ``/`` at the end of the command.
 
       ::
 
@@ -517,7 +354,9 @@ Build firmware
 
    -  Python version – Python 3.10
 
-   -  Install libffi6 **Build steps**
+   -  Install libffi6  
+  
+  **Build steps**
 
    1. For compiling Boot, you need the device tree compiler in the
       /pkg/qct/software/boottools directory. Install the package:
@@ -558,15 +397,17 @@ Build firmware
 
          python -u boot_images/boot_tools/buildex.py -t kodiak,QcomToolsPkg -v LAA -r RELEASE
 
-      **Note:** For debug variant builds, replace ``RELEASE`` with
-      ``DEBUG``.
+      .. note:: 
+         For debug variant builds, replace ``RELEASE`` with ``DEBUG``.
 
 -  **TZ firmware**
 
    **Tools required**
 
    -  Compiler version – LLVM 16.0.7
-   -  Python version – Python 3.10 **Build steps**
+   -  Python version – Python 3.10 
+  
+   **Build steps**
 
    1. Install LLVM:
 
@@ -588,7 +429,9 @@ Build firmware
    **Tools required**
 
    -  Compiler version – LLVM 14.0.4
-   -  Python version – Python 3.10 **Build steps**
+   -  Python version – Python 3.10 
+   
+   **Build steps**
 
    1. Navigate to the following directory:
 
@@ -635,19 +478,17 @@ Build firmware
       cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build
       python build.py --imf
 
-   **Note:** Firmware prebuild is successful if the following zip files
-   are generated in the
-   <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build/ufs/bin
-   directory:
-
-   -  QCM6490_bootbinaries.zip
-   -  QCM6490_dspso.zip
-   -  QCM6490_fw.zip
+   .. note:: 
+       Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCM6490.LE.1.0/common/build/ufs/bin`` directory:
+             
+             -  ``QCM6490_bootbinaries.zip``
+             -  ``QCM6490_dspso.zip``
+             -  ``QCM6490_fw.zip``
 
 .. _section_unn_4gq_p1c_vinayjk_03-02-24-1519-24-874:
 
 Build base image with extras
-----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download Qualcomm Yocto and supporting layers with extras:
 
@@ -664,10 +505,10 @@ Build base image with extras
       mkdir -p layers/meta-qcom-extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/QCM6490.LE.1.0/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
 
-   **Note:** For the ``<manifest release tag>`` and
-   ``<meta-qcom-extras release tag>`` information, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note:: For the ``<manifest release tag>`` and
+            ``<meta-qcom-extras release tag>`` information, see the
+            *Build-critical release tags* section in the `Release
+            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Set up the Yocto build:
 
@@ -705,12 +546,12 @@ Build base image with extras
 
       bitbake qcom-multimedia-image
 
-   **Note:** Clean the Yocto build:
+   .. note:: 
+       Clean the Yocto build:
+       ::
 
-   ::
-
-      bitbake -fc cleansstate qcom-multimedia-image
-      bitbake -fc cleanall qcom-multimedia-image
+          bitbake -fc cleansstate qcom-multimedia-image
+          bitbake -fc cleanall qcom-multimedia-image
 
    On successful build, you can check if ``system.img`` is present in
    the
@@ -722,13 +563,12 @@ Build base image with extras
       cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcm6490/qcom-multimedia-image
       ls -al system.img
 
-4. Flash the generated build using `Flash images for registered
-   users <flash_images.rst>`__.
+4. Flash the generated build using :doc:`Flash images for registered users <flash_images>`.
 
 .. _section_cx2_dqf_s1c_vinayjk_03-11-24-2139-47-648:
 
 Build QIMP SDK image with extras
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Download QIMP SDK layers, Qualcomm Yocto, and supporting layers with
    extras:
@@ -747,10 +587,9 @@ Build QIMP SDK image with extras
       cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/QCM6490.LE.1.0/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
       git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3 layers/meta-qcom-qim-product-sdk
 
-   **Note:** For the ``<manifest release tag>`` and
-   ``<meta-qcom-extras release tag>`` information, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note:: For the ``<manifest release tag>`` and
+            ``<meta-qcom-extras release tag>`` information, see the *Build-critical release tags* section in the `Release
+            Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Set up the Yocto build:
 
@@ -789,15 +628,16 @@ Build QIMP SDK image with extras
       bitbake qcom-multimedia-image
       bitbake qim-product-sdk
 
-   **Note:** Clean the QIMP SDK build:
+   .. note:: 
+      Clean the QIMP SDK build:
+      
+      ::
 
-   ::
+         bitbake -fc cleansstate qcom-multimedia-image
+         bitbake -fc cleanall qcom-multimedia-image
 
-      bitbake -fc cleansstate qcom-multimedia-image
-      bitbake -fc cleanall qcom-multimedia-image
-
-      bitbake -fc cleansstate qim-product-sdk
-      bitbake -fc cleanall qim-product-sdk
+         bitbake -fc cleansstate qim-product-sdk
+         bitbake -fc cleanall qim-product-sdk
 
    On successful build, you can check if ``system.img`` is present in
    the
@@ -809,16 +649,14 @@ Build QIMP SDK image with extras
       cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcm6490/qcom-multimedia-image
       ls -al system.img
 
-4. Flash the generated build using `Flash images for registered
-   users <flash_images.rst>`__.
+4. Flash the generated build using :doc:`Flash images for registered users <flash_images>`.
 
 .. _section_kjz_d1j_5bc_vinayjk_06-20-24-1130-57-104:
 
 Build QIRP SDK image with extras
---------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Note:** Ensure that you have cloned the respective firmware for QIRP
-SDK. For example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
+.. note:: Ensure that you have cloned the respective firmware for QIRP SDK. For example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
 
 1. Download QIRP SDK layers, Qualcomm Yocto, and supporting layers with
    extras:
@@ -845,11 +683,9 @@ SDK. For example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
       git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
       # Example, <qim-product-sdk release tag> is qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3
 
-   **Note:** For the ``<manifest release tag>``,
-   ``<meta-qcom-extras release tag>``, and
-   ``<qim-product-sdk release tag>`` information, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+   .. note:: 
+      For the ``<manifest release tag>``, ``<meta-qcom-extras release tag>``, and ``<qim-product-sdk release tag>`` information, see the
+      *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
 
 2. Set up the Yocto build:
 
@@ -897,6 +733,5 @@ SDK. For example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
       # system.img is present in the following path
       Robotics image: <workspace_path>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcm6490/qcom-robotics-full-image
 
-4. Flash the generated build using `Flash images for registered
-   users <flash_images.rst>`__.
+4. Flash the generated build using :doc:`Flash images for registered users <flash_images>`.
 

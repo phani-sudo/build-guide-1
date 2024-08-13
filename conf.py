@@ -6,13 +6,13 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-
+project = ''
 copyright = '2024'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx_rtd_theme', 'sphinx.ext.autosectionlabel', 'sphinx.ext.githubpages','sphinxcontrib.video','sphinx_design','linuxdoc.rstFlatTable','sphinx_tabs.tabs']
+extensions = ['sphinx_rtd_theme', 'sphinx.ext.autosectionlabel', 'sphinx.ext.githubpages','sphinxcontrib.video','sphinx_design','linuxdoc.rstFlatTable','sphinx_tabs.tabs','sphinx_new_tab_link']
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']

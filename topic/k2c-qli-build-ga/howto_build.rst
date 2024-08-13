@@ -1,12 +1,12 @@
 .. _howto_build:
 
 Build
-=====
+-----------
 
 .. _section_gcp_5hh_q1c_vinayjk_03-04-24-2335-11-750:
 
 How do I know if my build is completed?
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If your build instruction is ``bitbake qcom-multimedia-image``, then you
 can check if ``system.img`` is present in the
@@ -21,7 +21,7 @@ directory:
 .. _section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265:
 
 How to generate eSDK?
----------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Get a Docker shell and shell prompt**
 
@@ -51,9 +51,8 @@ How to generate eSDK?
 Check if you are in a workspace that has ``.repo`` in it. Set up the
 environment and generate eSDK:
 
-**Note:** When the eSDK generation build command is complete, the images
-are generated in the following directory:
-``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
+.. note:: When the eSDK generation build command is complete, the images
+          are generated in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
 
 1. After building ``meta-qcom-hwe`` with QSC CLI:
 
@@ -69,7 +68,7 @@ are generated in the following directory:
 2. After building with ``meta-qcom-extras`` and firmware sources with
    QSC CLI:
 
-   **Note:** This step is not applicable for unregistered users.
+   .. note:: This step is not applicable for unregistered users.
 
    ::
 
@@ -106,7 +105,7 @@ are generated in the following directory:
 
 5. After building with standalone instructions using Dockerfile.
 
-   1. Move the control to workspace directory:
+   a. Move the control to workspace directory:
 
       ::
 
@@ -115,7 +114,7 @@ are generated in the following directory:
          # Example
          cd /local/mnt/workspace/qcom-download-utils/qcom-6.6.28-QLI.1.1-Ver.1.1
 
-   2. Set up the environment and issue an eSDK build:
+   #. Set up the environment and issue an eSDK build:
 
       ::
 
@@ -145,7 +144,7 @@ Rebuild the image and generate eSDK again.
 .. _section_hjt_vhh_q1c_vinayjk_03-04-24-2335-32-213:
 
 How to rebuild using Docker environment?
-----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Following are the commands to connect to Docker for your environment
 setup and then use the BitBake commands to rebuild:
@@ -156,8 +155,8 @@ setup and then use the BitBake commands to rebuild:
    # Example, cd /local/mnt/workspace/Qworkspace/DEV/LE.QCLINUX.1.0.r1 for making changes to Yocto layers
    # Make code changes
 
-**Note:** Get to a Docker shell as mentioned in `How to generate
-eSDK? <#section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`__.
+.. note:: 
+   Get to a Docker shell as mentioned in :ref:`How to generate eSDK? <section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`.
 
 -  Rebuild using your source changes:
 
@@ -177,7 +176,7 @@ eSDK? <#section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`__.
 .. _how_to_build_qdl_standalone:
 
 How to build a standalone QDL?
-------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Prerequisites:**
 
@@ -207,7 +206,7 @@ How to build a standalone QDL?
 .. _section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877:
 
 How can I change the Hexagon tool install path?
------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ``HEXAGON_ROOT`` environment variable must point to the path where the
 Hexagon tools are installed. By default, ``qpm-cli`` installs
@@ -232,54 +231,52 @@ commands as shown in the following example:
 .. _section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455:
 
 What are the image recipes supported as part of the GitHub workflow?
---------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+------------------------------------+---------------------------------+
-| Image recipe                       | Description                     |
-+====================================+=================================+
-| ``qcom-minimal-image``             | A minimal rootfs image that     |
-|                                    | boots to shell                  |
-+------------------------------------+---------------------------------+
-| ``qcom-console-image``             | Boot to shell with package      |
-|                                    | group to bring in all the basic |
-|                                    | packages                        |
-+------------------------------------+---------------------------------+
-| ``qcom-multimedia-image``          | Image recipe includes recipes   |
-|                                    | for multimedia software         |
-|                                    | components, such as, audio,     |
-|                                    | Bluetooth®, camera, computer    |
-|                                    | vision, display, and video.     |
-+------------------------------------+---------------------------------+
-| ``qcom-multimedia-test-image``     | Image recipe that includes      |
-|                                    | tests                           |
-+------------------------------------+---------------------------------+
++------------------------------------+------------------------------------------+
+| Image recipe                       | Description                              |
++====================================+==========================================+
+| ``qcom-minimal-image``             | A minimal rootfs image that              |
+|                                    | boots to shell                           |
++------------------------------------+------------------------------------------+
+| ``qcom-console-image``             | Boot to shell with package               |
+|                                    | group to bring in all the basic          |
+|                                    | packages                                 |
++------------------------------------+------------------------------------------+
+| ``qcom-multimedia-image``          | Image recipe includes recipes            |
+|                                    | for multimedia software                  |
+|                                    | components, such as, audio,              |
+|                                    | Bluetooth\ :sup:`®`, camera, computer    |
+|                                    | vision, display, and video.              |
++------------------------------------+------------------------------------------+
+| ``qcom-multimedia-test-image``     | Image recipe that includes               |
+|                                    | tests                                    |
++------------------------------------+------------------------------------------+
 
 .. _section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780:
 
 How to download the Platform eSDK?
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Check the `host machine
-   requirements <host_machine_requirements_reg_unreg.rst>`__.
+1. Check the :ref:`host machine requirements <host_machine_req_github_workflow_unregistered_users>`.
 
-2. Set up the `Ubuntu
-   host <build_with_standalone_commands_unreg.rst#section_twd_1bv_xbc_vinayjk_07-02-24-2039-30-667>`__.
+2. Set up the :ref:`Ubuntu host <section_twd_1bv_xbc_vinayjk_07-02-24-2039-30-667>`.
 
 3. Download the Platform eSDK:
 
-   1. Create a directory:
+   a. Create a directory:
 
       ::
 
          mkdir <workspace_path>
 
-   2. Open the directory:
+   #. Open the directory:
 
       ::
 
          cd <workspace_path>
 
-   3. Download the zipped file:
+   #. Download the zipped file:
 
       -  For Ubuntu x86 architecture-based host machines:
 
@@ -293,16 +290,16 @@ How to download the Platform eSDK?
 
             wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcm6490/arm/qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.zip
 
-   4. Unzip the QIMP SDK to a directory of your choice:
+   #. Unzip the QIMP SDK to a directory of your choice:
 
       ::
 
          unzip qcom-6.6.28-QLI.1.1-Ver.1.1_qim-product-sdk-1.1.3.zip
 
       After unzipping, ensure that the eSDK installer is located at
-      ``<unzip_location>/target/qcm6490/sdk/``:|image1|
+      ``<unzip_location>/target/qcm6490/sdk/``:|imageunzipESDK|
 
-   5. If you do not have the necessary write permissions for the
+   #. If you do not have the necessary write permissions for the
       directory where you are trying to install the eSDK, the installer
       alerts you and then terminates. In such a scenario, set up the
       permissions in the directory appropriately by using the following
@@ -324,11 +321,10 @@ How to download the Platform eSDK?
 6. Ensure that the eSDK installation is successful.
 
    After installation, the QIMP SDK layers are included in the
-   installation under ``<workspace_path>/layers``:|image2|
+   installation under ``<workspace_path>/layers``:|imageLayerWorkspace|
 
-   **Note:** Advanced developers can still build their own eSDK by
-   following the steps mentioned in `Advanced
-   procedure <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-51/advanced-procedure.html>`__.
+   .. note:: Advanced developers can still build their own eSDK by following the steps
+             mentioned in `Advanced procedure <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-51/advanced-procedure.html>`__.
 
 7. Run the following command to set the ``ESDK_ROOT`` variable:
 
@@ -348,5 +344,5 @@ application <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-51/
 
 
 
-.. |image1| image:: ../../media/k2c-qli-build-ga/unzip_location.png
-.. |image2| image:: ../../media/k2c-qli-build-ga/qimp_sdk_layers.png
+.. |imageunzipESDK| image:: ../../media/k2c-qli-build-ga/unzip_location.png
+.. |imageLayerWorkspace| image:: ../../media/k2c-qli-build-ga/qimp_sdk_layers.png

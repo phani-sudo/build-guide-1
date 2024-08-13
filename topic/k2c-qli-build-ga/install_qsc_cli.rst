@@ -1,7 +1,7 @@
 .. _one_time_host_setup:
 
 Install QSC CLI
-===============
+--------------------
 
 Set up ``qsc-cli``:
 
@@ -30,12 +30,8 @@ Set up ``qsc-cli``:
 
       qsc-cli login -u <username>
 
-**Note:** A one-time login into
-`chipcode.qti.qualcomm.com <http://chipcode.qti.qualcomm.com/>`__ is
-required to download Qualcomm proprietary git repositories. Use your
-Qualcomm login credentials to complete this step.
-
-For more details, see ``qsc-cli`` related topics in `How
-to <how_to.rst>`__.
+.. note:: 
+    | A one-time login into `chipcode.qti.qualcomm.com <http://chipcode.qti.qualcomm.com/>`__ is required to download Qualcomm proprietary git repositories. Use your Qualcomm login credentials to complete this step. 
+    | For more details, see ``qsc-cli`` related topics in :doc:`How to <how_to>`.
 
 

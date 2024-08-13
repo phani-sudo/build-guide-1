@@ -1,8 +1,7 @@
 .. _flash_images_unregistered:
 
-****************************************
 Flash images for unregistered users
-****************************************
+========================================
 
 Unregistered users must flash the software using the following steps:
 
@@ -13,7 +12,7 @@ Unregistered users must flash the software using the following steps:
 .. _section_wxy_mty_v1c:
 
 Update ``udev`` rules
----------------------
+------------------------------------
 
 Ensure that the ``udev`` USB rules for the Qualcomm manufacturing vendor
 ID **05c6** are configured on the Linux host:
@@ -56,7 +55,7 @@ then reconnect it for the updated rules to take effect.
 .. _section_vgg_mly_v1c:
 
 Move to EDL mode
-----------------
+------------------------------------
 
 The device must be in EDL mode before you flash the software. The
 Qualcomm RB3 Gen 2 platform enters EDL mode if there is no image on the
@@ -65,10 +64,9 @@ EDL mode, use any one of the following methods:
 
 **Using UART**
 
-**Note:** The RB3 Gen 2 device must have a Qualcomm Linux build image.
+.. note:: The RB3 Gen 2 device must have a Qualcomm Linux build image.
 
-1. `Connect device to UART
-   shell <howto_setup.rst#section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`__.
+1. :ref:`Connect device to UART shell <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`.
 
 2. Move the device to EDL mode:
 
@@ -88,12 +86,11 @@ EDL mode, use any one of the following methods:
 
       Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-**Note:** This procedure is verified on an Ubuntu host machine and not
-on a VM.
+.. note:: This procedure is verified on an Ubuntu host machine and not on a VM.
 
 **Using ADB**
 
-**Note:** The RB3 Gen 2 device must have a Qualcomm Linux build image.
+.. note:: The RB3 Gen 2 device must have a Qualcomm Linux build image.
 
 1. `Install
    QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/connect_to_ssh.html#sub$qsg_instal_qud>`__
@@ -125,14 +122,13 @@ on a VM.
 
       Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-**Note:** This procedure is verified on an Ubuntu host machine and not
-on a VM.
+.. note:: This procedure is verified on an Ubuntu host machine and not on a VM.
 
 **Manual**
 
 1. Press and hold the **F_DL** button:
 
-   |image1|
+   .. image:: ../../media/k2c-qli-build-ga/RB3Gen2_device.jpg
 
 2. Connect the device to a +12 V wall power supply.
 
@@ -158,7 +154,7 @@ on a VM.
 .. _section_byn_pdj_x1c:
 
 Flash software using QDL
-------------------------
+------------------------------------
 
 1. Ensure ModemManager is not running.
 
@@ -215,24 +211,19 @@ Flash software using QDL
       Bus 002 Device 006: ID 05c6:901d Qualcomm, Inc. QCM6490_fd2913cf
       Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
-**Note:**
+.. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
-If flashing fails, perform the following steps and retry the flashing
-procedure:
+          1. Power off the device.
+          2. Disconnect from the host.
+          3. Reboot the host.
 
-1. Power off the device.
-2. Disconnect from the host.
-3. Reboot the host.
+          Do not move the QDL tool from this location to another alternate path or
+          host PC. If you must use the standalone QDL, see :ref:`How to build a standalone QDL <how_to_build_qdl_standalone>`.
+          To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
 
-Do not move the QDL tool from this location to another alternate path or
-host PC. If you must use the standalone QDL, see `How to build a
-standalone QDL <howto_build.rst#how_to_build_qdl_standalone>`__.
 
-To connect to the device, see `How to
-SSH <howto_setup.rst#section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`__.
+.. note:: The device reboots on successful completion of the flashing
+          procedure. To verify the updated software version, 
+          see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
 
-**Note:** The device reboots on successful completion of the flashing
-procedure. To verify the updated software version, see `Check software
-version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
 
-.. |image1| image:: ../../media/k2c-qli-build-ga/RB3Gen2_device.jpg

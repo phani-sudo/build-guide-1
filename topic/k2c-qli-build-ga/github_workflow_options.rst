@@ -1,23 +1,17 @@
 .. _concept_hx4_bvn_w1c:
 
 Workflow options
-================
+-------------------------
 
 There are two workflows for registered users to set up, sync, and build
 Qualcomm Linux with GitHub as described in the following table:
 
-+-----------------------------------+-----------------------------------+
-| |image1|                          | |image2|                          |
-+===================================+===================================+
-| Build public Qualcomm Yocto       | Build public Qualcomm Yocto       |
-| layers with standalone commands.  | layers with Dockerfile.           |
-+-----------------------------------+-----------------------------------+
-| `Build with standalone            | `Build with                       |
-| commands                          | Dockerf                           |
-|  <build_from_source_github.rst>`__ | ile <build_with_dockerfile.rst>`__ |
-+-----------------------------------+-----------------------------------+
+.. flat-table:: 
+    :header-rows: 1
 
-
-
-.. |image1| image:: ../../media/k2c-qli-build-ga/Updated%20Icons_Text_50-05.png
-.. |image2| image:: ../../media/k2c-qli-build-ga/Updated%20Icons_Text_50-04.png
+    * - .. figure:: ../../media/k2c-qli-build-ga/Updated-Icons_Text_50-05.png
+      - .. figure:: ../../media/k2c-qli-build-ga/Updated-Icons_Text_50-04.png
+    * - Build public Qualcomm Yocto layers with standalone commands.
+      - Build public Qualcomm Yocto layers with Dockerfile.
+    * - .. centered:: :doc:`Build with standalone commands <build_from_source_github>`
+      - .. centered:: :doc:`Build with Dockerfile <build_with_dockerfile>`

@@ -1,8 +1,7 @@
 .. _flash_images:
 
-************************************
 Flash images for registered users
-************************************
+========================================
 
 Registered users must flash the software using the following steps:
 
@@ -14,7 +13,7 @@ Registered users must flash the software using the following steps:
 .. _section_wxy_mty_v1c:
 
 Install PCAT and QUD
---------------------
+-----------------------------------------
 
 To detect connected devices and flash software builds, ensure that the
 Qualcomm PCAT and QUD tools are installed on the host machine. Run the
@@ -26,40 +25,35 @@ following commands to use ``qpm-cli`` to install PCAT and QUD:
    qpm-cli --install pcat --activate-default-license
    qpm-cli --install qud --activate-default-license
 
-**Note:** For Ubuntu 22.04, you may encounter an issue while installing
-QUD, where you might be asked to enroll the public key on your Linux
-host for a successful QUD installation. For additional details, follow
-the steps provided in the README file available in the
-``/opt/QUIC/sign/signReadme.txt`` directory.
+.. note:: For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux
+          host for a successful QUD installation. For additional details, follow the steps provided in the README file available in the
+          ``/opt/QUIC/sign/signReadme.txt`` directory.
 
 .. _update_udev_rules:
 
 Update ``udev`` rules
----------------------
+-----------------------------------------
 
-See `Update udev
-rules <flash_images_unregistered.rst#section_wxy_mty_v1c>`__.
+See :ref:`Update udev rules <section_wxy_mty_v1c>`.
 
 .. _section_az4_rdn_1cc_vinayjk_07-12-24-1201-27-226:
 
 Move to EDL mode
-----------------
+-----------------------------------------
 
-See `Move to EDL
-mode <flash_images_unregistered.rst#section_vgg_mly_v1c>`__.
+See :ref:`Move to EDL mode <section_vgg_mly_v1c>`.
 
 .. _section_jpb_5dn_1cc_vinayjk_07-12-24-1202-10-915:
 
 Flash software using QDL
-------------------------
+-----------------------------------------
 
-See `Flash software using
-QDL <flash_images_unregistered.rst#section_byn_pdj_x1c>`__.
+See :ref:`Flash software using QDL <section_byn_pdj_x1c>`.
 
 .. _section_mcc_yp5_qbc_vinayjk_06-07-24-1834-57-144:
 
 Flash software using PCAT
--------------------------
+-----------------------------------------
 
 1. Check if ``QTI_HS-USB_QDLoader`` driver is available in the installed
    directory:
@@ -129,22 +123,19 @@ Flash software using PCAT
       Bus 002 Device 006: ID 05c6:901d Qualcomm, Inc. QCM6490_fd2913cf
       Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
 
-**Note:**
+.. note::
 
--  To connect to the device, see `How to
-   SSH <howto_setup.rst#section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`__.
--  The device reboots on successful completion of the flashing
-   procedure. To verify the updated software version, see `Check
-   software
-   version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
+         -  To connect to the device, see :ref:`How to SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+         -  The device reboots on successful completion of the flashing
+            procedure. To verify the updated software version, see `Check
+            software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
 
 .. _section_mcj_21d_rbc_vinayjk_06-08-24-2217-8-100:
 
 Flash software using QSC Launcher
----------------------------------
+-----------------------------------------
 
-See `Flash using QSC Launcher <qsc_launcher.rst#section_cmp_qbj_x1c>`__.
+See :ref:`Flash using QSC Launcher <section_cmp_qbj_x1c>`.
 
-**Note:** The device reboots on successful completion of the flashing
-procedure. To verify the updated software version, see `Check software
-version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.
+.. note:: The device reboots on successful completion of the flashing
+          procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253/ubuntu_host.html#sub$check_sw_version_uart>`__.

@@ -1,7 +1,7 @@
 .. _concept_rr1_5dn_w1c:
 
 Install QSC
-===========
+---------------------
 
 There are two methods to install QSC:
 
@@ -11,7 +11,7 @@ There are two methods to install QSC:
 .. _section_mkf_b2n_w1c:
 
 Install QSC using a GUI
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use the Qualcomm Software Center (QSC) GUI to install QSC.
 
@@ -20,7 +20,7 @@ Use the Qualcomm Software Center (QSC) GUI to install QSC.
    Center**. The QSC Debian package (``.deb``) downloads to your
    machine.
 
-   |image1|
+   .. image:: ../../media/k2c-qli-build-ga/qcs_launcher_gui.png
 
 2. Install the downloaded QSC Debian package:
 
@@ -32,7 +32,7 @@ Use the Qualcomm Software Center (QSC) GUI to install QSC.
 .. _section_hrf_d2n_w1c:
 
 Install QSC using a CLI
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Install curl (if not already installed):
 
@@ -58,5 +58,3 @@ Install QSC using a CLI
    displayed.
 
 
-
-.. |image1| image:: ../../media/k2c-qli-build-ga/qcs_launcher_gui.png

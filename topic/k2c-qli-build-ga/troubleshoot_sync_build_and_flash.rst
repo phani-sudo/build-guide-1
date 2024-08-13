@@ -1,13 +1,13 @@
 .. _troubleshoot_sync_build_and_flash:
 
-*********************
+********************
 Troubleshooting
-*********************
+********************
 
 .. _section_hkm_2dc_p1c_vinayjk_02-29-24-1641-18-155:
 
 Docker
-------
+--------
 
 -  **docker: Cannot connect to the Docker daemon at
    unix:///var/run/docker.sock. Is the docker daemon running?**
@@ -24,13 +24,13 @@ Docker
    Add an internal Docker registry mirror (internal setting for Qualcomm
    network).
 
-   **Note:**
+   .. note::
 
-   Do not include # comments in the JSON configuration file.
+             Do not include # comments in the JSON configuration file.
 
-   Using a tab instead of space and other invisible whitespace
-   characters may break the proper work of JSON configuration files and
-   may lead to ``docker.service`` failing to start.
+             Using a tab instead of space and other invisible whitespace
+             characters may break the proper work of JSON configuration files and
+             may lead to ``docker.service`` failing to start.
 
    ::
 
@@ -91,7 +91,7 @@ Docker
 .. _section_w42_4gc_p1c_vinayjk_02-29-24-1706-59-554:
 
 Sync
-----
+-------
 
 -  **repo init or sync failure with except ManifestInvalidRevisionError,
    e:**
@@ -250,7 +250,7 @@ Sync
 .. _section_ays_4gc_p1c_vinayjk_02-29-24-1707-9-256:
 
 Build
------
+------------
 
 -  **ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
    found, unable to open devshell**
@@ -284,6 +284,8 @@ Build
    partially built workspace and retry the build. For example, if you
    are building with ``qsc-cli``, then these files are found under
    ``<absoute_workspace_path>/DEV/LE.QCLINUX.1.0.r1/build-qcom-wayland``.
+
+.. _do_fetch_error_1:
 
 -  **do_fetch: BitBake Fetcher Error: FetchError(‘Unable to fetch URL
    from any source’)**
@@ -324,8 +326,7 @@ Build
 
    After creating the ``.done`` file, proceed with the
    ``bitbake <image-recipe>`` command. After the first build completes,
-   it is recommended to set up your own `download
-   directory <https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR>`__.
+   it is recommended to set up your own `download directory <https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR>`__.
 
 -  **make[4]: /bin/sh: Argument list too long**
 
@@ -356,13 +357,10 @@ Build
 -  **qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git
    –progress failed with exit code 128, no output**
 
-   128 is a masking error and this error needs further triage as it
-   could be a network issue at your end or a genuine issue accessing
-   Qualcomm or upstream mirrors. As a workaround for this error, see
-   `do_fetch: BitBake Fetcher Error: FetchError(‘Unable to fetch URL
-   from any source’) <#do_fetch_error>`__. You can triage it further by
-   following the subsequent instructions to dump verbose logs during
-   fetch.
+   128 is a masking error and this error needs further triage as it could be a network issue at your end or a genuine issue accessing
+   Qualcomm or upstream mirrors. As a workaround for this error, 
+   see :ref:`do_fetch: BitBake Fetcher Error: FetchError(‘Unable to fetch URL from any source’) <do_fetch_error_1>`. You can triage it further by
+   following the subsequent instructions to dump verbose logs during fetch.
 
    By default, verbose logging is not enabled for Yocto git fetch. To
    enable the same for all git projects, edit ``local.conf`` file and
@@ -380,9 +378,11 @@ Build
       recipe’s working directory
       ``build-qcom-wayland/tmp-glibc/work/qcm6490-qcom-linux/diag/15.0-r0/temp``.
    5. Share ``log.do_fetch`` from this path with the Qualcomm CE point
-      of contact. **Note:** Enabling git verbose logging for all recipes
-      can significantly increase the build time. It is recommended to
-      enable it only in required recipes on a need basis.
+      of contact. 
+      
+   .. note:: Enabling git verbose logging for all recipes
+             can significantly increase the build time. It is recommended to
+             enable it only in required recipes on a need basis.
 
 -  **Failed SP Download with error: <> Sp Download failed. ExitCode: 128
    Signal: 0 with errorcode 4**
@@ -440,8 +440,7 @@ Build
    **Solution**
 
    -  Remove the ``build-qcom-wayland`` directory.
-   -  Rerun the commands in `Build QIMP SDK
-      image <build_with_standalone_commands_unreg.rst#section_lrb_1nd_fbc>`__.
+   -  Rerun the commands in :ref:`Build QIMP SDK image <section_lrb_1nd_fbc>`.
 
 -  **failed: database disk image is malformed. abort()ing pseudo client
    by server request**
@@ -467,6 +466,6 @@ Build
 .. _section_uwl_lhc_p1c_vinayjk_02-29-24-1713-48-740:
 
 Flash
------
+-----------
 
 No known errors.

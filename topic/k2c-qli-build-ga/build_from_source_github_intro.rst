@@ -1,8 +1,9 @@
 .. _qsc_cli_based_simple_yocto_layers_sync_build_and_flash:
 
-******************************************
+.. rst_class:: flattenforhtml
+
 GitHub workflow for registered users
-******************************************
+=============================================
 
 The following sections provide instructions to use GitHub to make a
 build utilizing prebuilt proprietary binaries/images.

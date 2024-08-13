@@ -1,12 +1,12 @@
 .. _howto_sync:
 
 Sync
-====
+---------------
 
 .. _section_znd_jcg_v1c_vinayjk_03-22-24-1638-43-232:
 
 Repo installation alternate methods
------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The latest Repo works with python3 and if your default Python is pointed
 to python2, then install ``python-is-python3`` to make python3 as the
@@ -40,7 +40,7 @@ following commands:
 .. _section_em1_xng_q1c_vinayjk_03-04-24-2103-35-76:
 
 How does QSC-CLI work?
-----------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. **Setup**
 
@@ -57,14 +57,14 @@ How does QSC-CLI work?
    build for the Qualcomm Yocto layers.
 
 4. Internally, QSC-CLI implements the standalone commands covered in the
-   `Github workflow (firmware and extras) <build_addn_info.rst>`__ and
+   :doc:`Github workflow (firmware and extras) <build_addn_info>` and
    leverages the prebuilt Docker images for the respective Qualcomm
    style software images. For example, ``LE.QCLINUX.1.0.r1``.
 
 .. _section_gcp_5hh_q1c_vinayjk_03-04-24-2335-11-750:
 
 How to see more information on commands and options supported by QSC-CLI?
--------------------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To see all the commands provided by QSC-CLI, run the following commands:
 
@@ -83,7 +83,7 @@ the command. For example:
 .. _section_hxv_5hh_q1c_vinayjk_03-04-24-2335-16-353:
 
 How to manage workspaces using QSC-CLI?
----------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 List the workspaces using the following command:
 
@@ -103,7 +103,7 @@ To delete a workspace, run the following command:
 .. _section_kw3_vhh_q1c_vinayjk_03-04-24-2335-25-119:
 
 How do I find my Yocto workspace with QSC-CLI?
-----------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can install the ``tree`` command and run it on your workspace. The
 Yocto workspace is under the ``LE.QCLINUX.1.0.r1`` directory as shown in
@@ -119,7 +119,8 @@ releases.
    -  ``LE.QCLINUX.1.0.r1`` contains the Yocto workspace.
    -  Remaining directories can be ignored as all the necessary sources
       and binaries are encoded in the Yocto layer recipes synced under
-      ``LE.QCLINUX.1.0.r1/layers``. |image1|
+      ``LE.QCLINUX.1.0.r1/layers``.       
+      |YoctoLEQCLinux|
 
 -  **QSC-CLI workspace structure after
    ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem`` distribution build
@@ -134,20 +135,19 @@ releases.
       -  These additional firmware are built.
       -  The output binaries from these are picked up from firmware
          recipes in the Qualcomm Yocto layers.
-      -  For detailed sync and build instructions, see `Github workflow
-         (firmware and extras) <build_addn_info.rst>`__. |image2|
+      -  For detailed sync and build instructions, see :doc:`Github workflow (firmware and extras) <build_addn_info>`. |ws_qsc_cli_4|
 
 .. _section_whj_vhh_q1c_vinayjk_03-04-24-2335-25-416:
 
 How to refresh the workspace with a new download using QSC CLI?
----------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This option is supported only for the ``LE.QCLINUX.1.0.r1`` image, which
 syncs the Yocto layers and prepares the Yocto workspace to be built.
 This includes the following steps:
 
-**Note:** Get to a Docker shell as mentioned in `How to generate
-eSDK <howto_build.rst#section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`__.
+.. note::
+     Get to a Docker shell as mentioned in :ref:`How to generate eSDK <section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`.
 
 1. Download a new release:
 
@@ -156,11 +156,9 @@ eSDK <howto_build.rst#section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`__.
       repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <release tag>
       repo sync
 
-   **Note:** For the ``<manifest release tag>`` information, see the
-   *Build-critical release tags* section in the `Release
-   Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
-   An example ``<manifest release tag>`` is
-   ``qcom-6.6.28-QLI.1.1-Ver.1.1.xml``.
+   .. note:: For the ``<manifest release tag>`` information, see the
+             *Build-critical release tags* section in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__.
+             An example ``<manifest release tag>`` is ``qcom-6.6.28-QLI.1.1-Ver.1.1.xml``.
 
 2. Set up the build environment:
 
@@ -176,5 +174,5 @@ eSDK <howto_build.rst#section_bcj_vhh_q1c_vinayjk_03-04-24-2335-25-265>`__.
 
 
 
-.. |image1| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_2.png
-.. |image2| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_4.png
+.. |YoctoLEQCLinux| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_2.png
+.. |ws_qsc_cli_4| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_4.png

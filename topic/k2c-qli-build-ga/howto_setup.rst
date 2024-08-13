@@ -1,18 +1,18 @@
 .. _howto_setup:
 
 Setup
-=====
+------------------
 
 .. _section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684:
 
 How to connect to a UART shell?
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To set up the debug UART connection and view diagnostic messages,
 connect the micro-USB cable from the micro-USB port on the RB3 Gen 2
 device to the Linux host.
 
-|image1|
+.. image:: ../../media/k2c-qli-build-ga/micro_usb_port.jpg
 
 1. Install Minicom on the Linux host:
 
@@ -40,56 +40,61 @@ device to the Linux host.
 4. Press the Down arrow key to select the **Serial port setup** option.
    Use the Up and Down arrow keys to navigate through the menu.
 
-   |image2|
+   .. image:: ../../media/k2c-qli-build-ga/serial_port_setup.jpg
+      :align: center
 
 5. Set up the serial device configuration:
 
-   1. Press **A** on your keyboard to set up the serial device name such
+   a. Press **A** on your keyboard to set up the serial device name such
       as ``/dev/ttyUSB0``.
 
-   2. Press **Enter** to save the changes.
+   #. Press **Enter** to save the changes.
 
-   3. Press **E** on your keyboard to set the baud rate. If the baud
+   #. Press **E** on your keyboard to set the baud rate. If the baud
       rate is not set to **115200**, press the **E** key again.
 
-   4. Press **Q** on your keyboard to set the configuration to **8N1**.
+   #. Press **Q** on your keyboard to set the configuration to **8N1**.
 
-   5. Press **Enter** to save the changes.
+   #. Press **Enter** to save the changes.
 
-   6. Press **F** on your keyboard to set the **Hardware Flow Control**
+   #. Press **F** on your keyboard to set the **Hardware Flow Control**
       to ``No``.
 
-      **Note:** Ensure that the letters A, E, Q, and F are in uppercase.
+      .. note:: Ensure that the letters A, E, Q, and F are in uppercase.
 
-      |image3|
+      .. image:: ../../media/k2c-qli-build-ga/serial_device_configuration.png
+         :align: center
 
-   7. Press **Enter** to save the changes.
+   #. Press **Enter** to save the changes.
 
 6. Select the **Save setup as dfl** option and press **Enter**.
 
-   |image4|
+   .. image:: ../../media/k2c-qli-build-ga/save_setup_as_dfl.png
+      :align: center
 
 7. Select **Exit** to open the UART console.
 
 8. Log in to the UART console:
 
    -  Login: ``root``
-   -  Password: ``oelinux123`` **Note:** If the login console does not
-      display as expected, verify the USB connection. If necessary,
-      disconnect and then reconnect the micro-USB.
+   -  Password: ``oelinux123`` 
+     
+      .. note:: If the login console does not display as expected, verify the USB connection. If necessary, disconnect and then reconnect the micro-USB.
 
-**Note:** If you want to run sample applications from the UART shell,
-ensure to run applications in the Permissive mode:
+.. note:: 
+    If you want to run sample applications from the UART shell, ensure to run applications in the Permissive mode:
 
-::
+    ::
 
-   setenforce 0
-   mount -o rw,remount /
+       setenforce 0
+       mount -o rw,remount /
 
 .. _section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279:
 
 How to SSH?
------------
+^^^^^^^^^^^^^^
+
+.. _howto_setup_wifi_sub:
 
 **Set up Wi-Fi**
 
@@ -97,9 +102,7 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the
 authentication for network management are initialized during the device
 boot up.
 
-To update the Wi-Fi configuration, perform the following from the debug
-`UART serial
-console <#section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`__:
+To update the Wi-Fi configuration, perform the following from the debug :ref:`UART serial console <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`:
 
 1. Remount and enable read-and-write access to the default read-only
    ``rootfs`` file before editing the ``/etc/wpa_supplicant.conf`` file:
@@ -123,9 +126,9 @@ console <#section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`__:
 
       vi /etc/wpa_supplicant.conf
 
-   **Note:** You can see the following configurations for security types
-   specified in the default ``wpa_supplicant.conf`` file at ``/etc`` to
-   add your required router configurations.
+   .. note::
+        You can see the following configurations for security types specified in the default ``wpa_supplicant.conf`` file at ``/etc`` to
+        add your required router configurations.
 
    ::
 
@@ -177,7 +180,7 @@ console <#section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`__:
 
       ifconfig wlan0
 
-   |image5|
+   .. image:: ../../media/k2c-qli-build-ga/setup_wifi_2.png
 
 8. Ping the router to confirm the connection:
 
@@ -185,12 +188,11 @@ console <#section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`__:
 
       ping 8.8.8.8
 
-   |image6|
+   .. image:: ../../media/k2c-qli-build-ga/setup_wifi_3.png
 
 **Connect to SSH**
 
-**Note:** Ensure that a Wi-Fi connection is established before
-connecting to SSH.
+.. note:: Ensure that a Wi-Fi connection is established before connecting to SSH.
 
 1. Find the IP address of the RB3 Gen 2 device in UART console:
 
@@ -214,28 +216,26 @@ connecting to SSH.
 
       oelinux123
 
-**Note:** Ensure that the Linux host is connected to the same Wi-Fi
-access point.
+.. note:: Ensure that the Linux host is connected to the same Wi-Fi access point.
 
-**Note:** To transfer the files successfully using the ``scp`` command,
-use the password ``oelinux123``.
+
+.. note:: To transfer the files successfully using the ``scp`` command,
+          use the password ``oelinux123``.
 
 .. _section_j5g_rds_5bc_vinayjk_06-21-24-1739-53-921:
 
 How to configure Ethernet with RJ45 port?
------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Ethernet/RJ45 port is enabled as a downstream port of PCIe to USB
 controller (``renesas``). Ensure that ``renesas_usb_fw.mem`` is
 available at the ``/lib/firmware`` directory.
 
-**Note:** If ``renesas_usb_fw.mem`` firmware is not available at the
-``/lib/firmware`` directory, then `connect to
-UART <#section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`__ and `enable
-the Wi-Fi <#set_up_wifi>`__.
-
-After getting SSH and IP address, `update PCIe to USB controller
-firmware <#section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`__.
+.. note:: 
+        | If ``renesas_usb_fw.mem`` firmware is not available at the ``/lib/firmware`` directory, 
+          then :ref:`connect to UART <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>` 
+          and :ref:`enable the Wi-Fi <howto_setup_wifi_sub>`.
+        | After getting SSH and IP address, :ref:`update PCIe to USB controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
 
 To check if USB to ETH controller is enumerated, run the following
 command:
@@ -264,7 +264,7 @@ To check the Ethernet IP address, run the following command:
 
 **Sample output**:
 
-**Note:** 10.219.0.106 is the IP address.
+.. note:: 10.219.0.106 is the IP address.
 
 ::
 
@@ -280,7 +280,7 @@ To check the Ethernet IP address, run the following command:
 .. _section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149:
 
 How to update USB and Ethernet controller firmware?
----------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you encounter any USB or Ethernet connectivity issues on the RB3 Gen
 2 device, a firmware update for the PCIe to USB controller could be a
@@ -295,9 +295,9 @@ solution.
 2. Transfer the files using SCP to the following path:
    ``/lib/firmware``.
 
-   **Note:** The firmware name should be ``renesas_usb_fw.mem`` and if
-   not, you must rename it. The driver identifies the firmware based on
-   this specific filename, and other firmware names will not function.
+   .. note:: 
+        The firmware name should be ``renesas_usb_fw.mem`` and if not, you must rename it. The driver identifies the firmware based on
+        this specific filename, and other firmware names will not function.
 
    **Example**:
 
@@ -305,16 +305,11 @@ solution.
 
       scp renesas_usb.mem root@<ip address>:/lib/firmware
 
-   **Note:** When prompted for a password, enter ``oelinux123``.
+   .. note:: 
+          When prompted for a password, enter ``oelinux123``.
 
-**Note:** After flashing the firmware, reboot the device. Upon
-subsequent boot-up, the driver reads the firmware and activates the
-PCIe-to-USB controller.
+.. note:: 
+      After flashing the firmware, reboot the device. Upon subsequent boot-up, the driver reads the firmware and activates the PCIe-to-USB controller.
 
 
-.. |image1| image:: ../../media/k2c-qli-build-ga/micro_usb_port.jpg
-.. |image2| image:: ../../media/k2c-qli-build-ga/serial_port_setup.jpg
-.. |image3| image:: ../../media/k2c-qli-build-ga/serial_device_configuration.png
-.. |image4| image:: ../../media/k2c-qli-build-ga/save_setup_as_dfl.png
-.. |image5| image:: ../../media/k2c-qli-build-ga/setup_wifi_2.png
-.. |image6| image:: ../../media/k2c-qli-build-ga/setup_wifi_3.png
+

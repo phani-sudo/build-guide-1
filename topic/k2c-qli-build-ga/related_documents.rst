@@ -1,74 +1,56 @@
 .. _related_documents:
 
 Related documents
-=================
+-----------------------
 
-+---------------------------------+------------------------------------+
-| Document title                  | Document number                    |
-+=================================+====================================+
-| **Qualcomm Technologies, Inc.** |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm Linux Yocto           | 80-70014-27                        |
-| Guide <https://                 |                                    |
-| docs.qualcomm.com/bundle/public |                                    |
-| resource/topics/80-70014-27>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm Linux Release         | RNO-240626095531                   |
-| Notes <https://docs.q           |                                    |
-| ualcomm.com/bundle/publicresour |                                    |
-| ce/topics/RNO-240626095531/>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm Linux Kernel          | 80-70014-3                         |
-| Guide <https:/                  |                                    |
-| /docs.qualcomm.com/bundle/publi |                                    |
-| cresource/topics/80-70014-3>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `RB3 Gen 2 Quick Start          | 80-70014-253                       |
-| Guide <https://d                |                                    |
-| ocs.qualcomm.com/bundle/publicr |                                    |
-| esource/topics/80-70014-253>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm Intelligent           | 80-70014-51                        |
-| Multimedia Product (QIMP) SDK   |                                    |
-| Quick Start                     |                                    |
-| Guide <https://                 |                                    |
-| docs.qualcomm.com/bundle/public |                                    |
-| resource/topics/80-70014-51>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm® Linux Intelligent    | 80-65220-2                         |
-| Robotics Product SDK (QIRP SDK) |                                    |
-| 2.0 Quick Start                 |                                    |
-| Guide <https:/                  |                                    |
-| /docs.qualcomm.com/bundle/publi |                                    |
-| cresource/topics/80-65220-2>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm Linux Virtual Machine | 80-70014-41                        |
-| Setup                           |                                    |
-| Guide <https://d                |                                    |
-| ocs.qualcomm.com/bundle/publicr |                                    |
-| esource/topics/80-70014-41/>`__ |                                    |
-+---------------------------------+------------------------------------+
-| `Qualcomm Software Center User  | 80-72780-2                         |
-| Guide <https://                 |                                    |
-| docs.qualcomm.com/bundle/public |                                    |
-| resource/topics/80-72780-2/>`__ |                                    |
-+---------------------------------+------------------------------------+
-| **Resources**                   |                                    |
-+---------------------------------+------------------------------------+
-| Qualcomm manifest               | https://g                          |
-|                                 | ithub.com/quic-yocto/qcom-manifest |
-+---------------------------------+------------------------------------+
-| Yocto central download          | https://docs.yoctoproject.org/4    |
-| directory                       | .0.16/singleindex.html#term-DL_DIR |
-+---------------------------------+------------------------------------+
-| CodeLinaro patch file           | https:                             |
-|                                 | //artifacts.codelinaro.org/artifac |
-|                                 | tory/codelinaro-le/0001-fetch2-git |
-|                                 | -Add-verbose-logging-support.patch |
-+---------------------------------+------------------------------------+
-| meta-qcom-realtime              | https://github                     |
-|                                 | .com/quic-yocto/meta-qcom-realtime |
-+---------------------------------+------------------------------------+
+.. flat-table::
+   :widths: 36 36
+   :header-rows: 1
 
-**Parent
-topic:**\ `References <../../topic/k2c-qli-build-ga/references.rst>`__
+
+   * - Document title
+     - Document number
+
+   * - **Qualcomm Technologies, Inc.**
+     - 
+
+   * - `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-27>`__
+     - 80-70014-27
+
+   * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/>`__
+     - RNO-240626095531
+
+   * - `Qualcomm Linux Kernel Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-3>`__
+     - 80-70014-3
+
+   * - `RB3 Gen 2 Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-253>`__
+     - 80-70014-253
+
+   * - `Qualcomm Intelligent Multimedia Product (QIMP) SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-51>`__
+     - 80-70014-51
+
+   * - `Qualcomm® Linux Intelligent Robotics Product SDK (QIRP SDK) 2.0 Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-65220-2>`__
+     - 80-65220-2
+
+   * - `Qualcomm Linux Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-41/>`__
+     - 80-70014-41
+
+   * - `Qualcomm Software Center User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-72780-2/>`__
+     - 80-72780-2
+
+   * - :cspan:`1` **Resources**      
+
+   * - Qualcomm manifest
+     - https://github.com/quic-yocto/qcom-manifest
+
+   * - Yocto central download directory
+     - https://docs.yoctoproject.org/4.0.16/singleindex.html#term-DL_DIR
+
+   * - CodeLinaro patch file
+     - https://artifacts.codelinaro.org/artifactory/codelinaro-le/0001-fetch2-git-Add-verbose-logging-support.patch
+
+
+   * - meta-qcom-realtime
+     - https://github.com/quic-yocto/meta-qcom-realtime
+
+

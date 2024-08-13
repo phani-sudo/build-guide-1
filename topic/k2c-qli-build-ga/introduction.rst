@@ -1,9 +1,9 @@
-*************
+
 Introduction
-*************
+========================================
 
 This guide describes the methods to configure, download, compile, and
-flash Qualcomm® Linux® and the associated firmware on supported devices.
+flash Qualcomm\ :sup:`®` Linux\ :sup:`®` and the associated firmware on supported devices.
 **This information is also available in** `Simplified
 Chinese <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-254Y>`__.
 
@@ -16,9 +16,7 @@ before starting your build.
 Unregistered users
 ------------------
 
-Unregistered users can sync and build Qualcomm Linux using the `GitHub
-workflow for unregistered
-users <github_workflow_unregistered_users.rst>`__.
+Unregistered users can sync and build Qualcomm Linux using the :doc:`GitHub workflow for unregistered users <github_workflow_unregistered_users>`.
 
 .. _section_x3d_nqy_v1c:
 
@@ -29,24 +27,31 @@ Registered users can use any one of the following three methods to sync
 and build Qualcomm Linux. These methods use the Qualcomm Yocto layers
 and the supporting base Yocto layers.
 
-+--------------------------------+-----------+------------------------+
-| Launcher                       | CLI       | GitHub                 |
-+================================+===========+========================+
-| Easy-to-use, GUI-based,        | Simple    | Instructions to use    |
-| Qualcomm Software Center (QSC) | QSC       | GitHub based workflow. |
-| Launcher.                      | com       |                        |
-|                                | mand-line |                        |
-|                                | interface |                        |
-|                                | (CLI).    |                        |
-+--------------------------------+-----------+------------------------+
-| `Build with QSC                | `Build    | `GitHub workflow for   |
-| Launcher <build_fr             | with QSC  | registered             |
-| om_source_qsc_gui_intro.rst>`__ | C         | users <build_from_sour |
-|                                | LI <build | ce_github_intro.rst>`__ |
-|                                | _from_sou |                        |
-|                                | rce_QSC_C |                        |
-|                                | LI.rst>`__ |                        |
-+--------------------------------+-----------+------------------------+
+
+.. list-table:: 
+   :header-rows: 1
+   :align: center
+ 
+   * - Launcher
+     - CLI
+     - GitHub
+   * - Easy-to-use, GUI-based, Qualcomm Software Center (QSC) Launcher.
+     - Simple QSC command-line interface (CLI).
+     - Instructions to use GitHub based workflow.
+   * - .. centered:: :doc:`Build with QSC Launcher<build_from_source_qsc_gui_intro>` 
+     - .. centered:: :doc:`Build with QSC CLI <build_from_source_QSC_CLI>`
+     - .. centered:: :doc:`GitHub workflow for registered users <build_from_source_github_intro>`
+
+.. only:: html
+
+      .. figure:: ../../media/k2c-qli-build-ga/explore_QSC.svg
+         :align: center
+
+.. only:: latex
+  
+      .. figure:: ../../media/k2c-qli-build-ga/explore_QSC.png
+         :align: center
+   
 
 .. note::
 
@@ -54,8 +59,9 @@ and the supporting base Yocto layers.
     Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240626095531/ReleaseNote.html#prebuilt-flashable-images-along-with-esdk>`__.
 
     The Platform eSDK is an installer generated from the Qualcomm Linux image. It provides a complete Yocto environment that allows you to
-    synchronize, modify, compile, and install applications and open-source plugins. For more details, see `How to download the PlatformeSDK? <howto_build.rst#section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`__.
+    synchronize, modify, compile, and install applications and open-source plugins. For more details, see :ref:`How to download the PlatformeSDK? <section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`.
+
 
 .. note::
-     Qualcomm Linux allows you to build images for QCS6490 and QCS5430.
-     QCM6490 and QCS6490 are used interchangeably in this guide.
+     | Qualcomm Linux allows you to build images for QCS6490 and QCS5430.
+     | QCM6490 and QCS6490 are used interchangeably in this guide.

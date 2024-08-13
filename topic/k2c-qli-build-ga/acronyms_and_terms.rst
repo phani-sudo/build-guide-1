@@ -1,7 +1,7 @@
 .. _acronyms_and_terms:
 
 Acronyms and terms
-==================
+----------------------------
 
 =============== =======================================
 Acronym or term Definition
@@ -30,5 +30,4 @@ SDK             Software development kit
 TZ              TrustZone
 =============== =======================================
 
-**Parent
-topic:**\ `References <../../topic/k2c-qli-build-ga/references.rst>`__
+

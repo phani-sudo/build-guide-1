@@ -1,12 +1,12 @@
 .. _build_private_distribution:
 
 Build with Dockerfile
-=====================
+-------------------------
 
 .. _section_d5g_qcq_p1c_vinayjk_03-02-24-1449-27-555:
 
 Ubuntu host setup
------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 -  Install git:
 
@@ -37,7 +37,7 @@ Ubuntu host setup
 .. _section_anw_sv3_v1c_vinayjk_03-23-24-142-19-530:
 
 Check the machine configuration
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Check if your host is configured accurately:
 
@@ -52,15 +52,15 @@ Check the machine configuration
 
       bash docker/docker_setup.sh
 
-**Note:** As part of the Docker setup, the ``qcom-download-utils``
-directory structure is shown in the following figure:
+.. note:: 
+   As part of the Docker setup, the ``qcom-download-utils`` directory structure is shown in the following figure:
 
-|image1|
+          .. image:: ../../media/k2c-qli-build-ga/qcom-download-utils-folder.png
 
 .. _section_opk_sh4_w1c:
 
 Build base image
-----------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Create a Yocto Docker image and build:
 
@@ -74,9 +74,8 @@ Create a Yocto Docker image and build:
    build with Dockerfile (Docker does not allow upper case letters in
    the Dockertag).
 
-   **Note:** See `docker
-   troubleshooting <troubleshoot_sync_build_and_flash.rst#section_hkm_2dc_p1c_vinayjk_02-29-24-1641-18-155>`__
-   for troubleshooting Docker issues.
+   .. note:: 
+      See :ref:`docker troubleshooting <section_hkm_2dc_p1c_vinayjk_02-29-24-1641-18-155>` for troubleshooting Docker issues.
 
    ::
 
@@ -117,27 +116,24 @@ Create a Yocto Docker image and build:
    For example,
    ``qcom-download-utils/qcom-6.6.28-QLI.1.1-Ver.1.1/build-qcom-wayland``.
 
-**Note:** **# ERROR: error.GitError: git config (‘–replace-all’,
-‘color.ui’, ‘auto’): error: could not write config file
-/home/$USER/.gitconfig: Device or resource busy**
+.. note:: 
+   | **# ERROR: error.GitError: git config (‘–replace-all’,‘color.ui’, ‘auto’): error: could not write config file /home/$USER/.gitconfig: Device or resource busy**
+   | This error is triggered when your gitconfig does not set the UI color
+     configuration as Git 1.8.4 is enabled by default. To enable color
+     display in your account, run the following command: ``git config --global color.ui auto``.
 
-This error is triggered when your gitconfig does not set the UI color
-configuration as Git 1.8.4 is enabled by default. To enable color
-display in your account, run the following command:
-``git config --global color.ui auto``.
-
-**Note:** If a build error is triggered and fixed, run the commands in
-`Rebuild <#section_p1h_tv3_v1c_vinayjk_03-23-24-142-26-643>`__.
+.. note:: 
+   If a build error is triggered and fixed, run the commands in :ref:`Rebuild <section_p1h_tv3_v1c_vinayjk_03-23-24-142-26-643>`.
 
 .. _section_mp2_1n4_w1c:
 
 Build QIMP SDK image
---------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. `Build base image <#section_opk_sh4_w1c>`__ with Docker.
+1. :ref:`Build base image <section_opk_sh4_w1c>` with Docker.
 2. Build QIMP SDK on top of the base image with Docker:
 
-   1. Run the ``docker run`` command:
+   a. Run the ``docker run`` command:
 
       ::
 
@@ -146,7 +142,7 @@ Build QIMP SDK image
          bash
          docker run -it -v "${HOME}/.gitconfig":"/home/${USER}/.gitconfig" -v "${HOME}/.netrc":"/home/${USER}/.netrc" -v $(pwd):$(pwd) -w $(pwd) qcom-6.6.28-qli.1.1-ver.1.1_22.04 /bin/bash
 
-   2. Clone QIMP SDK layer into the workspace:
+   #. Clone QIMP SDK layer into the workspace:
 
       ::
 
@@ -159,7 +155,7 @@ Build QIMP SDK image
 
          export EXTRALAYERS="meta-qcom-qim-product-sdk"
 
-   3. Set up the build environment:
+   #. Set up the build environment:
 
       ::
 
@@ -167,7 +163,7 @@ Build QIMP SDK image
          # source setup-environment: Sets the environment settings, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory
 
-   4. Build the software image:
+   #. Build the software image:
 
       ::
 
@@ -178,7 +174,7 @@ Build QIMP SDK image
 .. _section_p1h_tv3_v1c_vinayjk_03-23-24-142-26-643:
 
 Rebuild
--------
+^^^^^^^^^^^^^^
 
 -  List the Docker images:
 
@@ -225,11 +221,7 @@ Rebuild
 .. _section_x2k_vnf_w1c:
 
 Flash
------
+^^^^^^^
 
-Flash software images to the device using `Flash images for registered
-users <flash_images.rst>`__.
+Flash software images to the device using :doc:`Flash images for registered users <flash_images>`.
 
-
-
-.. |image1| image:: ../../media/k2c-qli-build-ga/qcom-download-utils-folder.png

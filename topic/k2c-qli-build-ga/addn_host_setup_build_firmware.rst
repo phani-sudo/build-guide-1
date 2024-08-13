@@ -1,7 +1,7 @@
 .. _host_setup_to_build_sdks:
 
 Ubuntu host setup
-=================
+-------------------------
 
 The Ubuntu host machine needs a few setup operations to ensure that the
 required software tools are ready.
@@ -27,13 +27,10 @@ required software tools are ready.
       # The last line in this output is the token, which can be used to access
       # Qualcomm Proprietary repositories. This token expires in two weeks.
 
-   **Note:**
-
-   user@hostname:/local/mnt/workspace$ qsc-cli pat –get
-
-   [Info]: Starting qsc-cli version 0.0.0.9
-
-   **5LThNlklb55mMVLB5C2KqUGU2jCF**
+   .. note::
+      | user@hostname:/local/mnt/workspace$ qsc-cli pat –get
+      | [Info]: Starting qsc-cli version 0.0.0.9
+      | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
    ::
 
@@ -83,8 +80,7 @@ required software tools are ready.
 
 5. Set up Python 3.10.2:
 
-   **Note:** Skip the following instructions if you already have python
-   3.10.2 or later versions.
+   .. note:: Skip the following instructions if you already have python 3.10.2 or later versions.
 
    ::
 
