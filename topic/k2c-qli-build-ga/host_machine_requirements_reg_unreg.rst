@@ -27,19 +27,19 @@ Host machine requirements
    * - Quad-core CPU, for example, Intel i7-2600 at 3.4 GHz
        (equivalent or better)
      - 16-core CPU
-     - 16-core CPU
+     - 8-core CPU
      - Git 1.8.3.1 or later versions
       
 
    * - 300 GB free disk space (swap partition > 32 GB)
      - 300 GB free space for the VirtualBox VM
-     - 300 GB free space for UTM
+     - 300 GB free space for UTM
      - Python 3.10.2 or later versions
       
 
    * - 16 GB RAM
      - 16 GB RAM
-     - 16 GB RAM
+     - 8 GB RAM
      - GCC 7.5 or later versions
       
 
@@ -54,5 +54,3 @@ Host machine requirements
           Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70014-41/>`__.
           Code compilation on a VM is a slow process and may take a few hours.
           Qualcomm recommends using an Ubuntu host machine for compilation.
-
-

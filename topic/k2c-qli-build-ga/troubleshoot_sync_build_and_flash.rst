@@ -40,6 +40,12 @@ Docker
               "registry-mirrors": ["https://docker-registry.qualcomm.com"]
       }
 
+   .. note::
+
+      As an alternative, you can add the following entry in /etc/docker/daemon.json:
+
+      "registry-mirrors": ["https://ccr.ccs.tencentyun.com"]
+
    Restart the Docker service to take the new settings.
 
    ::
