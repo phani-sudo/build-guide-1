@@ -156,6 +156,15 @@ EDL mode, use any one of the following methods:
 Flash software using QDL
 ------------------------------------
 
+.. note:: Prerequisites for using QDL:
+   
+   - The modules ``make`` and ``gcc`` must be available.
+   - Install the following dependent packages:
+
+   ::
+
+      sudo apt-get install git libxml2-dev libusb-1.0-0-dev pkg-config
+   ::
 1. Ensure ModemManager is not running.
 
    Some Linux distributions come with ModemManager, a tool for
@@ -172,18 +181,8 @@ Flash software using QDL
 
    If you need ModemManager, you can start it again after the flashing
    is complete.
-
-2. Prerequisites for using QDL:
-
-   - The modules ``make`` and ``gcc`` must be available.
-   - Install the following dependent packages:
-
-   ::
-
-      sudo apt-get install git libxml2-dev libusb-1.0-0-dev pkg-config
-   ::
-
-3.  Download the QDL tool, compile it, and flash the images:
+  
+2.  Download the QDL tool, compile it, and flash the images:
 
    ::
 
