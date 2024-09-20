@@ -353,7 +353,7 @@ Build firmware
 
           ::
 
-            export LLVM=<FIRMWARE_ROOT>/llvm/10.0.3/
+            export LLVM=<FIRMWARE_ROOT>/llvm/14.0.4/
 
        -  Python version – Python 3.10
 
@@ -585,7 +585,7 @@ Build firmware
 
           ::
 
-            export LLVM=<FIRMWARE_ROOT>/llvm/10.0.3/
+            export LLVM=<FIRMWARE_ROOT>/llvm/14.0.4/
 
        -  Python version – Python 3.10
 
