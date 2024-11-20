@@ -56,15 +56,17 @@ Connect to a UART shell
 
    .. note:: Ensure that the letters are in uppercase.
 
-   a. Press **A** on your keyboard to set up the serial device name such
-      as ``/dev/ttyUSB0``.
+   a. Press **A** on your keyboard to set up the serial device name such as ``/dev/ttyUSB0``.
 
    #. Press **Enter** to save the changes.
 
-   #. Press **E** on your keyboard to set the baud rate. If the baud
-      rate is not set to **115200**, press the **E** key again.
+   #. Press **E** on your keyboard to set the baud rate and 8N1 configuration:
+   
+      i. Press the **E** key again if the baud rate is not set to **115200**.
 
-   #. Press **Q** on your keyboard to set the configuration to **8N1**.
+      #. Press the **Q** key if the configuration is not set to **8N1**.
+
+      .. image:: ../../media/k2c-qli-build-ga/option_Q.png
 
    #. Press **Enter** to save the changes.
 
@@ -81,7 +83,7 @@ Connect to a UART shell
    .. image:: ../../media/k2c-qli-build-ga/save_setup_as_dfl.png
       :align: center
 
-7. Select **Exit** to open the UART console.
+7. Select **Exit** to open the UART console and press the ENTER key.
 
 8. Log in to the UART console:
 

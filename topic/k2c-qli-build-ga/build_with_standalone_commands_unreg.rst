@@ -142,6 +142,9 @@ The following table shows an example mapping of Yocto layers to the manifest rel
 
 Build BSP image
 ^^^^^^^^^^^^^^^^^^^^^
+BSP image build contains software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm products.
+
+For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 
@@ -190,6 +193,9 @@ Build BSP image
 
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The Qualcomm® Intelligent Multimedia Product (QIMP) SDK is a collection of four standalone function SDKs, namely, Qualcomm® Intelligent Multimedia SDK (IM SDK), Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the TensorFlow Lite runtime. It also includes reference applications that you can use to develop use cases. 
+
+For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-51>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 
@@ -250,6 +256,9 @@ Build QIMP SDK image
 
 Build QIRP SDK image
 ^^^^^^^^^^^^^^^^^^^^^
+The Qualcomm® Intelligent Robotics Product (QIRP) SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
+
+For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-265>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 
@@ -308,6 +317,9 @@ Build QIRP SDK image
 
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The real-time layer provides recipes and configurations required to run the Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Linux kernel for the supported machine. This layer appends to kernel and the upstream ``PREEMPT_RT`` patches, based on the kernel version and enables real-time configurations.
+
+For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-3/features.html#real-time-(rt)-kernel-overview>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 

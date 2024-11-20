@@ -64,13 +64,13 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
 1. :ref:`Connect the device to a UART shell <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`.
 
-2. Move the device to the EDL mode:
+2. Move the device to the EDL mode by running the following command on the UART shell:
 
    ::
 
       reboot edl
 
-3. Verify if the device entered Qualcomm Download (QDL) mode:
+3. Verify if the device has entered the Qualcomm Download (QDL) mode by running the following command on the host machine:
 
    ::
 
@@ -100,13 +100,13 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
    ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/additional_setup.html#connect-to-adb>`__
    to the device.
 
-4. Move the device to EDL mode:
+4. Move the device to EDL mode by running the following command on the host machine:
 
    ::
 
       adb shell reboot edl
 
-5. Verify whether the device has entered the QDL mode:
+5. Verify whether the device has entered the QDL mode by running the following command on the host machine:
 
    ::
 
@@ -209,7 +209,7 @@ Flash software using QDL
       make
 
       # Flash images
-      # Built images are under <workspace_path>/<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
+      # Built images are under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
       # build_path: For DISTRO=qcom-wayland, it is build-qcom-wayland. 
       #             For DISTRO=qcom-robotics-ros2-humble, it is build-qcom-robotics-ros2-humble
       # qdl <prog.mbn> [<program> <patch> ...]
@@ -232,11 +232,10 @@ Flash software using QDL
 
    .. container:: screenoutput
       
-       # Sample output for QCM6490
-       Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-       Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-       Bus 002 Device 006: ID 05c6:901d Qualcomm, Inc. QCM6490_fd2913cf
+       # Sample output for QCS6490
+       Bus 002 Device 003: ID 05c6:9135 Qualcomm, Inc. qcs6490-rb3gen2-vision-kit
        Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
+       Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
@@ -325,12 +324,7 @@ Flash software using PCAT
 
    .. container:: screenoutput
  
-       # Sample output for QCM6490
-       Bus 004 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-       Bus 003 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-       Bus 002 Device 006: ID 05c6:901d Qualcomm, Inc. QCM6490_fd2913cf
+       # Sample output for QCS6490
+       Bus 002 Device 003: ID 05c6:9135 Qualcomm, Inc. qcs6490-rb3gen2-vision-kit
        Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
-
-.. note::
-   -  The device reboots on successful completion of the flashing procedure. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-253/ubuntu_host.html#check-software-version>`__.
-   -  To connect to the device, see :ref:`Use SSH <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`.
+       Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub

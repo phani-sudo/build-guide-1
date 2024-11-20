@@ -711,7 +711,10 @@ Build firmware
 .. _section_unn_4gq_p1c_vinayjk_03-02-24-1519-24-874:
 
 Build BSP image with extras
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+BSP image build contains the software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm products. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+
+For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
 1. Download Qualcomm Yocto and the supporting layers with extras:
 
@@ -797,6 +800,9 @@ Build BSP image with extras
 
 Build QIMP SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The QIMP SDK is a collection of four standalone function SDKs, namely, IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the TensorFlow Lite runtime. It also includes reference applications that you can use to develop use cases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+
+For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-51>`__.
 
 1. Download the QIMP SDK layers, Qualcomm Yocto layer, and the supporting layers with
    extras:
@@ -890,6 +896,9 @@ Build QIMP SDK image with extras
 
 Build QIRP SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The QIRP SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+
+For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70015-265>`__.
 
 .. note:: Before you begin, clone the respective firmware for QIRP SDK, for example, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qirpsdk``.
 
