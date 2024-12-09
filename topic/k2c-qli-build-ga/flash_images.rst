@@ -467,6 +467,6 @@ Connect to UART shell and network
 ----------------------------------
 After flashing and booting the device, follow these steps to connect to UART shell, network, and log in using SSH.
  
-* :ref:`Connect to UART shell <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>`
-* :ref:`Connect to network <section_hmw_vsh_p1c_vinayjk_03-01-24-1110-45-279>`
-* :ref:`Log in using SSH <howto_login_via_ssh>`
+* :ref:`Connect to UART shell <connect_uart>`
+* :ref:`Connect to network <connect_to_network>`
+* :ref:`Log in using SSH <use-ssh>`

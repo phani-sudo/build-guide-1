@@ -3,7 +3,7 @@
 Setup
 ------------------
 
-.. _section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684:
+.. _connect_uart:
 
 Connect to a UART shell
 ^^^^^^^^^^^^^^^^^^^^^^^^^
