@@ -3,7 +3,7 @@
 Workspace view
 -----------------
 
-This section provides sample workspace structures with ``qsc-cli`` and GitHub workflow standalone use cases for QCS6490 and QCS5430.
+This section provides sample workspace structures with ``qsc-cli`` and GitHub workflow standalone use cases for the supported `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-115/soc.html>`__.
 
 .. _section_bsj_xhm_q1c_vinayjk_03-05-24-1606-7-713:
 
@@ -80,7 +80,7 @@ Images directory structure after successful build
    .. image:: ../../media/k2c-qli-build-ga/ws_standalone_5.png
 
    The files in the images directory are described in the following table:
-
+   
    +-----------------------------+----------------------------------------+
    | Filename                    | Description                            |
    +=============================+========================================+
@@ -122,4 +122,3 @@ Images directory structure after successful build
 
 .. |ws_standalone_3| image:: ../../media/k2c-qli-build-ga/ws_standalone_3.png
 .. |ws_standalone_4| image:: ../../media/k2c-qli-build-ga/ws_standalone_4.png
-

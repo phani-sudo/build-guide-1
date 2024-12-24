@@ -1,7 +1,7 @@
 .. _flash_images:
 
-Flash images
-===============
+Flash software images
+======================
 
 Follow these steps to flash the software images:
 
@@ -23,33 +23,43 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
 1. Navigate to the ``udev`` USB rules directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      cd /etc/udev/rules.d
+         cd /etc/udev/rules.d
 
 2. List the contents of the directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ls
+         ls
 
    -  If the ``51-qcom-usb.rules`` file is not present, use the ``sudo vi 51-qcom-usb.rules`` file to create it and add the following content to the file:
 
-      ::
+      .. container:: nohighlight
+      
+         ::
 
-        SUBSYSTEMS=="usb", ATTRS{idVendor}=="05c6", ATTRS{idProduct}=="9008", MODE="0666", GROUP="plugdev"
+            SUBSYSTEMS=="usb", ATTRS{idVendor}=="05c6", ATTRS{idProduct}=="9008", MODE="0666", GROUP="plugdev"
 
    -  If the file exists, then check for the previous content:
 
-      ::
+      .. container:: nohighlight
+      
+         ::
 
-        cat 51-qcom-usb.rules
+            cat 51-qcom-usb.rules
 
 3. Restart ``udev``:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-     sudo systemctl restart udev
+         sudo systemctl restart udev
 
 If the USB cable is already connected to the host, unplug and reconnect the cable for the updated rules to take effect.
 
@@ -68,15 +78,19 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
 2. Move the device to the EDL mode by running the following command on the UART shell:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      reboot edl
+         reboot edl
 
 3. Verify if the device has entered the Qualcomm Download (QDL) mode by running the following command on the host machine:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      lsusb
+         lsusb
 
    **Sample output**
 
@@ -106,15 +120,19 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
 4. Move the device to EDL mode by running the following command on the host machine:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      adb shell reboot edl
+         adb shell reboot edl
 
 5. Verify whether the device has entered the QDL mode by running the following command on the host machine:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      lsusb
+         lsusb
 
    **Sample output**
 
@@ -146,9 +164,11 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
          
          #. Verify whether the device has entered the QDL mode:
 
-            ::
+            .. container:: nohighlight
+      
+               ::
 
-               lsusb
+                  lsusb
 
             **Sample output**
 
@@ -166,9 +186,11 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
          #. Verify whether the device has entered the QDL mode:
 
-            ::
+            .. container:: nohighlight
+      
+               ::
 
-               lsusb
+                  lsusb
 
             **Sample output**
 
@@ -186,44 +208,47 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
 .. note::
     - This procedure is available for registered users only.
-    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provisioning* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provisioning* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/ReleaseNote.html#release-specific-information>`__.
 
 1. Download the provision file:
 
-   Based on the required SoC, download the respective ‘provision’ from the "UFS Provisioning" table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+   Based on the required SoC, download the respective ‘provision’ from the "UFS Provisioning" table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/ReleaseNote.html#release-specific-information>`__.
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      wget <provision_download_link>
-      unzip <downloaded_zip_file>
+         wget <provision_download_link>
+         unzip <downloaded_zip_file>
 
    Example:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      mkdir <provision_download_path>
-      cd <provision_download_path>
-      wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/provision.zip
-      unzip provision.zip
+         mkdir <provision_download_path>
+         cd <provision_download_path>
+         wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/provision.zip
+         unzip provision.zip
 
 #. Download the QDL tool.
 
    QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
 
-   ::
-
-      mkdir <qdl_tool_path>
-      cd <qdl_tool_path>
-      curl -L  https://softwarecenter.qualcomm.com/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip -o qdl_all.zip
-      unzip qdl_all.zip
+   Download the latest version of the QDL tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
 
 #. Provision UFS:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      cd <provision_download_path>
-      <qdl_tool_path>/qdl_1.0.1/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf <Provision file>
-      # Example, <qdl_tool_path>/qdl_1.0.1/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf provision_1_3.xml
+         cd <provision_download_path>
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf <Provision file>
+         # Example, <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf provision_1_3.xml
+
+   .. note:: Use QDL binary based on the host machine architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
 Flash CDT
 ----------
@@ -233,41 +258,42 @@ CDT provides platform/device-dependent data such as platform ID, subtype, versio
 
 1. Download the CDT binary.
 
-   Based on the required reference kit, download the respective CDT from the “Flash CDT" table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+   Based on the required reference kit, download the respective CDT from the “Flash CDT" table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/ReleaseNote.html#release-specific-information>`__.
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      wget <CDT_download_link>
-      unzip <downloaded_zip_file>
+         wget <CDT_download_link>
+         unzip <downloaded_zip_file>
 
    Example:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      mkdir <cdt_download_path>
-      cd <cdt_download_path>
-      wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
-      unzip rb3gen2-core-kit.zip
+         mkdir <cdt_download_path>
+         cd <cdt_download_path>
+         wget https://artifacts.codelinaro.org/artifactory/codelinaro-le/Qualcomm_Linux/QCS6490/cdt/rb3gen2-core-kit.zip
+         unzip rb3gen2-core-kit.zip
 
 #. Download the QDL tool.
 
    QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images.
 
-   ::
-
-      mkdir <qdl_tool_path>
-      cd <qdl_tool_path>
-      curl -L  https://softwarecenter.qualcomm.com/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip -o qdl_all.zip
-      unzip qdl_all.zip
+   Download the latest version of the QDL tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
 
 #. Flash the CDT:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      cd <cdt_download_path>
-      <qdl_tool_path>/qdl_1.0.1/QDL_Linux_x64/qdl prog_firehose_ddr.elf rawprogram3.xml patch3.xml
+         cd <cdt_download_path>
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl prog_firehose_ddr.elf rawprogram3.xml patch3.xml
 
-   .. note:: Use QDL binary based on the host machine architecture. For example, linux_x64 supported qdl binary is ``qdl_1.0.1/QDL_Linux_x64/qdl``.
+   .. note:: Use QDL binary based on the host machine architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
 .. _section_byn_pdj_x1c:
 
@@ -280,31 +306,24 @@ Flash software using QDL
    
    If you are using a Linux distribution with ``systemd``, stop the ModemManager tool using the following command:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      sudo systemctl stop ModemManager
+         sudo systemctl stop ModemManager
 
    If you need the ModemManager, you can restart it after the flashing is complete.
   
-#. Download the QDL tool:
+#. Download the QDL tool.
 
    Qualcomm Device Loader (QDL) is a software tool that communicates with Qualcomm USB devices to upload a flash loader and flash software images.
 
-   a. Using GUI
-
-      Download QDL tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
-
-   #. Using CLI
-
-      ::
-
-         mkdir <qdl_tool_path>
-         cd <qdl_tool_path>
-         curl -L https://softwarecenter.qualcomm.com/api/download/software/tool/Qualcomm_Device_Loader/1.0.1/Windows/Qualcomm_Device_Loader.Core.1.0.1.Windows-AnyCPU.zip -o qdl_all.zip
-         unzip qdl_all.zip
+   Download the latest version of the QDL tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
 
 #. Flash the images:
 
+   .. container:: nohighlight
+      
       ::
 
          # Built images are under <workspace_path>/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/<IMAGE>
@@ -313,9 +332,9 @@ Flash software using QDL
          # qdl <prog.mbn> [<program> <patch> ...]
          # Example: build_path is build-qcom-wayland
          cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-         <qdl_tool_path>/qdl_1.0.1/QDL_Linux_x64/qdl prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 
-   .. note:: Use QDL binary based on the host machine architecture. For example, linux_x64 supported qdl binary is ``qdl_1.0.1/QDL_Linux_x64/qdl``.
+   .. note:: Use QDL binary based on the host machine architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
    Flashing is successful if you see *partition 1 is now bootable* on the terminal window as shown in the following message:
 
@@ -341,7 +360,7 @@ Flash software using QDL
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/ubuntu_host.html#check-software-version>`__.
+   To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
 
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
@@ -358,20 +377,24 @@ Flash software using PCAT
 1. :ref:`Install QSC CLI <one_time_host_setup>`.
 #. To detect the connected devices and flash the software builds, ensure that the Qualcomm PCAT and QUD tools are installed on the host machine. Run the following commands to use ``qpm-cli`` to install PCAT and QUD:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      qpm-cli --login
-      qpm-cli --install quts --activate-default-license
-      qpm-cli --install qud --activate-default-license
-      qpm-cli --install pcat --activate-default-license
+         qpm-cli --login
+         qpm-cli --install quts --activate-default-license
+         qpm-cli --install qud --activate-default-license
+         qpm-cli --install pcat --activate-default-license
 
    .. note:: For Ubuntu 22.04, you may encounter an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For additional details, follow the steps provided in the README file available in the ``/opt/QTI/sign/signReadme.txt`` directory.
 
 #. Check if the ``QTI_HS-USB_QDLoader`` driver is available in the installed directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ls –la /dev/Q*
+         ls –la /dev/Q*
 
    **Sample output**
 
@@ -383,9 +406,11 @@ Flash software using PCAT
 
 #. Verify if the device entered the QDL mode:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      lsusb
+         lsusb
 
    **Sample output**
 
@@ -397,9 +422,11 @@ Flash software using PCAT
 
 #. Check if the device is recognized by the PCAT:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      pcat -devices
+         pcat -devices
 
    **Sample output**
 
@@ -411,12 +438,13 @@ Flash software using PCAT
 
 #. Flash the build:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
+         
+         PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD “<build_images_path>” -MEMORYTYPE UFS -FLAVOR asic
 
-      PCAT –PLUGIN SD -DEVICE <device_serial_number> -BUILD “<build_images_path>” -MEMORYTYPE UFS -FLAVOR asic
-
-      # Example
-      PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
+         # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
 
    If the software has been flashed successfully, you will see the following message:
 
@@ -439,13 +467,13 @@ Flash software using PCAT
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/ubuntu_host.html#check-software-version>`__.
+   The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
 
 .. _connect_uart_network:
 
 Connect to UART shell and network
 ----------------------------------
-After flashing and booting the device, follow these steps to connect to UART shell, network, and log in using SSH.
+After flashing and booting the device, follow these steps to establish the connections:
  
 * :ref:`Connect to UART shell <connect_uart>`
 * :ref:`Connect to network <connect_to_network>`

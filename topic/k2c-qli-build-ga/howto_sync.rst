@@ -3,36 +3,40 @@
 Sync
 ---------------
 
-.. _section_znd_jcg_v1c_vinayjk_03-22-24-1638-43-232:
+.. _alternative_methods_install_repo:
 
 Alternative methods to install Repo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The latest Repo works with python3. If your default Python is pointed to python2, then install ``python-is-python3`` to make python3 as the default Python.
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   mkdir -p ~/bin
-   cd ~/bin
-   # If you already have a previous directory of repo_tool, you can delete it
-   rm -rf ~/bin/repo_tool
-   git clone https://android.googlesource.com/tools/repo.git -b v2.41 repo_tool
-   cd repo_tool
-   git checkout -b v2.41
-   export PATH=~/bin/repo_tool:$PATH
+      mkdir -p ~/bin
+      cd ~/bin
+      # If you already have a previous directory of repo_tool, you can delete it
+      rm -rf ~/bin/repo_tool
+      git clone https://android.googlesource.com/tools/repo.git -b v2.41 repo_tool
+      cd repo_tool
+      git checkout -b v2.41
+      export PATH=~/bin/repo_tool:$PATH
 
 If the previous steps do not work, install Repo using the following commands:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   # Install curl (if it is not installed)
-   sudo apt install curl bc
-    
-   # Latest Repo version works with python3
-    
-   mkdir -p ~/bin
-   curl https://raw.githubusercontent.com/GerritCodeReview/git-repo/v2.41/repo -o ~/bin/repo && chmod +x ~/bin/repo
-   export PATH=~/bin:$PATH
+      # Install curl (if it is not installed)
+      sudo apt install curl bc
+      
+      # Latest Repo version works with python3
+      
+      mkdir -p ~/bin
+      curl https://raw.githubusercontent.com/GerritCodeReview/git-repo/v2.41/repo -o ~/bin/repo && chmod +x ~/bin/repo
+      export PATH=~/bin:$PATH
 
 .. _section_em1_xng_q1c_vinayjk_03-04-24-2103-35-76:
 
@@ -60,16 +64,20 @@ View information about QSC CLI commands
 
 To see all the commands provided by QSC CLI, run the following commands:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   qsc-cli -h
-   qsc-cli download –h
+      qsc-cli -h
+      qsc-cli download –h
 
 To see more details about a particular command, you can append ``-h`` to the command. For example:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   qsc-cli compile -h
+      qsc-cli compile -h
 
 .. _section_hxv_5hh_q1c_vinayjk_03-04-24-2335-16-353:
 
@@ -78,18 +86,21 @@ Manage workspaces using QSC CLI
 
 List the workspaces using the following command:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   qsc-cli workspace info --list
+      qsc-cli workspace info --list
 
 To delete a workspace, run the following command:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   qsc-cli workspace delete --workspace-path <workspace_path>
+      qsc-cli workspace delete --workspace-path <workspace_path>
 
-   # Example
-   qsc-cli workspace delete --workspace-path '/local/mnt/worskspace/Qworkspace_QIMPSDK'
+      # Example, qsc-cli workspace delete --workspace-path '/local/mnt/worskspace/Qworkspace_QIMPSDK'
 
 .. _section_kw3_vhh_q1c_vinayjk_03-04-24-2335-25-119:
 
@@ -138,30 +149,35 @@ This includes the following steps:
 
 1. Download a new release:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <release tag>
-      repo sync
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <release tag>
+         repo sync
 
-   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+   .. note:: For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
              An example ``<manifest release tag>`` is ``qcom-6.6.52-QLI.1.3-Ver.1.0.xml``.
 
 2. Set up the build environment:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
 
    .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 3. Build the software image:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      bitbake qcom-multimedia-image
-
+         bitbake qcom-multimedia-image
 
 
 .. |YoctoLEQCLinux| image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_2.png

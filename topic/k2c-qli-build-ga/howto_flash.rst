@@ -12,19 +12,21 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
 .. note::
     - This procedure is available for registered users only.
-    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provisioning* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/ReleaseNote.html#release-specific-information>`__.
+    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see *UFS Provisioning* table in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/ReleaseNote.html#release-specific-information>`__.
 
 **Prerequisites**
 
 * :ref:`Install QSC CLI <one_time_host_setup>`.
 * Install PCAT and QUD on the host machine using qpm-cli:
 
-  ::
+  .. container:: nohighlight
+      
+      ::
 
-    qpm-cli --login
-    qpm-cli --install quts --activate-default-license
-    qpm-cli --install qud --activate-default-license
-    qpm-cli --install pcat --activate-default-license
+         qpm-cli --login
+         qpm-cli --install quts --activate-default-license
+         qpm-cli --install qud --activate-default-license
+         qpm-cli --install pcat --activate-default-license
 
 .. note::
    
@@ -35,13 +37,15 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
 1. Verify whether PCAT can detect the device in EDL mode:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      PCAT -DEVICES
+         PCAT -DEVICES
    
    **Sample output**
 
-   ::
+   .. container:: screenoutput
 
       Searching devices in Device Manager, please wait for a moment…
       ID | DEVICE TYPE | DEVICE STATE | SERIAL NUMBER | ADB SERIAL NUMBER | DESCRIPTION
@@ -49,24 +53,29 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
 #. Provision UFS:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
+         PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG [DEVICE PROGRAMMER] -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML [UFS PROVISION XML]
    
    For example:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG <provision_download_path>/prog_firehose_ddr.elf -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML <provision_download_path>/provision_1_3.xml
+         PCAT -PLUGIN SD -DEVICE [PCAT SERIAL NUMBER] -DEVICEPROG <provision_download_path>/prog_firehose_ddr.elf -MEMORYTYPE UFS -UFSPROV TRUE -UFSPROVXML <provision_download_path>/provision_1_3.xml
 
 .. _flash_CDT:
 
 Flash Qualcomm configuration data table (CDT) with QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Flash CDT:
 
-#. Flash CDT:
-
+.. container:: nohighlight
+      
    ::
 
       <program SECTOR_SIZE_IN_BYTES="4096" file_sector_offset="0" filename="CORE_KIT_CDT.bin" label="cdt" num_partition_sectors="32" partofsingleimage="false" physical_partition_number="3" readbackverify="false" size_in_KB="128.0" sparse="false" start_byte_hex="0x20000" start_sector="32"/>

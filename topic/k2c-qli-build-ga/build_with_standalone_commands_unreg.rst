@@ -8,46 +8,50 @@ Build with standalone commands
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Ubuntu host machine must be setup to ensure that the
-required software tools are installed and configured for use.
+The Ubuntu host machine must be setup to ensure that the required software tools are installed and configured for use.
 
-1. Install the following packages to prepare your host environment for
-   Yocto build:
+1. Install the following packages to prepare your host environment for Yocto build:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      sudo apt update
-      sudo apt install repo gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool locales tar python-is-python3 file libxml-opml-simplegen-perl vim whiptail g++
+         sudo apt update
+         sudo apt install repo gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool locales tar python-is-python3 file libxml-opml-simplegen-perl vim whiptail g++
 
 2. Set up the locales (if not set up already):
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      sudo locale-gen en_US.UTF-8
-      sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-      export LC_ALL=en_US.UTF-8
-      export LANG=en_US.UTF-8
+         sudo locale-gen en_US.UTF-8
+         sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+         export LC_ALL=en_US.UTF-8
+         export LANG=en_US.UTF-8
 
 3. Update git configurations:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      # Check if your identity is configured in .gitconfig
-      git config --get user.email
-      git config --get user.name
+         # Check if your identity is configured in .gitconfig
+         git config --get user.email
+         git config --get user.name
 
-      # Run the following commands if you do not have your account identity set in .gitconfig
-      git config --global user.email <Your email ID>
-      git config --global user.name <"Your Name">
+         # Run the following commands if you do not have your account identity set in .gitconfig
+         git config --global user.email <Your email ID>
+         git config --global user.name <"Your Name">
 
-      # Add the following UI color option for output of console (optional)
-      git config --global color.ui auto
+         # Add the following UI color option for output of console (optional)
+         git config --global color.ui auto
 
-      # Add the following git configurations to fetch large size repositories and to avoid unreliable connections
-      git config --global http.postBuffer 1048576000
-      git config --global http.maxRequestBuffer 1048576000
-      git config --global http.lowSpeedLimit 0
-      git config --global http.lowSpeedTime 999999
+         # Add the following git configurations to fetch large size repositories and to avoid unreliable connections
+         git config --global http.postBuffer 1048576000
+         git config --global http.maxRequestBuffer 1048576000
+         git config --global http.lowSpeedLimit 0
+         git config --global http.lowSpeedTime 999999
 
 .. _section_y32_1zy_v1c:
 
@@ -56,9 +60,9 @@ Sync
 
 This section uses the Repo tool installed in :ref:`Ubuntu host setup <section_twd_1bv_xbc_vinayjk_07-02-24-2039-30-667>` to download git repositories and additional attributes from the `Qualcomm manifest <https://github.com/quic-yocto/qcom-manifest>`__. The Repo tool downloads the manifests using the ``repo init`` command.
 
-The following table shows an example mapping of Yocto layers to the manifest release tags, and this mapping is used to download and build Qualcomm Linux.
+The following table shows an example mapping of the Yocto layers to the manifest release tags, and this mapping is used to download and build Qualcomm Linux.
 
-.. list-table:: Yocto layers mapped to manifest release tags
+.. list-table:: Mapping Yocto layers to manifest release tags
    :header-rows: 1
    :class: longtable
 
@@ -115,7 +119,7 @@ The following table shows an example mapping of Yocto layers to the manifest rel
     
      For example, the manifest release tag ``qcom-6.6.52-QLI.1.3-Ver.1.0.xml`` denotes the following:
      
-     - 6.6.52: Linux Kernel
+     - 6.6.52: Qualcomm Linux kernel
      - QLI.1.3: Qualcomm Linux v1.3
      - 1.0: Milestone release
 
@@ -125,7 +129,7 @@ The following table shows an example mapping of Yocto layers to the manifest rel
 
      For example, the additional productization manifest release tag ``qcom-6.6.52-QLI.1.3-Ver.1.0_qim-product-sdk-1.1.1.xml`` denotes the following:
      
-     - 6.6.52: Linux Kernel
+     - 6.6.52: Qualcomm Linux kernel
      - QLI.1.3: Qualcomm Linux v1.3
      - qim-product-sdk-1.1.1: QIMP SDK release on top of QLI.1.3
 
@@ -142,58 +146,66 @@ The following table shows an example mapping of Yocto layers to the manifest rel
 
 Build BSP image
 ^^^^^^^^^^^^^^^^^^
-Board support package (BSP) image build contains software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm products.
+Board support package (BSP) image build contains software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits.
 
 For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      # cd to directory where you have 300 GB of free storage space to create your workspaces
-      mkdir <WORKSPACE_DIR>
-      cd <WORKSPACE_DIR>
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
-      repo sync
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <WORKSPACE_DIR>
+         cd <WORKSPACE_DIR>
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
+         # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
+         repo sync
 
    .. note::  
-      For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Set up the build environment:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
-      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
-      # and enters into build-qcom-wayland directory.
+         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
+         # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Build the software image:
 
    .. note::
       For supported image recipes, see :ref:`Image recipes supported in the GitHub workflow <section_x3c_n5l_zbc_vinayjk_07-08-24-1744-58-455>`.
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      bitbake <image recipe>
-      # Example, bitbake qcom-multimedia-image
+         bitbake <image recipe>
+         # Example, bitbake qcom-multimedia-image
 
    After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-      ls -al system.img
+         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
+         ls -al system.img
 
 .. _section_lrb_1nd_fbc:
 
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm® Intelligent Multimedia Product (QIMP) SDK is a collection of four standalone function SDKs, namely, Qualcomm® Intelligent Multimedia SDK (IM SDK), Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the TensorFlow Lite runtime. It also includes reference applications that you can use to develop use cases. 
+The Qualcomm® Intelligent Multimedia Product (QIMP) SDK is a collection of four standalone function SDKs, namely, Qualcomm® Intelligent Multimedia SDK (IM SDK), Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the LiteRT. It also includes reference applications that you can use to develop use cases. 
 
 For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-51>`__.
 
@@ -201,62 +213,74 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
 
    .. note:: 
       - The ``<manifest release tag>`` for the QIMP SDK build is the same as the BSP build. Clone the QIMP SDK layer on top of the BSP build. 
-      - For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      - For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      # cd to directory where you have 300 GB of free storage space to create your workspaces
-      mkdir <WORKSPACE_DIR>
-      cd <WORKSPACE_DIR>
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
-      repo sync
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <WORKSPACE_DIR>
+         cd <WORKSPACE_DIR>
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
+         # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
+         repo sync
 
 #. Clone the QIMP SDK layer into the workspace:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-      # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0_qim-product-sdk-1.1.1
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
+         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0_qim-product-sdk-1.1.1
 
    To build a QIMP SDK layer, the following export is required:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      export EXTRALAYERS="meta-qcom-qim-product-sdk"
+         export EXTRALAYERS="meta-qcom-qim-product-sdk"
 
 #. Set up the build environment:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
-      # and enters into build-qcom-wayland directory.
+         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
+         # and enters into build-qcom-wayland directory.
 
    .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Build the software image:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      bitbake qcom-multimedia-image
-      # Build SDK image
-      bitbake qcom-qim-product-sdk
+         bitbake qcom-multimedia-image
+         # Build SDK image
+         bitbake qcom-qim-product-sdk
 
    After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-      ls -al system.img
+         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
+         ls -al system.img
 
 .. _section_gv3_czl_qbc_vinayjk_06-06-24-1402-32-392:
 
 Build QIRP SDK image
 ^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm® Intelligent Robotics Product (QIRP) SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases.
+The Qualcomm® Intelligent Robotics Product (QIRP) SDK 2.0 is a collection of components that enable you to develop robotic features on Qualcomm platforms.    This SDK is applicable to the Qualcomm Linux releases.
 
 For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-265>`__.
 
@@ -264,115 +288,137 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
 
    .. note:: The ``<manifest release tag>`` for QIRP SDK build is the same as the BSP build. Clone the QIRP SDK layers on top of the BSP build.
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      # cd to directory where you have 300 GB of free storage space to create your workspaces
-      mkdir <WORKSPACE_DIR>
-      cd <WORKSPACE_DIR>
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
-      repo sync
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <WORKSPACE_DIR>
+         cd <WORKSPACE_DIR>
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
+         # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
+         repo sync
 
-   .. note:: For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+   .. note:: For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Download the QIRP SDK layers into the BSP build ``<WORKSPACE DIR>`` directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
-      git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
-      git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
-      git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
-      git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
+         git clone https://github.com/ros/meta-ros -b kirkstone layers/meta-ros
+         git clone https://github.com/quic-yocto/meta-qcom-robotics.git layers/meta-qcom-robotics
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git layers/meta-qcom-robotics-distro
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git layers/meta-qcom-robotics-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk layers/meta-qcom-qim-product-sdk
 
 #. Set up the build environment:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
-      ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
-      MACHINE=<machine> DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=<override> source setup-robotics-environment
-      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=custom source setup-robotics-environment
-      # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
-      # and enters into build-qcom-robotics-ros2-humble directory.
+         ln -s layers/meta-qcom-robotics-distro/set_bb_env.sh ./setup-robotics-environment
+         ln -s layers/meta-qcom-robotics-sdk/scripts/qirp-build ./qirp-build
+         MACHINE=<machine> DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=<override> source setup-robotics-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-robotics-ros2-humble QCOM_SELECTED_BSP=custom source setup-robotics-environment
+         # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
+         # and enters into build-qcom-robotics-ros2-humble directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Build the robotics image and the QIRP SDK artifacts:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ../qirp-build qcom-robotics-full-image
+         ../qirp-build qcom-robotics-full-image
 
    After a successful build, check that the QIRP SDK build artifacts are at the following paths:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      QIRP SDK artifacts: <WORKSPACE DIR>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/qirpsdk_artifacts/qirp-sdk_<version>.tar.gz
-      # system.img is present in the following path
-      Robotics image: <WORKSPACE DIR>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-robotics-full-image
+         QIRP SDK artifacts: <WORKSPACE DIR>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/qirpsdk_artifacts/qirp-sdk_<version>.tar.gz
+         # system.img is present in the following path
+         Robotics image: <WORKSPACE DIR>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-robotics-full-image
 
 .. _section_k51_23b_wbc_vinayjk_06-26-24-1344-54-418:
 
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The real-time layer provides recipes and configurations required to run the Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Linux kernel for the supported machine. This layer appends to kernel and the upstream ``PREEMPT_RT`` patches, based on the kernel version and enables real-time configurations.
+The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to kernel and the upstream ``PREEMPT_RT`` patches, based on the kernel version and enables real-time configurations.
 
-For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-3/features.html#real-time-(rt)-kernel-overview>`__.
+For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-3/features.html#real-time-rt-kernel-overview>`__.
 
 1. Download Qualcomm Yocto and the supporting layers:
 
    .. note:: The ``<manifest release tag>`` for real-time Linux image is the same as the BSP build. Clone the real-time Linux on top of the BSP build.
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      # cd to directory where you have 300 GB of free storage space to create your workspaces
-      mkdir <WORKSPACE_DIR>
-      cd <WORKSPACE_DIR>
-      repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
-      # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
-      repo sync
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <WORKSPACE_DIR>
+         cd <WORKSPACE_DIR>
+         repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-kirkstone -m <manifest release tag>
+         # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0.xml
+         repo sync
 
-   .. note::  For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+   .. note::  For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Clone the real-time Linux layer into the workspace:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
-      # Example, <meta-qcom-realtime release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0_realtime-linux-1.0
+         git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
+         # Example, <meta-qcom-realtime release tag> is qcom-6.6.52-QLI.1.3-Ver.1.0_realtime-linux-1.0
 
    To build a real-time layer, the following export is required:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      export EXTRALAYERS="meta-qcom-realtime"
+         export EXTRALAYERS="meta-qcom-realtime"
 
 #. Set up the build environment:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
-      # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-      # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
-      # and enters into build-qcom-wayland directory.
+         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=<override> source setup-environment
+         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
+         # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
+         # and enters into build-qcom-wayland directory.
 
    .. note::
-      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 #. Build the software image:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      bitbake qcom-multimedia-image
+         bitbake qcom-multimedia-image
 
    After a successful build, check that the ``system.img`` file is in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-      ls -al system.img
+         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
+         ls -al system.img
 
 .. _section_x2k_vnf_w1c:
 

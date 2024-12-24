@@ -16,6 +16,7 @@ CLI             Command-line interface
 EDL             Emergency download
 EFI             Extensible firmware interface
 LE              Linux embedded
+LiteRT          Lite Runtime
 PCAT            Product configuration assistant tool
 QDL             Qualcomm download
 QIMP            Qualcomm Intelligent Multimedia Product
@@ -25,8 +26,8 @@ QLI             Qualcomm Linux
 QNN             Qualcomm® Neural Network
 QPM             Qualcomm Package Manager
 QSC             Qualcomm Software Center
+QTEE            Qualcomm Trusted Execution Environment
 QUD             Qualcomm USB drivers
 SDK             Software development kit
-TZ              TrustZone
 WSL             Windows Subsystem for Linux
 =============== =======================================

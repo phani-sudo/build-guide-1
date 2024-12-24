@@ -24,8 +24,7 @@ To sync and build real-time Linux, see :ref:`Build real-time Linux image <sectio
 Migrate from the previous release to the next release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This depends on the development, branching, and integration workflows at
-your end. However, the following steps must be performed:
+The migration process depends on the development, branching, and integration workflows at your end. However, the following steps must be performed:
 
 1. Integrate changes for the sources that you have branched:
 
@@ -34,7 +33,7 @@ your end. However, the following steps must be performed:
       files.
    #. Qualcomm provides git history to all the source repositories.
       A reference list of repositories is provided in the `Release
-      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
       For Qualcomm repositories that are branched and modified at your
       end, perform the following steps:
 
@@ -73,7 +72,7 @@ customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-
 Download layers for the QIMP SDK build using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+.. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 ::
 
@@ -93,7 +92,7 @@ Download layers for the QIRP SDK build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note:: 
-   For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+   For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release  Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 ::
 
@@ -112,7 +111,7 @@ Download layers for the QIRP SDK build by using the manifest release tag
 Download layers for the real-time Linux build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+.. note:: For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 ::
 
@@ -156,7 +155,7 @@ commands and already have an existing ``<WORKSPACE DIR>``, follow these steps to
       # and enters into build-qcom-wayland directory
 
    .. note::
-      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+      To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
 3. Build the software image:
 

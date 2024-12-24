@@ -10,13 +10,13 @@ Install QSC using a GUI
 
    The QSC Debian package (``.deb``) is downloaded to your machine.
 
-2. To install the QSC Debian package using the Ubuntu GNOME GUI, it is necessary to first ensure GDebi is installed. Run the following command on your Linux host machine to install GDebi:
+2. To install the QSC Debian package using the Ubuntu GNOME GUI, ensure that GDebi is installed first. Run the following command on your Linux host machine to install GDebi:
 
    ::
 
       sudo apt install gdebi
 
-3. Right-click on the downloaded QSC Debian file and click **Open with GDebi Package Installer**.
+3. Right-click on the downloaded QSC Debian file and click **Open With GDebi Package Installer**.
 
    .. image:: ../../media/k2c-qli-build-ga/deb_gui_installer.png
 

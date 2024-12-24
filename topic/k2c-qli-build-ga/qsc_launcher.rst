@@ -19,12 +19,14 @@ Software download
 
       Install PCAT and QUD using ``qpm-cli``:
 
-      ::
+      .. container:: nohighlight
+         
+         ::
 
-         qpm-cli --login
-         qpm-cli --install quts --activate-default-license
-         qpm-cli --install qud --activate-default-license
-         qpm-cli --install pcat --activate-default-license
+            qpm-cli --login
+            qpm-cli --install quts --activate-default-license
+            qpm-cli --install qud --activate-default-license
+            qpm-cli --install pcat --activate-default-license
 
       The ``qpm-cli --help`` command lists the help options.
 
@@ -40,7 +42,7 @@ Software download
 
 3. On the **Specify Environment** page, select the appropriate values for **Category**, **Chipset**, **Host Operating System**, and **Target Operating System**.
 
-   .. note:: See `hardware SoCs (chipsets) <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-115/soc.html>`__ that are supported on Qualcomm Linux.
+   .. note:: See `chipsets (hardware SoCs) <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-115/soc.html>`__ that are supported on Qualcomm Linux.
 
    .. image:: ../../media/k2c-qli-build-ga/specify_env.png
 
@@ -56,7 +58,7 @@ Software download
 
       .. note::
          
-         - For information on the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+         - For information on the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
          - For information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.        
          - For information on the QIMP and QIRP SDKs, see the following guides:
 
@@ -83,7 +85,7 @@ Build and flash default configuration
 
 1. Compile the default build.
 
-   .. note:: For information on the default configurations, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+   .. note:: For information on the default configurations, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
    .. _launcher_compile_step:
 
@@ -100,7 +102,7 @@ Build and flash default configuration
 
 2. Flash the software with the default configuration.
 
-   .. note:: Before you flash the software, ensure that the device is in Emergency Download (EDL) mode. For more information on how to force the device into EDL mode, see :ref:`Move to EDL mode <section_vgg_mly_v1c>`.
+   .. note:: Before you flash the software, ensure that the device is in Emergency Download (EDL) mode. For more information on how to force the device into EDL mode, see :ref:`Move to EDL mode <move_to_EDL>`.
 
    a. Flash the software by selecting the device on which you want to flash the compiled software. If multiple devices are connected, select the correct target device.
 
@@ -118,7 +120,7 @@ Build and flash default configuration
 
    e. Click **Done**.
 
-      .. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check software version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/ubuntu_host.html#check-software-version>`__.
+      .. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
 
    f. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
 
@@ -132,7 +134,7 @@ To build your own configuration, compile the build for default machine configura
 
 2. Compile the `LE.QCLINUX.1.0.r1` image with your own MACHINE and QCOM_SELECTED_BSP parameter values.
    
-   .. note:: For information on the supported machine configurations of the development kit, see the table *MACHINE and QCOM_SELECTED_BSP parameter value* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-240929204440/>`__.
+   .. note:: For information on the supported machine configurations of the development kit, see the table *MACHINE and QCOM_SELECTED_BSP parameter value* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/>`__.
 
    a. To run the build commands for a specific configuration, click **Compile using terminal**.
 

@@ -26,16 +26,20 @@ Connect to a UART shell
 
 1. Install Minicom on the Linux host:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      sudo apt update
-      sudo apt install minicom
+         sudo apt update
+         sudo apt install minicom
 
 2. Check the USB port:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ls /dev/ttyUSB*
+         ls /dev/ttyUSB*
 
    **Sample output**
 
@@ -43,9 +47,11 @@ Connect to a UART shell
 
 3. Open Minicom:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      sudo minicom -s
+         sudo minicom -s
 
 4. Press the Down arrow key to select the **Serial port setup** option. Use the Up and Down arrow keys to navigate through the menu.
 
@@ -66,7 +72,8 @@ Connect to a UART shell
 
       #. Press the **Q** key if the configuration is not set to **8N1**.
 
-      .. image:: ../../media/k2c-qli-build-ga/option_Q.png
+         .. image:: ../../media/k2c-qli-build-ga/option_Q.png
+            :align: center
 
    #. Press **Enter** to save the changes.
 
@@ -95,9 +102,11 @@ Connect to a UART shell
 .. note:: 
     If you want to run sample applications from the UART shell, remount the root file system with write permissions:
 
-    ::
+    .. container:: nohighlight
+      
+       ::
 
-      mount -o rw,remount /
+         mount -o rw,remount /
 
 Connect to ADB
 ^^^^^^^^^^^^^^^^
@@ -116,15 +125,19 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
 
 1. Connect to the Wireless Access Point (Wi-Fi Router):
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      nmcli dev wifi connect <WiFi-SSID> password <WiFi-password>
+         nmcli dev wifi connect <WiFi-SSID> password <WiFi-password>
 
    **Example**
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      root@qcs6490-rb3gen2-vision-kit:~# nmcli dev wifi connect Qualcomm password 1234567890
+         root@qcs6490-rb3gen2-vision-kit:~# nmcli dev wifi connect Qualcomm password 1234567890
 
    .. container:: screenoutput
 
@@ -134,9 +147,11 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
 
 #. Check the connection and device status:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      execute <nmcli -p device>
+         execute <nmcli -p device>
    
    .. container:: screenoutput
 
@@ -152,9 +167,11 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
 
 #. Check the WLAN connection status and IP address:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ifconfig wlan0
+         ifconfig wlan0
 
    .. container:: screenoutput
 
@@ -174,9 +191,11 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
 
 #. Ensure that the connection is active by pinging any website:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ping google.com
+         ping google.com
 
 **Switching networks**
 
@@ -184,9 +203,11 @@ If you are already connected to a network and need to reconnect to another netwo
 
 1. Disconnect from the current network:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      nmcli c down Qualcomm
+         nmcli c down Qualcomm
 
    .. container:: screenoutput
 
@@ -196,9 +217,11 @@ If you are already connected to a network and need to reconnect to another netwo
 
 #. Check the disconnect status:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      nmcli -p device
+         nmcli -p device
 
    .. container:: screenoutput
 
@@ -214,9 +237,11 @@ If you are already connected to a network and need to reconnect to another netwo
 
 #. Connect to a different Wi-Fi network:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      nmcli dev wifi connect QualcommAP password XXXXXXXXX
+         nmcli dev wifi connect QualcommAP password XXXXXXXXX
 
    .. container:: screenoutput
 
@@ -232,15 +257,19 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
 1. Find the IP address of the RB3 Gen 2 device in the UART console on the Linux host:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ifconfig wlan0
+         ifconfig wlan0
 
 #. Use the IP address to establish an SSH connection from the remote host to the device:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      ssh root@ip-address
+         ssh root@ip-address
 
    **Example**
 
@@ -248,9 +277,11 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
 #. Connect to the SSH shell using the following password:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      oelinux123
+         oelinux123
 
 .. note:: Ensure that the remote host is connected to the same Wi-Fi access point.
 
@@ -267,13 +298,15 @@ Ethernet/RJ45 port is enabled as a downstream port of PCIe to USB controller (``
 
 To check if the USB to ETH controller is enumerated, run the following command:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   lsusb
+      lsusb
 
 **Sample output**:
 
-::
+.. container:: screenoutput
 
    Bus 002 Device 003: ID 0b95:1790 ASIX Electronics Corp. AX88179 Gigabit Ethernet
    Bus 002 Device 002: ID 05e3:0625 Genesys Logic, Inc. USB3.2 Hub
@@ -285,24 +318,28 @@ Connect an RJ45 cable to the RB3 Gen 2 device.
 
 To check the Ethernet IP address, run the following command:
 
-::
+.. container:: nohighlight
+      
+   ::
 
-   ifconfig
+      ifconfig
 
 **Sample output**:
 
 .. note:: 10.219.0.106 is the IP address.
 
-::
+.. container:: screenoutput
 
-   enP1p4s0u1u1 Link encap:Ethernet HWaddr A6:CD:9B:FD:C1:B5
-             inet addr:10.219.0.106  Bcast:10.219.1.255  Mask:255.255.254.0
-             inet6 addr: fe80::a370:7a00:8131:5a03/64 Scope:Link
-             UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-             RX packets:1071 errors:0 dropped:0 overruns:0 frame:0
-             TX packets:132 errors:0 dropped:0 overruns:0 carrier:0
-             collisions:0 txqueuelen:1000
-             RX bytes:60711 (59.2 KiB)  TX bytes:18342 (17.9 KiB)
+   .. line-block::
+
+      enP1p4s0u1u1 Link encap:Ethernet HWaddr A6:CD:9B:FD:C1:B5
+               inet addr:10.219.0.106  Bcast:10.219.1.255  Mask:255.255.254.0
+               inet6 addr: fe80::a370:7a00:8131:5a03/64 Scope:Link
+               UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+               RX packets:1071 errors:0 dropped:0 overruns:0 frame:0
+               TX packets:132 errors:0 dropped:0 overruns:0 carrier:0
+               collisions:0 txqueuelen:1000
+               RX bytes:60711 (59.2 KiB)  TX bytes:18342 (17.9 KiB)
 
 .. _section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149:
 
@@ -316,7 +353,7 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, co
 - Ensure that the software is upgraded as described in `Update Software <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#ubuntu-up-sw>`__ before updating the Renesas firmware.
 - The device should be connected to the Linux host through the USB Type-C cable.
 
-.. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or Mac host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-41/getting-started.html>`__.
+.. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or macOS host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-41/getting-started.html>`__.
 
 1. Register and log in to `Renesas <https://www.renesas.com/>`__.
 
@@ -324,28 +361,34 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, co
 
 #. Create the ``usb_fw.img`` image and copy the USB firmware:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      dd if=/dev/zero of=usb_fw.img bs=4k count=240
-      mkfs -t ext4 usb_fw.img
-      mkdir usb_fw
-      sudo mount -o loop usb_fw.img usb_fw/
-      sudo cp -rf renesas_usb_fw.mem usb_fw
-      sudo umount usb_fw
+         dd if=/dev/zero of=usb_fw.img bs=4k count=240
+         mkfs -t ext4 usb_fw.img
+         mkdir usb_fw
+         sudo mount -o loop usb_fw.img usb_fw/
+         sudo cp -rf renesas_usb_fw.mem usb_fw
+         sudo umount usb_fw
 
 #. Start the device in Fastboot mode:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      adb root
-      adb shell
-      reboot bootloader
+         adb root
+         adb shell
+         reboot bootloader
 
 #. Check if the device is in Fastboot mode:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      fastboot devices
+         fastboot devices
 
    .. container:: screenoutput
 
@@ -355,7 +398,9 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, co
 
 #. Flash the ``usb_fw.img`` image to the device:
 
-   ::
+   .. container:: nohighlight
+      
+      ::
 
-      fastboot erase usb_fw
-      fastboot flash usb_fw  usb_fw.img
+         fastboot erase usb_fw
+         fastboot flash usb_fw  usb_fw.img
