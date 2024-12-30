@@ -137,7 +137,7 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
       
       ::
 
-         root@qcs6490-rb3gen2-vision-kit:~# nmcli dev wifi connect Qualcomm password 1234567890
+         root@qcs6490-rb3gen2-vision-kit:~# nmcli dev wifi connect QualcommWiFi password 1234567890
 
    .. container:: screenoutput
 
@@ -151,19 +151,9 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
       
       ::
 
-         execute <nmcli -p device>
+         nmcli -p device
    
-   .. container:: screenoutput
-
-      .. line-block:: 
-
-         Status of devices
-         DEVICE  TYPE      STATE        CONNECTION
-         wlan0   wifi      connected    Qualcomm
-         eth0    ethernet  unavailable  –
-         eth1    ethernet  unavailable  –
-         can0    can       unmanaged    –
-         lo      loopback  unmanaged    –
+   .. image:: ../../media/k2c-qli-build-ga/status_of_devices.png
 
 #. Check the WLAN connection status and IP address:
 
@@ -173,21 +163,7 @@ Wi-Fi is operational in Station mode. The Wi-Fi host driver and the authenticati
 
          ifconfig wlan0
 
-   .. container:: screenoutput
-
-      .. line-block:: 
-
-         wlan0 Link encap:Ethernet  HWaddr 00:03:7F:12:F7:F7
-         inet addr:192.168.117.130  Bcast:192.168.117.255  Mask:255.255.255.0
-         inet6 addr: 2401:4900:658c:d8b0:3213:94e9:a421:a15e/64 Scope:Global
-         inet6 addr: fe80::b91:3f50:78fc:855a/64 Scope:Link
-         inet6 addr: fe80::e17e:9961:c1a6:4524/64 Scope:Link
-         inet6 addr: 2401:4900:658c:d8b0:3280:ef33:8f01:843d/64 Scope:Global
-         UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-         RX packets:38 errors:0 dropped:0 overruns:0 frame:0
-         TX packets:99 errors:0 dropped:0 overruns:0 carrier:0
-         collisions:0 txqueuelen:1000
-         RX bytes:4361 (4.2 KiB)  TX bytes:15141 (14.7 KiB)
+   .. image:: ../../media/k2c-qli-build-ga/chk_ip.png
 
 #. Ensure that the connection is active by pinging any website:
 
@@ -207,13 +183,13 @@ If you are already connected to a network and need to reconnect to another netwo
       
       ::
 
-         nmcli c down Qualcomm
+         nmcli c down QualcommWiFi
 
    .. container:: screenoutput
 
       .. line-block:: 
          
-         Connection ‘Qualcomm’ successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
+         Connection ‘QualcommWiFi’ successfully deactivated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)
 
 #. Check the disconnect status:
 
@@ -223,17 +199,7 @@ If you are already connected to a network and need to reconnect to another netwo
 
          nmcli -p device
 
-   .. container:: screenoutput
-
-      .. line-block:: 
-         
-         Status of devices
-         DEVICE  TYPE      STATE           CONNECTION
-         wlan0   wifi      disconnected    Qualcomm
-         eth0    ethernet  unavailable     –
-         eth1    ethernet  unavailable     –
-         can0    can       unmanaged       –
-         lo      loopback  unmanaged       –
+   .. image:: ../../media/k2c-qli-build-ga/status_of_devices_switch_network.png
 
 #. Connect to a different Wi-Fi network:
 
@@ -253,9 +219,19 @@ If you are already connected to a network and need to reconnect to another netwo
 
 **Log in using SSH**
 
-Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established before connecting to SSH.
+Ensure that the :ref:`network connectivity <connect_to_network>` is established before connecting to SSH.
 
-1. Find the IP address of the RB3 Gen 2 device in the UART console on the Linux host:
+1. Locate the IP address of the RB3 Gen 2 device according to the type of network connection, using the UART console on the Linux host:
+
+   For Ethernet:
+
+   .. container:: nohighlight
+      
+      ::
+
+         ifconfig eth2
+
+   For Wi-Fi:
 
    .. container:: nohighlight
       
@@ -263,7 +239,7 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
          ifconfig wlan0
 
-#. Use the IP address to establish an SSH connection from the remote host to the device:
+#. Use the IP address from the Linux host to establish an SSH connection to the device:
 
    .. container:: nohighlight
       
@@ -273,7 +249,7 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
    **Example**
 
-   ``ssh root@10.92.180.250``
+   ``ssh root@192.168.0.222``
 
 #. Connect to the SSH shell using the following password:
 
@@ -283,7 +259,10 @@ Ensure that a :ref:`Wi-Fi connection <howto_setup_wifi_sub>` is established befo
 
          oelinux123
 
-.. note:: Ensure that the remote host is connected to the same Wi-Fi access point.
+.. note:: 
+   
+   - Ensure that the remote host is connected to the same Wi-Fi access point as the device.
+   - To create a non-root user account, see `Create a non-root user account <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/additional_setup.html#non-root-acc>`__.
 
 .. _section_j5g_rds_5bc_vinayjk_06-21-24-1739-53-921:
 
@@ -293,8 +272,7 @@ Configure Ethernet with RJ45 port
 Ethernet/RJ45 port is enabled as a downstream port of PCIe to USB controller (``renesas``). Ensure that the ``renesas_usb_fw.mem`` file is available at the ``var/usbfw`` directory.
 
 .. note:: 
-   - If the ``renesas_usb_fw.mem`` firmware is not available at the ``var/usbfw`` directory, then :ref:`connect to UART <section_ags_ssh_p1c_vinayjk_03-01-24-1109-49-684>` and :ref:`enable the Wi-Fi <howto_setup_wifi_sub>`.
-   - After getting the SSH and the IP address, :ref:`update USB and Ethernet controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
+   - If the ``renesas_usb_fw.mem`` firmware is not available at the ``var/usbfw`` directory, then :ref:`update USB and Ethernet controller firmware <section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149>`.
 
 To check if the USB to ETH controller is enumerated, run the following command:
 
@@ -330,16 +308,14 @@ To check the Ethernet IP address, run the following command:
 
 .. container:: screenoutput
 
-   .. line-block::
-
-      enP1p4s0u1u1 Link encap:Ethernet HWaddr A6:CD:9B:FD:C1:B5
-               inet addr:10.219.0.106  Bcast:10.219.1.255  Mask:255.255.254.0
-               inet6 addr: fe80::a370:7a00:8131:5a03/64 Scope:Link
-               UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
-               RX packets:1071 errors:0 dropped:0 overruns:0 frame:0
-               TX packets:132 errors:0 dropped:0 overruns:0 carrier:0
-               collisions:0 txqueuelen:1000
-               RX bytes:60711 (59.2 KiB)  TX bytes:18342 (17.9 KiB)
+   enP1p4s0u1u1 Link encap:Ethernet HWaddr A6:CD:9B:FD:C1:B5
+            inet addr:10.219.0.106  Bcast:10.219.1.255  Mask:255.255.254.0
+            inet6 addr: fe80::a370:7a00:8131:5a03/64 Scope:Link
+            UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+            RX packets:1071 errors:0 dropped:0 overruns:0 frame:0
+            TX packets:132 errors:0 dropped:0 overruns:0 carrier:0
+            collisions:0 txqueuelen:1000
+            RX bytes:60711 (59.2 KiB)  TX bytes:18342 (17.9 KiB)
 
 .. _section_nsb_5gs_5bc_vinayjk_06-21-24-1803-34-149:
 
@@ -403,4 +379,29 @@ If you encounter USB or Ethernet connectivity issues on the RB3 Gen 2 device, co
       ::
 
          fastboot erase usb_fw
-         fastboot flash usb_fw  usb_fw.img
+         fastboot flash usb_fw usb_fw.img
+         fastboot reboot
+
+   .. container:: screenoutput
+
+      c:\>fastboot erase usb_fw
+      Erasing 'usb_fw'                                   FAILED (remote: 'Check device console.')
+      fastboot: error: Command failed
+
+#. Verify if the firmware is successfully updated:
+
+   .. container:: nohighlight
+
+      ::
+
+         dmesg
+
+   Sample log after the firmware is successfully updated.
+
+   .. container:: screenoutput
+
+      [    6.589462] usbcore: registered new device driver onboard-usb-hub
+      [    6.653277] usb 2-1: new SuperSpeed USB device number 2 using xhci_hcd
+      [    7.013061] usb 2-1.1: new SuperSpeed USB device number 3 using xhci_hcd
+      [    7.120657] ax88179_178a 2-1.1:1.0 eth0: register 'ax88179_178a' at usb-0001:04:00.0-1.1, ASIX AX88179 USB 3.0 Gigabit Ethernet, 3e:9e:5e:ff:d3:fb
+      [    7.120767] usbcore: registered new interface driver ax88179_178a

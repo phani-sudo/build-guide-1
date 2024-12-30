@@ -19,7 +19,7 @@ Download prebuilt images and flash the software
 
 - The Platform eSDK is an installer generated from the Qualcomm Linux software. It provides a complete Yocto environment that allows you to sync, modify, compile, and install applications and open-source plug-ins. For more information, see :ref:`Download the Platform eSDK <section_imr_xc4_1cc_vinayjk_07-12-24-1513-38-780>`.
 
-- To flash the prebuilt flashable images, see :doc:`Flash images <flash_images>`.
+- To flash the prebuilt flashable images, see :ref:`Flash software images <flash_images>`.
 
 Sync, build, and flash the software
 -------------------------------------

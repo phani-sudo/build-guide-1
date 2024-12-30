@@ -268,4 +268,4 @@ To rebuild after any modifications to the software release, use your existing wo
 Flash
 ^^^^^^^
 
-To flash the software images to the device, see :doc:`Flash images <flash_images>`.
+To flash the software images to the device, see :ref:`Flash software images <flash_images>`.

@@ -36,11 +36,11 @@ The following table describes the Qualcomm Yocto layers and release tags:
    * - Licensed developers with authorized access
      - ``meta-qcom-extras``
      - meta-qcom-extras release tag
-     - r1.0_00055.0 
+     - r1.0_00059.0 
    * - See :ref:`Mapping access levels to firmware distributions <build_mapping_access_levels>`
      - NA
      - firmware release tag
-     - r1.0_00054.0
+     - r1.0_00058.0
 
 The following tables describe the firmware distributions that can be downloaded according to the need and entitlements:
 
@@ -208,7 +208,7 @@ The following ``git clone`` command downloads the selected firmware components i
       mkdir -p <FIRMWARE_ROOT>
       cd <FIRMWARE_ROOT>
       git clone -b <firmware release tag> --depth 1 https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk.git
-      # Example, <firmware release tag> is r1.0_00054.0
+      # Example, <firmware release tag> is r1.0_00058.0
 
 .. note:: 
    - The ``git clone`` command clones the content into the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` directory.
@@ -1145,7 +1145,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1.xml
          repo sync
          git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-         # Example, <meta-qcom-extras release tag> is r1.0_00055.0
+         # Example, <meta-qcom-extras release tag> is r1.0_00059.0
          mkdir -p layers/meta-qcom-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
          # An example <product> is QCM6490.LE.1.0. For more information on <product>, see the latest Release Notes (https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241208101813/).
@@ -1221,7 +1221,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
          cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
          ls -al system.img
 
-#. Flash the generated build using :doc:`Flash images <flash_images>`.
+#. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
 .. _section_cx2_dqf_s1c_vinayjk_03-11-24-2139-47-648:
 
@@ -1329,7 +1329,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
          ls -al system.img
 
-#. Flash the generated build using :doc:`Flash images <flash_images>`.
+#. Flash the generated build using :doc:`Flash software images <flash_images>`.
 
 .. _section_kjz_d1j_5bc_vinayjk_06-20-24-1130-57-104:
 
@@ -1355,7 +1355,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          # Example, <manifest release tag> is qcom-6.6.52-QLI.1.3-Ver.1.1.xml
          repo sync
          git clone https://qpm-git.qualcomm.com/home2/git/qualcomm/qualcomm-linux-spf-1-0_hlos_oem_metadata.git -b <meta-qcom-extras release tag> --depth 1
-         # Example, <meta-qcom-extras release tag> is r1.0_00055.0
+         # Example, <meta-qcom-extras release tag> is r1.0_00059.0
          mkdir -p layers/meta-qcom-extras
          mkdir -p layers/meta-qcom-robotics-extras
          cp -rf qualcomm-linux-spf-1-0_hlos_oem_metadata/<product>/common/config/meta-qcom-extras/* layers/meta-qcom-extras/
@@ -1427,4 +1427,4 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
          # system.img is present in the following path
          Robotics image: <workspace_path>/build-qcom-robotics-ros2-humble/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-robotics-full-image
 
-#. Flash the generated build using :doc:`Flash images <flash_images>`.
+#. Flash the generated build using :doc:`Flash software images <flash_images>`.

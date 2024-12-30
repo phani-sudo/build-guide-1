@@ -443,4 +443,4 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
 Flash
 ^^^^^^^
 
-To flash the software images to the device, see :doc:`Flash images <flash_images>`.
+To flash the software images to the device, see :ref:`Flash software images <flash_images>`.

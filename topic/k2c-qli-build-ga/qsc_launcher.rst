@@ -120,7 +120,7 @@ Build and flash default configuration
 
    e. Click **Done**.
 
-      .. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
+      .. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
    f. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
 
@@ -164,7 +164,7 @@ To build your own configuration, compile the build for default machine configura
  
       For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.1.0.r1``.
 
-3. To flash your build, see :ref:`Flash images <flash_images>`.
+3. To flash your build, see :ref:`Flash software images <flash_images>`.
 
    .. note::
       - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.

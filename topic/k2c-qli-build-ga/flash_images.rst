@@ -360,7 +360,7 @@ Flash software using QDL
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
+   To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
@@ -467,7 +467,7 @@ Flash software using PCAT
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
+   The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
 .. _connect_uart_network:
 

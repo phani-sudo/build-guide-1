@@ -125,7 +125,7 @@ For Ubuntu 22.04, you may encounter an issue while installing QUD, where you mig
            ID | DEVICE TYPE | DEVICE STATE | SERIAL NUMBER | ADB SERIAL NUMBER | DESCRIPTION
            NA | NA          | EDL          | BE116704      | be116704          | Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
 
-      - The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#panel-0-vwj1bnr1tab$check-qualcomm-linux-version>`__.
+      - The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70017-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
 2. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
 
@@ -178,7 +178,7 @@ To build your own configuration, you must compile the build for default machine 
  
        For example, if you compile ``BOOT.MXF.1.0.c1``, ensure that you also compile the software product (such as ``QCM6490.LE.1.0``) and then ``LE.QCLINUX.1.0.r1``.
       
-3. To flash your build, see :ref:`Flash images <flash_images>`.
+3. To flash your build, see :ref:`Flash software images <flash_images>`.
 
    .. note::
       - Before flashing, update the build images path to the compiled build images workspace at ``<Base_Workspace_Path>/DEV/LE.QCLINUX.1.0.r1/build-<DISTRO>/tmp-glibc/deploy/images/<MACHINE>/qcom-multimedia-image``.
