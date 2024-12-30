@@ -610,7 +610,7 @@ Build firmware
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`Change the Hexagon tool install path? <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
+            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`Change the Hexagon tool install path <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
 
          .. rubric:: Build DSP      
 
@@ -903,7 +903,7 @@ Build firmware
                   export HEXAGON_ROOT=$HOME/Qualcomm/HEXAGON_Tools
                   echo $HEXAGON_ROOT
 
-            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`Change the Hexagon tool install path? <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
+            .. note:: Set the environment variable HEXAGON_ROOT to the path where the Hexagon SDK is installed. To change the install path when using ``qpm-cli``, see :ref:`Change the Hexagon tool install path <section_nqg_cj3_v1c_vinayjk_03-23-24-006-3-877>`.
 
          .. rubric:: Build DSP      
 
