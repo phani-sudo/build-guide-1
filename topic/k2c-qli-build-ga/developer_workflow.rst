@@ -6,21 +6,16 @@ Developer workflow
 Sync and build with real-time Linux
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-``PREEMPT_RT`` patches for the Qualcomm Linux kernel are provided in the
-``meta-qcom-realtime`` layer. This layer is available in the Qualcomm
-`GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it's
-built on top of the BSP build image. For more information on this layer,
-see
+``meta-qcom-realtime`` layer provides ``PREEMPT_RT`` patches for the Qualcomm Linux kernel. This layer is available in the Qualcomm `GitHub <https://github.com/quic-yocto/meta-qcom-realtime>`__ and it's built on top of the BSP build image. For more information on this layer, see
 `meta-qcom-realtime <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#meta-qcom-realtime>`__
-from the `Qualcomm Linux Yocto
-Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27>`__.
+from the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27>`__.
 
 To sync and build real-time Linux, see :ref:`Build real-time Linux image <build_real_time_linux_image_unreg>`.
 
-Migrate from the previous release to the next release
+Migrate from the earlier release to the next release
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The migration process depends on the development, branching, and integration workflows at your end. However, the following steps must be performed:
+The migration process depends on the development, branching, and integration workflows at your end. However, perform the following steps:
 
 1. Integrate changes for the sources that you have branched:
 
@@ -28,9 +23,9 @@ The migration process depends on the development, branching, and integration wor
       used by Qualcomm Yocto layers and are applying only ``.patch``
       files.
    #. Qualcomm provides git history to all the source repositories.
-      A reference list of repositories is provided in the `Release
+      You can see a reference list of repositories in the `Release
       Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
-      For Qualcomm repositories that are branched and modified at your
+      For Qualcomm repositories branched and modified at your
       end, perform the following steps:
 
       i. Compare the Qualcomm Yocto layers with your Yocto layers, and

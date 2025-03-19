@@ -5,7 +5,7 @@ Build with Dockerfile
 
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
-The Ubuntu host computer must be setup to ensure that the required software tools are installed and configured for use.
+Install and configure the required software tools on the Ubuntu host computer.
 
 -  Install git:
 
@@ -42,7 +42,7 @@ The Ubuntu host computer must be setup to ensure that the required software tool
 Check the host computer configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Check if your host computer is configured accurately:
+-  Configure your host computer:
 
    .. container:: nohighlight
       
@@ -73,10 +73,10 @@ Create a Yocto Docker image and build:
 
 1. Run ``docker_build.sh`` to create the Docker image with Dockerfile
    (**Dockerfile_22.04**) and Dockertag
-   (**qcom-6.6.65-qli.1.4-ver.1.0_22.04**). This Docker image is used to
-   create the container environment to run the Yocto build.
+   (**qcom-6.6.65-qli.1.4-ver.1.0_22.04**). Use this Docker image to
+   create the container environment and run the Yocto build.
 
-   **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version to identify the release build with the Dockerfile since Docker doesn't permit uppercase letters in the Dockertag.
+   **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version to identify the release build with the Dockerfile. Docker doesn't allow uppercase letters in the Dockertag.
 
    .. note:: 
       To troubleshoot Docker issues, see :ref:`Troubleshoot Docker <troubleshoot_docker>`.
@@ -131,11 +131,11 @@ Create a Yocto Docker image and build:
    ``qcom-download-utils/qcom-6.6.65-QLI.1.4-Ver.1.0/build-qcom-wayland``.
 
 .. note:: 
-   - **# ERROR: error.GitError: git config (‘–replace-all’,‘color.ui’, ‘auto’): error: could not write config file /home/$USER/.gitconfig: Device or resource busy**
+   - **# ERROR: error.GitError: git config (‘–replace-all’,‘color.ui’, ‘auto’): error: couldn't write config file /home/$USER/.gitconfig: Device or resource busy**
      
-     This error is triggered when your gitconfig doesn't set the UI color configuration as Git 1.8.4 is enabled by default. To enable color display in your account, run the following command: ``git config --global color.ui auto``.
+     As Git 1.8.4 is enabled by default, you will see this error when the UI color configuration is not set in gitconfig. To enable color display in your account, run the following command: ``git config --global color.ui auto``.
 
-   - If a build error is triggered and fixed, run the commands in :ref:`Rebuild <build_with_docker_rebuild>`.
+   - If you see and fix a build error, run the commands in :ref:`Rebuild <build_with_docker_rebuild>`.
 
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -163,7 +163,7 @@ Build QIMP SDK image
             git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
             # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1
 
-      To build a QIMP SDK layer, the following export is required:
+      Build the QIMP SDK layer:
 
       .. container:: nohighlight
       
@@ -256,7 +256,7 @@ To rebuild after any modifications to the software release, use your existing wo
 
          bitbake qcom-multimedia-image
 
-.. note:: Exit from Docker before you flash the images.
+.. note:: Close Docker before you flash the images.
 
 Flash
 ^^^^^^^

@@ -8,7 +8,7 @@ Build with standalone commands
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Ubuntu host computer must be setup to ensure that the required software tools are installed and configured for use.
+Install and configure the required software tools on the Ubuntu host computer.
 
 1. Install the following packages to prepare your host environment for Yocto build:
 
@@ -56,9 +56,9 @@ The Ubuntu host computer must be setup to ensure that the required software tool
 Sync
 ^^^^^^^
 
-This section uses the Repo tool installed in :ref:`Ubuntu host setup <ubuntu_host_setup_github_unreg>` to download git repositories and additional attributes from the `Qualcomm manifest <https://github.com/quic-yocto/qcom-manifest>`__. The Repo tool downloads the manifests using the ``repo init`` command.
+This section uses the Repo tool installed in :ref:`Ubuntu host setup <ubuntu_host_setup_github_unreg>` to download git repositories and other attributes from the `Qualcomm manifest <https://github.com/quic-yocto/qcom-manifest>`__. The Repo tool downloads the manifests using the ``repo init`` command.
 
-The following table shows an example mapping of the Yocto layers to the manifest release tags, and this mapping is used to download and build Qualcomm Linux.
+The following table shows an example mapping of the Yocto layers to the manifest release tags. Use this mapping to download and build Qualcomm Linux.
 
 .. list-table:: Mapping Yocto layers to manifest release tags
    :header-rows: 1
@@ -142,7 +142,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
 
 Build BSP image
 ^^^^^^^^^^^^^^^^^^
-Board support package (BSP) image build contains software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits.
+Board support package (BSP) image build has software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits.
 
 For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
@@ -200,7 +200,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
 
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm® Intelligent Multimedia Product (QIMP) SDK is a collection of four standalone function SDKs, namely, Qualcomm® Intelligent Multimedia SDK (IM SDK), Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the LiteRT. It also includes reference applications that you can use to develop use cases. 
+The Qualcomm® Intelligent Multimedia Product (QIMP) SDK is a collection of four standalone function SDKs, namely, Qualcomm® Intelligent Multimedia SDK (IM SDK), Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and Lite Runtime (LiteRT). It also includes reference applications that you can use to develop use cases. 
 
 For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-51>`__.
 
@@ -230,7 +230,7 @@ For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bun
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
          # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1
 
-   To build a QIMP SDK layer, the following export is required:
+   Build the QIMP SDK layer:
 
    .. container:: nohighlight
       
@@ -375,7 +375,7 @@ For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/public
          git clone https://github.com/quic-yocto/meta-qcom-realtime -b <meta-qcom-realtime release tag> layers/meta-qcom-realtime
          # Example, <meta-qcom-realtime release tag> is qcom-6.6.65-QLI.1.4-Ver.1.0_realtime-linux-1.0
 
-   To build a real-time layer, the following export is required:
+   Build the real-time layer:
 
    .. container:: nohighlight
       

@@ -21,7 +21,7 @@ Update ``udev`` rules
 
 Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6** on the Linux host:
 
-1. Navigate to the ``udev`` USB rules directory:
+1. Go to the ``udev`` USB rules directory:
 
    .. container:: nohighlight
       
@@ -45,7 +45,7 @@ Configure the ``udev`` USB rules for the Qualcomm manufacturing vendor ID **05c6
 
             SUBSYSTEMS=="usb", ATTRS{idVendor}=="05c6", ATTRS{idProduct}=="9008", MODE="0666", GROUP="plugdev"
 
-   -  If the file exists, then check for the previous content:
+   -  If the file exists, then check for the earlier content:
 
       .. container:: nohighlight
       
@@ -254,12 +254,14 @@ The device must be in the EDL mode before you flash the software. The Qualcomm s
 
          .. note:: Dip switch S5-4 must be turned off after the flashing is complete.
 
+.. _provision_ufs:
+
 Provision UFS
 ---------------
-Universal Flash Storage (UFS) provisioning helps to divide the storage into multiple LUNS allowing different types of data to be stored separately. This improves access efficiency and system organization.
+Universal Flash Storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
 
 .. note::
-    - UFS is provisioned by default. If there are any changes in LUNs, UFS re-provisioning must be done again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/ReleaseNote.html#release-specific-information>`__.
+    - UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned again. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/ReleaseNote.html#release-specific-information>`__.
 
 1. Download the provision file:
 
@@ -318,11 +320,13 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into mult
 
    .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
+.. _flash_cdt:
+
 Flash CDT
 ----------
 .. note:: Ensure that the device is in :ref:`EDL mode <move_to_EDL>`.
 
-CDT provides platform/device-dependent data such as platform ID, subtype, version. Various Software(drivers/firmware) modules can make use of this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
+CDT provides platform/device-dependent data such as platform ID, subtype, version. Various Software (drivers/firmware) modules can use this information to perform dynamic detection and initialization of the platform. You can update CDT by flashing a CDT binary:
 
 1. Download the CDT binary.
 
@@ -377,7 +381,7 @@ Flash software using QDL
 
 1. Ensure that the ModemManager tool isn't running.
 
-   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When the device is connected in the USB mode, it's identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
+   Some Linux distributions include the ModemManager tool, which allows you to configure the mobile broadband. When you connect the device in the USB mode, it's identified as a Qualcomm modem, and the ModemManager tries to configure the device. As this interferes with the QDL flashing, you must disable the ModemManager before connecting your device.
    
    If you are using a Linux distribution with ``systemd``, stop the ModemManager tool using the following command:
 
@@ -450,7 +454,7 @@ Flash software using QDL
 
           1. Power off the device.
           2. Disconnect from the host.
-          3. Reboot the host.
+          3. Restart the host.
 
 To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
 
@@ -460,7 +464,7 @@ Flash software using PCAT
 
 1. :ref:`Install QSC CLI <install_qsc_cli>`.
  
-#. To detect the connected devices and flash the software builds, ensure that the Qualcomm PCAT and QUD tools are installed on the host computer. Run the following commands to use ``qpm-cli`` to install PCAT and QUD:
+#. To detect the connected devices and flash the software builds, install the Qualcomm PCAT and QUD tools on the host computer. Run the following commands to use ``qpm-cli`` to install PCAT and QUD:
 
    .. container:: nohighlight
       
@@ -471,7 +475,7 @@ Flash software using PCAT
          qpm-cli --install qud --activate-default-license
          qpm-cli --install pcat --activate-default-license
 
-   .. note:: For Ubuntu 22.04, you may get an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For additional details, follow the steps provided in the README file available in the ``/opt/QTI/sign/signReadme.txt`` directory.
+   .. note:: For Ubuntu 22.04, you may get an issue while installing QUD, where you must enroll the public key on your Linux host for a successful QUD installation. For more details, follow the steps provided in the README file available in the ``/opt/QTI/sign/signReadme.txt`` directory.
 
 #. Check if the ``QTI_HS-USB_QDLoader`` driver is available in the installed directory:
 
@@ -505,7 +509,7 @@ Flash software using PCAT
 
           Bus 002 Device 014: ID 05c6:9008 Qualcomm, Inc. Gobi Wireless Modem (QDL mode)
 
-#. Check if the device is recognized by the PCAT:
+#. Check if PCAT recognizes the device:
 
    .. container:: nohighlight
       
@@ -531,7 +535,7 @@ Flash software using PCAT
 
          # Example, PCAT -PLUGIN SD -DEVICE be116704 -BUILD "<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image" -MEMORYTYPE UFS -FLAVOR asic
 
-   If the software has been flashed successfully, you will see the following message:
+   If flashing the software is successful, you will see the following message:
 
    .. container:: screenoutput
 
@@ -552,7 +556,7 @@ Flash software using PCAT
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
+   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
 .. _connect_uart_network:
 
@@ -562,4 +566,4 @@ After flashing and booting the device, follow these steps to establish the conne
  
 * :ref:`Connect to UART shell <connect_uart>`
 * :ref:`Connect to network <connect_to_network>`
-* :ref:`Log in using SSH <use-ssh>`
+* :ref:`Sign in using SSH <use-ssh>`

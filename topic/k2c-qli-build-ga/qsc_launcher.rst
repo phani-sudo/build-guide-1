@@ -124,7 +124,7 @@ Build and flash default configuration
 
    e. Click **Done**.
 
-      .. note:: The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
+      .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
    f. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
 

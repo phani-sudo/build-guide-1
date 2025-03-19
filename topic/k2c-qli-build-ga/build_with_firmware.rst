@@ -38,7 +38,7 @@ The following table describes the Qualcomm Yocto layers and release tags:
      - firmware release tag
      - r1.0_00068.0
 
-The following tables describe the firmware distributions that can be downloaded according to the need and entitlements:
+The following tables describe the firmware distributions you can download according to the need and entitlements:
 
 .. _build_mapping_access_levels:
 
@@ -193,7 +193,7 @@ The following tables describe the firmware distributions that can be downloaded 
 
 .. note:: Commands in the following sections are based on the binary and source for firmware images without modem and GPS (see the command in :ref:`Mapping firmware distributions to git repositories <Mapping_firmware_table>`). Hence, ``qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk`` is used. If you use any other distribution, then update the directory accordingly.
 
-The **Git command** column (see :ref:`Mapping firmware distributions to git repositories <Mapping_firmware_table>`) provides information about the git repositories that contain the firmware sources. These repositories are hosted on Qualcomm servers. Clone the appropriate repositories based on your access profile and use case.
+The **Git command** column (see :ref:`Mapping firmware distributions to git repositories <Mapping_firmware_table>`) provides information about the git repositories that contain the firmware sources. Qualcomm servers host these repositories. Clone the appropriate repositories based on your access profile and use case.
 
 The following ``git clone`` command downloads the selected firmware components in source, except the modem:
 
@@ -1123,7 +1123,7 @@ Build firmware
 
 Build BSP image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-BSP image build contains the software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+BSP image build has the software components for Qualcomm device support and value-added software features applicable to Qualcomm SoCs. It includes a reference distribution configuration for Qualcomm development kits. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
 
 For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
 
@@ -1219,7 +1219,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
 
 Build QIMP SDK image with extras
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The QIMP SDK is a collection of four standalone function SDKs, namely, IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the LiteRT. It also includes reference applications that you can use to develop use cases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
+The QIMP SDK is a collection of four standalone function SDKs, namely, Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. It also includes reference applications that you can use to develop use cases. The ``meta-qcom-extras`` layer enables source compilation of select components, which are otherwise present as binary.
 
 For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-51>`__.
 

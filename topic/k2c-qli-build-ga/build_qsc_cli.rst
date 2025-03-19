@@ -65,7 +65,7 @@ To recompile after any modifications to the software release, use your existing 
 Flash
 '''''''''
 
-.. note:: For the QSC CLI to detect the connected devices and flash the software builds, ensure that the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) are installed on the host computer. Use the ``qpm-cli`` command to install PCAT and QUD:
+.. note:: For the QSC CLI to detect the connected devices and flash the software builds, install the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) on the host computer. Use the ``qpm-cli`` command to install PCAT and QUD:
 
    .. container:: nohighlight
       
@@ -78,13 +78,13 @@ Flash
 
 The ``qpm-cli --help`` command lists the help options.
 
-For Ubuntu 22.04, you may get an issue while installing QUD, where you might be asked to enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
+For Ubuntu 22.04, you may get an issue while installing QUD, where you must enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
 
 .. note:: Before you flash the software, ensure the following:
 
    1. Device is in :ref:`Emergency Download (EDL) mode <move_to_EDL>`.
-   #. :ref:`Provision UFS <ufs_provisioning>`.
-   #. :ref:`Flash CDT <flash_CDT>`.
+   #. :ref:`Provision UFS <provision_ufs>`.
+   #. :ref:`Flash CDT <flash_cdt>`.
   
 1. Flash a device.
 
@@ -103,7 +103,7 @@ For Ubuntu 22.04, you may get an issue while installing QUD, where you might be 
       ::
 
          qsc-cli flash --workspace-path <workspace path> --list-buildflavor
-..code
+
    .. note::
       - To find the `<serial number>`, run the following command on the host computer:
 
@@ -121,7 +121,7 @@ For Ubuntu 22.04, you may get an issue while installing QUD, where you might be 
            ID | DEVICE TYPE | DEVICE STATE | SERIAL NUMBER | ADB SERIAL NUMBER | DESCRIPTION
            NA | NA          | EDL          | BE116704      | be116704          | Qualcomm USB Composite Device:QUSB_BULK_CID:042F_SN:BE116704
 
-      - The device reboots after the flashing procedure is completed successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
+      - The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
 2. To establish UART and network connections, see :ref:`Connect to UART and network <connect_uart_network>`.
 

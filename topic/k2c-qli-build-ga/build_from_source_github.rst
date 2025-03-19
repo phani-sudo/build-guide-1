@@ -215,7 +215,7 @@ For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com
 
 Build QIMP SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The QIMP SDK is a collection of four standalone function SDKs, namely, IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and the Lite Runtime (LiteRT). It also includes reference applications that you can use to develop use cases. 
+The QIMP SDK is a collection of four standalone function SDKs, namely, IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. It also includes reference applications that you can use to develop use cases. 
 
 For more details, see `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-51>`__.
 
