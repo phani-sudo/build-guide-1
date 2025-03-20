@@ -34,7 +34,7 @@ The migration process depends on the development, branching, and integration wor
          updates.
       #. Clone these repositories using ``git clone`` and check out the
          appropriate branch and SHA as pointed by the SRC_URI.
-      #. Use ``git merge`` or appropriate mechanism to bring the delta
+      #. Use ``git merge`` or the appropriate mechanism to bring the delta
          to your own fork according to your need.
       #. Update your recipes as required.
 

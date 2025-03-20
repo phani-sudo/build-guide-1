@@ -1,6 +1,6 @@
 .. _host_machine_requirements_reg_unreg:
 
-Host machine requirements
+Host computer requirements
 -------------------------------
 
 .. tabularcolumns:: |p{3cm}|p{3cm}|p{3cm}|

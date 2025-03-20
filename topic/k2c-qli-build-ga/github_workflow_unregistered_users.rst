@@ -7,7 +7,7 @@ Build with GitHub for unregistered users
 
 The following sections explain how to use GitHub and make a build using the prebuilt proprietary binaries/images.
 
-.. note:: To know the hardware SoCs that are supported in this build method, see the table *Sync and build methods* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
+.. note:: For more details on the hardware SoCs supported in this build method, see the table *Sync and build methods* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
 .. _host_machine_req_github_workflow_unregistered_users:
 

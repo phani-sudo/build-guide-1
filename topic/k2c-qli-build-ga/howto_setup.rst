@@ -69,7 +69,7 @@ Connect to a UART shell
 
          sudo minicom -s
 
-4. Use the Down arrow key to select the **Serial port setup** option. Use the Up and Down arrow keys to navigate through the menu.
+4. Use the Down arrow key to select the :guilabel:`Serial port setup` option. Use the Up and Down arrow keys to navigate through the menu.
 
    .. image:: ../../media/k2c-qli-build-ga/serial_port_setup.jpg
       :align: center
@@ -78,42 +78,42 @@ Connect to a UART shell
 
    .. note:: Ensure that the letters are in uppercase.
 
-   a. Select **A** on your keyboard to set up the serial device name such as ``/dev/ttyUSB0``.
+   a. Select :guilabel:`A` on your keyboard to set up the serial device name such as ``/dev/ttyUSB0``.
 
-   #. Select **Enter** to save the changes.
+   #. Select :guilabel:`Enter` to save the changes.
 
-   #. Select **E** on your keyboard to set the baud rate and 8N1 configuration:
+   #. Select :guilabel:`E` on your keyboard to set the baud rate and 8N1 configuration:
    
-      i. Select the **E** key again if the baud rate isn't set to **115200**.
+      i. Select the :guilabel:`E` key again if the baud rate isn't set to **115200**.
 
-      #. Select the **Q** key if the configuration isn't set to **8N1**.
+      #. Select the :guilabel:`Q` key if the configuration isn't set to **8N1**.
 
          .. image:: ../../media/k2c-qli-build-ga/option_Q.png
             :align: center
 
-   #. Select **Enter** to save the changes.
+   #. Select :guilabel:`Enter` to save the changes.
 
-   #. Select **F** on your keyboard to set the **Hardware Flow Control**
+   #. Select :guilabel:`F` on your keyboard to set the **Hardware Flow Control**
       to ``No``.
 
       .. image:: ../../media/k2c-qli-build-ga/serial_device_configuration.png
          :align: center
 
-   #. Select **Enter** to save the changes.
+   #. Select :guilabel:`Enter` to save the changes.
 
-6. Select the **Save setup as dfl** option and then select **Enter**.
+6. Select the :guilabel:`Save setup as dfl` option and then select :guilabel:`Enter`.
 
    .. image:: ../../media/k2c-qli-build-ga/save_setup_as_dfl.png
       :align: center
 
-7. Select **Exit** to open the UART console and then select ENTER.
+7. Select :guilabel:`EXIT` to open the UART console and then select :guilabel:`Enter`.
 
-8. Log in to the UART console:
+8. Sign in to the UART console:
 
    -  Login: ``root``
    -  Password: ``oelinux123`` 
      
-      .. note:: If the login console doesn't display as expected, verify the USB connection. If the issue persists, disconnect and then reconnect the micro-USB.
+      .. note:: If the sign in console doesn't display as expected, verify the USB connection. If the issue persists, disconnect and then reconnect the micro-USB.
 
 .. note:: 
     If you want to run sample applications from the UART shell, remount the root file system with write permissions:
@@ -288,7 +288,7 @@ Ethernet/RJ45 port is enabled as a downstream port of PCIe to USB controller (``
 .. note:: 
    - If the ``renesas_usb_fw.mem`` firmware isn't available at the ``var/usbfw`` directory, then :ref:`update USB and Ethernet controller firmware <update_usb_eth_controller>`.
 
-To check if the USB to ETH controller is enumerated, run the following command:
+To check if the USB to Ethernet controller is enumerated, run the following command:
 
 .. container:: nohighlight
       
@@ -345,7 +345,7 @@ If you face USB or Ethernet connectivity issues on the RB3 Gen 2 device, conside
 
 .. note:: The following procedure is applicable only to Ubuntu 22.04 host. If you are using a Windows or macOS host, set up an Ubuntu virtual machine by following the instructions described in the `Virtual Machine Setup Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-41/getting-started.html>`__.
 
-1. Register and log in to `Renesas <https://www.renesas.com/>`__.
+1. Register and sign in to `Renesas <https://www.renesas.com/>`__.
 
 #. `Download the firmware <https://www.renesas.com/en/products/interface/usb-switches-hubs/upd720201-usb-30-host-controller#design_development>`__.
 

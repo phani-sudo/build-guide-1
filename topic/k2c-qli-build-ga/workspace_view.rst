@@ -1,66 +1,60 @@
 Workspace view
 -----------------
 
-This section provides sample workspace structures with ``qsc-cli`` and GitHub workflow standalone use cases for the supported `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-115/soc.html>`__.
+This section provides sample workspace structures with ``qsc-cli`` and GitHub workflow standalone use cases, for the supported `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-115/soc.html>`__.
 
 Workspace structure with qsc-cli
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The directory structure before the
-   ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK`` distribution build
-   is shown in the following figure (``LE.QCLINUX.1.0.r1`` contains the
+-  The following figure shows the directory structure before the
+   ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK`` distribution build (``LE.QCLINUX.1.0.r1`` has the
    Yocto workspace):
 
          .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_1.png
 
--  The directory structure after
-   ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK`` distribution build
-   is shown in the following figure:
+-  The following figure shows the directory structure after
+   ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK`` distribution build:
 
          .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_2.png
 
--  The directory structure before
+-  The following figure shows the directory structure before
    ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem`` distribution build
-   with firmware and extras is shown in the following figure:
+   with firmware and extras:
 
          .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_3.png
 
--  The directory structure after
+-  The following figure shows the directory structure after
    ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem`` distribution build
-   with firmware and extras is shown in the following figure:
+   with firmware and extras:
 
         .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_4.png
 
 Workspace structure with GitHub workflow standalone instructions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  The directory structure before GitHub workflow QIMP SDK standalone build
-   is shown in the following figure:
+-  The following figure shows the directory structure before the GitHub workflow QIMP SDK standalone build:
 
         .. image:: ../../media/k2c-qli-build-ga/ws_standalone_1.png
 
--  The directory structure after GitHub workflow QIMP SDK standalone build
-   is shown in the following figure:
+-  The following figure shows the directory structure after the GitHub workflow QIMP SDK standalone build:
 
         .. image:: ../../media/k2c-qli-build-ga/ws_standalone_2.png
 
--  The directory structure after building firmware of
-   ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem`` is shown in the
-   following figure:
+-  The following figure shows the directory structure after building firmware of
+   ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem``:
 
    .. note::
       - ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem`` contains the downloaded select firmware sources.
-      - ``LE.QCLINUX.1.0.r1`` contains the built Yocto workspace. 
+      - ``LE.QCLINUX.1.0.r1`` has the built Yocto workspace. 
    
    |ws_standalone_3|
 
--  The directory structure after building firmware of
-   ``qualcomm-linux-spf-1-0_amss_standard_oem_nomodem`` is shown in the
-   following figure:
+-  The following figure shows the directory structure after building firmware of
+   ``qualcomm-linux-spf-1-0_amss_standard_oem_nomodem``:
 
    .. note::
       - ``qualcomm-linux-spf-1-0_amss_standard_oem_nomodem`` contains the downloaded select firmware sources.
-      - ``LE.QCLINUX.1.0.r1`` contains the built Yocto workspace. 
+      - ``LE.QCLINUX.1.0.r1`` has the built Yocto workspace. 
   
    |ws_standalone_4|
 
@@ -71,7 +65,7 @@ Images directory structure after successful build
 
    .. image:: ../../media/k2c-qli-build-ga/ws_standalone_5.png
 
-   The files in the images directory are described in the following table:
+   The following table describes the files in the images directory:
    
    +-----------------------------+----------------------------------------+
    | Filename                    | Description                            |

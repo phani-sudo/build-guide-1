@@ -150,7 +150,7 @@ The following tables describe the firmware distributions you can download accord
 
        ``meta-qcom-qim-product-sdk``
 
-.. note:: For more information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
+.. note:: For more information on the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
 .. _Mapping_firmware_table:
 
@@ -237,7 +237,7 @@ Build firmware
 
                   bash
 
-         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
+         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates the header and the source files from the IDL files:
 
             .. container:: nohighlight
       
@@ -556,7 +556,7 @@ Build firmware
 
                   bash
 
-         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
+         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates the header and the source files from the IDL files:
 
             .. container:: nohighlight
       
@@ -849,7 +849,7 @@ Build firmware
 
                   bash
 
-         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates header and source files from IDL files:
+         -  Install the libffi6 package using the following commands. This is required for the QAIC compiler, which generates the header and the source files from the IDL files:
 
             .. container:: nohighlight
       

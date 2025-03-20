@@ -29,7 +29,7 @@ Install QSC CLI
          sudo apt update
          sudo apt install ./qsc_installer.deb
 
-4. Log in to ``qsc-cli`` using your registered email ID:
+4. Sign in to ``qsc-cli`` using your registered email ID:
 
    .. note:: To register, go to https://www.qualcomm.com/support/working-with-qualcomm.
 

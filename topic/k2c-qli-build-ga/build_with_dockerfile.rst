@@ -76,7 +76,7 @@ Create a Yocto Docker image and build:
    (**qcom-6.6.65-qli.1.4-ver.1.0_22.04**). Use this Docker image to
    create the container environment and run the Yocto build.
 
-   **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version to identify the release build with the Dockerfile. Docker doesn't allow uppercase letters in the Dockertag.
+   **Dockertag**: Use lowercase letters for the release folder followed by the Dockerfile OS version, to identify the release build with the Dockerfile. Docker doesn't allow uppercase letters in the Dockertag.
 
    .. note:: 
       To troubleshoot Docker issues, see :ref:`Troubleshoot Docker <troubleshoot_docker>`.
@@ -100,7 +100,7 @@ Create a Yocto Docker image and build:
 
          # Error2: Response from daemon: Get "https://registry-1.docker.io/v2/": http: server gave HTTP response to HTTPS client
             # Check with your IT administrator to acquire ``registry-mirrors`` URL and replace <docker-mirror-host>`` in the following solution 
-            # Using a tab instead of space and other invisible white-space characters may break the proper work of json configuration files
+            # Using a tab instead of space and other invisible white-space characters may break the proper functioning of the JSON configuration files
             # and later may lead to the Docker service failing to start
 
             # Solution:

@@ -27,7 +27,7 @@ Docker
 
    .. note::
 
-      don't include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters might break the functionality of JSON configuration files and might also lead to ``docker.service`` failing to start.
+      Don't include # comments in the JSON configuration file. Using a tab instead of space and other invisible whitespace characters may break the functionality of JSON configuration files and can also lead to ``docker.service`` failing to start.
 
    .. container:: nohighlight
       
@@ -70,16 +70,14 @@ Docker
 
 -  **Docker failure due to Virtualization not enabled**
 
-   This error can be resolved by enabling virtualization from the BIOS.
+   Enable virtualization from the BIOS to resolve this error.
    Follow the specific instructions from the system provider to enable
    the virtualization. For example, the following steps can enable
    virtualization provided by a system provider:
 
-   1. When the system is booting up, step into the BIOS. The **BIOS**
-      window is displayed.
-   2. Switch to the **Advanced** tab.
-   3. In the **CPU Configuration** section, set **Virtualization
-      Technology** to enabled.
+   1. When the system is booting up, step into the BIOS. The :guilabel:`BIOS` window appears.
+   2. Switch to the :guilabel:`Advanced` tab.
+   3. In the :guilabel:`CPU Configuration` section, set :guilabel:`Virtualization Technology` to enabled.
    4. Save and exit.
    5. Restart the system.
 
@@ -106,7 +104,7 @@ Docker
          sudo grep /etc/group -e "docker"
          # This command shows a list of users who are part of the Docker group; must include your user ID
 
-   Log out and log in again for the access to take effect.
+   Sign out and sign in again for the access to take effect.
 
    .. container:: nohighlight
       
@@ -122,7 +120,7 @@ Sync
 -  **repo init or sync failure with except ManifestInvalidRevisionError,
    e:**
 
-   You might get this issue after installing the Repo package:
+   You may see this issue after installing the Repo package:
 
    -  If you have redirection in your ``/etc/gitconfig`` or
       ``~/.gitconfig`` to an internal mirror.
@@ -231,7 +229,7 @@ Sync
    **Solution**
 
    This error may occur if QSC CLI is incompatible with Qlauncher.
-   Qlauncher is going to be deprecated and replaced with a new
+   Qlauncher will be deprecated and replaced with a new
    application from the QSC. If you have Qlauncher in the workspace, you
    can run the following commands:
 
@@ -279,7 +277,7 @@ Sync
 
    If you see any junk characters while copying commands from the PDF,
    remove or replace the junk characters with appropriate symbols and
-   rerun the command. Alternatively, you can open the guide in HTML mode
+   rerun the command. You can also open the guide in HTML mode
    and use the copy command option.
 
    **Example**
@@ -317,7 +315,7 @@ Build
 -  **ERROR: linux-kernel-qcom-6.6-r0 do_menuconfig: No valid terminal
    found, unable to open devshell**
 
-   This error might be triggered while running a
+   This error can trigger while running a
    ``bitbake linux-kernel-qcom -c menuconfig`` command.
 
    **Error excerpt**
@@ -358,7 +356,7 @@ Build
 
    These are intermittent fetch failures. Check if there is a
    network/host issue at your end, else check if the server is creating
-   this issue. You could increase ``postBuffer`` and
+   this issue. You can increase ``postBuffer`` and
    ``maxRequestBuffer`` settings in your ``.gitconfig`` file if the
    errors occur while fetching the git repositories. If you are using
    ``qsc-cli``, then these configurations are already taken care of by the
@@ -413,11 +411,7 @@ Build
    kernel source
    ``<kernel-src>/include/dt-bindings/iio/qcom,spmi-adc7-pmk8350.h``.
 
-   Check the workspace for this file and ensure that the environment is
-   properly initialized to pick this file. While compiling dtbs, the
-   kernel build system runs a GCC preprocessor to replace the macros in
-   dts files by its definition. The mentioned path is one such place
-   where several ``includes`` reside.
+   Check the workspace for this file and initialize the environment to pick this file. While compiling dtbs, the kernel build system runs a GCC preprocessor to replace the macros in dts files by its definition. The mentioned path is one such place where several ``includes`` reside.
 
    Check if you have ``core.symlinks`` set to ``false`` in your git
    configuration. If yes, set it to true:
@@ -431,21 +425,20 @@ Build
 -  **qpm-git.qualcomm.com.home2.git.revision-history.qualcomm_linux-spf-1-0-le-qclinux-1-0-r1_api-linux_history_prebuilts.git
    –progress failed with exit code 128, no output**
 
-   128 is a masking error and this error needs further triage as it could be a network issue at your end or a genuine issue accessing
+   128 is a masking error and this error needs further triage as it can be a network issue at your end or a genuine issue accessing
    Qualcomm or upstream mirrors. As a workaround for this error, 
    see :ref:`BitBake Fetcher Error <do_fetch_error_1>`. You can triage it further by
    following the subsequent instructions to dump verbose logs during fetch.
 
    By default, verbose logging isn't enabled for Yocto git fetch. To
    enable the same for all git projects, edit the ``local.conf`` file and
-   change the ``BB_GIT_VERBOSE_FETCH`` value to **1**. Verbose logging can
-   also be enabled for each recipe. For example, to enable verbose
+   change the ``BB_GIT_VERBOSE_FETCH`` value to **1**. You can also enable verbose logging for each recipe. For example, to enable verbose
    logging and debug a ``do_fetch()`` failure in a diag recipe, perform
    the following steps:
 
    1. Edit ``layers/meta-qcom-hwe/recipes-bsp/diag/daig_15.0.bb`` and
       add the line ``BB_GIT_VERBOSE_FETCH = "1"``.
-   2. Clean the previous downloaded artifacts using
+   2. Clean the earlier downloaded artifacts using
       ``bitbake -fc cleanall diag``.
    3. Fetch the source again using ``bitbake -fc fetch diag``.
    4. Fetch the log with verbose logging available under the diag
@@ -523,7 +516,7 @@ Build
 
 -  **failed: database disk image is malformed. abort()ing pseudo client by server request**
 
-   The Pseudo tool gets path mismatch and corrupt database issues when processing the file system operations. When Pseudo simulates the file system operations in a Yocto project, problems might occur in the process of handling file paths and permissions.
+   The Pseudo tool gets path mismatch and corrupt database issues when processing the file system operations. When Pseudo simulates the file system operations in a Yocto project, problems can occur while handling file paths and permissions.
 
    This is a known issue in the `Yocto community <https://wiki.yoctoproject.org/wiki/Pseudo_Abort>`__.
 
@@ -541,7 +534,7 @@ Build
 
 -  **pyinotify.WatchManagerError: No space left on device (ENOSPC)**
 
-   This error is triggered during compilation.
+   Compilation triggers this error.
 
    **Solution**
 

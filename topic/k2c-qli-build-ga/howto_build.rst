@@ -55,8 +55,8 @@ Check if you are in a workspace that has ``.repo`` in it.
 
 Set up the environment and generate eSDK:
 
-.. note:: When the eSDK generation build command is complete, the images
-          are generated in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
+.. note:: When the eSDK generation is complete, you can see the images
+          in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
 
 1. After building the ``meta-qcom-hwe`` with QSC CLI:
 
@@ -316,7 +316,7 @@ Download the Platform eSDK
 
                wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86/qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1.zip
 
-      -  For an Arm architecture-based host computer:
+      -  For an Arm\ :sup:`®` architecture-based host computer:
 
          .. container:: nohighlight
       
@@ -332,7 +332,7 @@ Download the Platform eSDK
 
             unzip qcom-6.6.65-QLI.1.4-Ver.1.0_qim-product-sdk-1.1.1.zip
 
-      After unzipping, ensure that the eSDK installer is located at
+      After unzipping, you must see the eSDK installer at
       ``<unzip_location>/target/qcm6490/sdk/``:
       
       |imageunzipESDK|
@@ -361,7 +361,7 @@ Download the Platform eSDK
 
 6. Ensure that the eSDK installation is successful.
 
-   After installation, the QIMP SDK layers are included under ``<workspace_path>/layers``:
+   After installation, you can see the QIMP SDK layers under ``<workspace_path>/layers``:
 
    |imageLayerWorkspace|
 

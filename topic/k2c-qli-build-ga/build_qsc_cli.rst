@@ -20,7 +20,7 @@ Software download
    .. note::
       - If you are downloading more than one distribution, create a new workspace for each distribution that you download.
       - For the Product_ID, Distribution, and Release_ID values, see the table *QSC-CLI Input Parameters* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
-      - For more information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
+      - For more information on the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
 
 Build default configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ Flash
 
 The ``qpm-cli --help`` command lists the help options.
 
-For Ubuntu 22.04, you may get an issue while installing QUD, where you must enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
+For Ubuntu 22.04, you may see an issue while installing QUD, where you must enroll the public key on your Linux host for a successful QUD installation. For more information, see the ``signReadme.txt`` file in the ``/opt/QTI/sign/`` directory.
 
 .. note:: Before you flash the software, ensure the following:
 
@@ -152,7 +152,7 @@ To build your own configuration, you must compile the build for default machine 
 
       This command opens the terminal.
    
-      .. note:: An environment is setup to run your own build commands for a specific software image. QSC won't track the status of input workspaces in the future releases and flash using ``qsc-cli`` won't be supported for these workspaces.
+      .. note:: An environment is set up to run your own build commands for a specific software image. QSC won't track the status of input workspaces in the future releases and flash using ``qsc-cli`` won't be supported for these workspaces.
 
    b. Update the highlighted command according to your own machine configuration and run it on the terminal:
 

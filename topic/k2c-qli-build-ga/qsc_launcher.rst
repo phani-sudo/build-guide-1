@@ -6,10 +6,10 @@ Use QSC Launcher
 Software download
 ^^^^^^^^^^^^^^^^^^^
 
-1. To open the QSC Launcher desktop application, launch **Qualcomm Software Center** from the **Applications** menu.
+1. To open the QSC Launcher desktop application, launch :guilabel:`Qualcomm Software Center` from the :guilabel:`Applications` menu.
 
    .. note:: 
-      For the Launcher workflow to detect connected devices and flash software builds, ensure that the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) are installed on the host computer. Click **PCAT** to install PCAT and **QUD** to install QUD as shown in the following image:
+      For the Launcher workflow to detect connected devices and flash software builds, install the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) tools on the host computer. Select :guilabel:`PCAT` to install PCAT and :guilabel:`QUD` to install QUD as shown in the following image:
 
       .. image:: ../../media/k2c-qli-build-ga/QSC_has_PCAT_QUD_install_info.png
 
@@ -28,49 +28,48 @@ Software download
 
       The ``qpm-cli --help`` command lists the help options.
 
-      For Ubuntu 22.04, you may get an issue while installing QUD where you are asked to enroll the public key on your Linux host for a
-      successful QUD installation. For more details, follow the steps provided in the ``signReadme.txt`` file available at the ``/opt/QTI/sign/`` directory.
+      For Ubuntu 22.04, you may see an issue while installing QUD where you must enroll the public key on your Linux host for a successful QUD installation. For more details, follow the steps provided in the ``signReadme.txt`` file available at the ``/opt/QTI/sign/`` directory.
 
-2. Use your registered email ID to log in to the QSC desktop application. The QSC Launcher dashboard page (for example, when QCS6490 development kit is connected) appears as shown in the following image:
+2. Use your registered email ID to sign in to the QSC desktop application. The QSC Launcher dashboard page (for example, when you connect the QCS6490 development kit) appears as shown in the following image:
 
    .. note:: To register, go to https://www.qualcomm.com/support/working-with-qualcomm.
 
    .. image:: ../../media/k2c-qli-build-ga/start_launcher_ab.png
 
-   -  If you don't have a connected device, click **Start Launcher** (A) on the top panel.
-   -  If you have a connected device, click **Start Launcher** (B) for the appropriate device in the **Connected devices** panel.
+   -  If you don't have a connected device, click :guilabel:`Start Launcher` (A) on the top panel.
+   -  If you have a connected device, select :guilabel:`Start Launcher` (B) for the appropriate device in the :guilabel:`Connected devices` panel.
 
-3. On the **Specify Environment** page, select the appropriate values for **Category**, **Chipset**, **Host Operating System**, and **Target Operating System**.
+3. On the :guilabel:`Specify Environment` page, select the appropriate values for :guilabel:`Category`, :guilabel:`Chipset`, :guilabel:`Host Operating System`, and :guilabel:`Target Operating System`.
 
    .. note:: See `chipsets (hardware SoCs) <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-115/soc.html>`__ that are supported on Qualcomm Linux.
 
    .. image:: ../../media/k2c-qli-build-ga/specify_env.png
 
-4. Click **Next**. The **Select Resources** page appears.
+4. Select :guilabel:`Next`. The :guilabel:`Select Resources` page appears.
    
    .. image:: ../../media/k2c-qli-build-ga/select_resource_page.png
 
-   a. In the **Base Workspace Path** text box, specify a directory where you want to download the software.
+   a. In the :guilabel:`Base Workspace Path` text box, specify a directory where you want to download the software.
 
-   b. Select the **Software Product**.
+   b. Select the :guilabel:`Software Product`.
 
-   c. Select the **Distribution** and the **Release Tag**.
+   c. Select the :guilabel:`Distribution` and the :guilabel:`Release Tag`.
 
       .. note::
          
          - For information on the supported distributions for your hardware SoCs, see the table *Access Controlled Distribution* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
-         - For information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.        
+         - For information on the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.        
          - For information on the QIMP and QIRP SDKs, see the following guides:
 
            - `QIMP SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-51>`__
            - `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-265>`__
 
-5. Click **Download** to download the selected compilable distribution or flashable binary. After the software is downloaded successfully, a *Download complete* status appears.
+5. Select :guilabel:`Download` to download the selected compilable distribution or flashable binary. After the software download is successful, a *Download complete* status appears.
 
    .. image:: ../../media/k2c-qli-build-ga/software_download_complete.png
 
    
-   .. note:: You can also track the download progress through the **Downloads** option in the top menu bar.
+   .. note:: You can also track the download progress through the :guilabel:`Downloads` option in the top menu bar.
 
    You don't have to compile flashable binaries. If you have selected a flashable binary, follow the on-screen instructions to flash to a connected device.
 
@@ -89,14 +88,13 @@ Build and flash default configuration
 
    .. _launcher_compile_step:
 
-   a. After the download is complete, select **Compile** to start compiling. Depending on the size of the downloaded software and the host computer configuration, the compilation process may take a few hours.
+   a. After the download is complete, select :guilabel:`Compile` to start compiling. Depending on the size of the downloaded software and the host computer configuration, the compilation process may take a few hours.
 
       .. image:: ../../media/k2c-qli-build-ga/download.png
 
    b. To view the compilation progress, expand the logs panel.
 
       .. image:: ../../media/k2c-qli-build-ga/QSC_compile_progress.png
-
    
    .. note:: BitBake fetch errors are typically intermittent fetch failures. To resolve these errors, retry :ref:`step 1a <launcher_compile_step>`. If the issue persists, see :ref:`BitBake Fetcher Error <do_fetch_error_1>` for a solution.
 
@@ -105,24 +103,24 @@ Build and flash default configuration
    .. note:: Before you flash the software, ensure the following:
 
       1. Device is in :ref:`Emergency Download (EDL) mode <move_to_EDL>`.
-      #. :ref:`Provision UFS <ufs_provisioning>`.
+      #. :ref:`Provision UFS <provision_ufs>`.
       #. :ref:`Flash CDT <flash_CDT>`.
 
-   a. Flash the software by selecting the device on which you want to flash the compiled software. If multiple devices are connected, select the correct target device.
+   a. Flash the software by selecting the device on which you want to flash the compiled software. If you connected many devices, then select the correct target device.
 
       .. image:: ../../media/k2c-qli-build-ga/flash.png
 
-   b. Click **Flash on device**. The page is updated and displays a progress bar as QSC Launcher begins flashing the software. Leave the device connected while the software is being flashed.
+   b. Select :guilabel:`Flash on device`. The page is updated and displays a progress bar as QSC Launcher begins flashing the software. Leave the device connected while you flash the software.
 
    c. To view the compilation progress of individual software images, expand the logs panel.
 
       .. image:: ../../media/k2c-qli-build-ga/flash_launcher_logs.png
 
-   d. When the process is finished, the page displays a *Flash Complete* message.
+   d. When the process is complete, the page displays a *Flash Complete* message.
 
       .. image:: ../../media/k2c-qli-build-ga/flash_launcher_flashComplete.png
 
-   e. Click **Done**.
+   e. Select :guilabel:`Done`.
 
       .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Check Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-253/set_up_the_device.html#check-qualcomm-linux-version>`__.
 
@@ -140,7 +138,7 @@ To build your own configuration, compile the build for default machine configura
    
    .. note:: For information on the supported machine configurations of the development kit, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-241225194606/>`__.
 
-   a. To run the build commands for a specific configuration, click **Compile using terminal**.
+   a. To run the build commands for a specific configuration, select :guilabel:`Compile using terminal`.
 
       .. image:: ../../media/k2c-qli-build-ga/compile_terminal_page.png
 
@@ -148,7 +146,7 @@ To build your own configuration, compile the build for default machine configura
 
          .. image:: ../../media/k2c-qli-build-ga/compile_terminal_dialog.png
       
-   b. Click **Open Terminal**. A terminal window with expanded default build command appears.
+   b. Select :guilabel:`Open Terminal`. A terminal window with the expanded default build command appears.
 
    c. Update the highlighted command with your own configuration and run it on the terminal:
 

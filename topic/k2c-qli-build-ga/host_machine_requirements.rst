@@ -1,6 +1,6 @@
 .. _host_machine_requirements:
 
-Host machine requirements
+Host computer requirements
 ----------------------------
 
    .. flat-table::

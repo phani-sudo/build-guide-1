@@ -1,40 +1,38 @@
 Install QSC using a GUI
 -----------------------------
 
-1. Download the latest `Qualcomm Software Center <https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Software_Center>`__, and then click **Download**.
+1. Download the latest `Qualcomm Software Center <https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Software_Center>`__, and then select :guilabel:`Download`.
 
    .. image:: ../../media/k2c-qli-build-ga/QSC_download.png
 
 
    The QSC Debian package (``.deb``) is downloaded to your machine.
 
-2. To install the QSC Debian package using the Ubuntu GNOME GUI, ensure that GDebi is installed first. Run the following command on your Linux host computer to install GDebi:
+2. To install the QSC Debian package using the Ubuntu GNOME GUI, GDebi must be installed first. Run the following command on your Linux host computer to install GDebi:
 
    ::
 
       sudo apt update
       sudo apt install gdebi
 
-3. Right-click on the downloaded QSC Debian file and click **Open With GDebi Package Installer**.
+3. Right-click on the downloaded QSC Debian file and select :guilabel:`Open With GDebi Package Installer`.
 
    .. image:: ../../media/k2c-qli-build-ga/deb_gui_installer.png
 
-4. Click **Install Package**.
+4. Select :guilabel:`Package`.
 
    .. image:: ../../media/k2c-qli-build-ga/install_package.png
-
 
 5. Enter the password for the current user. In the following image, the current user is Ubuntu.
 
    .. image:: ../../media/k2c-qli-build-ga/current_user.png
 
-
-6. Accept the license agreement. Click **Next**.
+6. Accept the license agreement. Select :guilabel:`Next`.
 
    .. image:: ../../media/k2c-qli-build-ga/lic_agreement_next.png
 
 
-7. Click **I ACCEPT**.
+7. Select :guilabel:`I ACCEPT`.
 
    .. image:: ../../media/k2c-qli-build-ga/accept.png
 
@@ -43,6 +41,6 @@ Install QSC using a GUI
    .. image:: ../../media/k2c-qli-build-ga/installation_finished.png
 
 
-8. To find the Qualcomm Software Center, click **Show Applications**.
+8. To find the Qualcomm Software Center, select :guilabel:`Show Applications`.
 
    .. image:: ../../media/k2c-qli-build-ga/show_apps.png

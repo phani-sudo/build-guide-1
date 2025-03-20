@@ -8,7 +8,7 @@ Sync
 Alternative methods to install Repo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The latest Repo works with python3. If your default Python is pointed to python2, then install ``python-is-python3`` to make python3 as the default Python.
+The latest Repo works with python3. If your default Python is python2, then install ``python-is-python3`` to make python3 as the default Python.
 
 .. container:: nohighlight
       
@@ -23,7 +23,7 @@ The latest Repo works with python3. If your default Python is pointed to python2
       git checkout -b v2.41
       export PATH=~/bin/repo_tool:$PATH
 
-If the previous steps don't work, install Repo using the following commands:
+If the earlier steps didn't work, install Repo using the following commands:
 
 .. container:: nohighlight
       
@@ -106,8 +106,8 @@ You can install the ``tree`` command and run it on your workspace. The Yocto wor
 
    The following is a sample view, in which:
 
-   -  ``LE.QCLINUX.1.0.r1`` contains the Yocto workspace.
-   -  Remaining directories can be ignored as all the necessary sources
+   -  ``LE.QCLINUX.1.0.r1`` has the Yocto workspace.
+   -  Ignore the remaining directories as all the necessary sources
       and binaries are encoded in the Yocto layer recipes synced under
       ``LE.QCLINUX.1.0.r1/layers``.       
       |YoctoLEQCLinux|
@@ -118,20 +118,21 @@ You can install the ``tree`` command and run it on your workspace. The Yocto wor
 
    The following is a sample view, in which:
 
-   -  ``LE.QCLINUX.1.0.r1`` contains the Yocto workspace.
+   -  ``LE.QCLINUX.1.0.r1`` has the Yocto workspace.
    -  Few additional directories are for the Qualcomm firmware. While
       building with extras:
 
       -  The additional firmware is built.
-      -  The output binaries from these are picked up from firmware
+      -  The output binaries from these are taken from the firmware
          recipes in the Qualcomm Yocto layers.
-      -  For detailed sync and build instructions, see :doc:`Build with GitHub using firmware and extras <build_addn_info>`. |ws_qsc_cli_4|
+      -  For detailed sync and build instructions, see :doc:`Build with GitHub using firmware and extras <build_addn_info>`.
+         |ws_qsc_cli_4|
 
 Refresh the workspace with a new download using QSC CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This option is supported only for the ``LE.QCLINUX.1.0.r1`` image, which
-syncs the Yocto layers and prepares the Yocto workspace to be built.
+syncs the Yocto layers and prepares to build the Yocto workspace.
 This includes the following steps:
 
 .. note::

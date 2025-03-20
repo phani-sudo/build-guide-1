@@ -8,10 +8,9 @@ Build with standalone commands
 Ubuntu host setup
 ^^^^^^^^^^^^^^^^^^^^^
 
-The Ubuntu host computer must be setup to install the required software tools and configure them for use.
+The Ubuntu host computer must be set up to install the required software tools and configure them for use.
 
-1. Install the following packages to prepare your host environment for
-   Yocto build:
+1. Install the following packages to prepare your host environment for the Yocto build:
 
    .. container:: nohighlight
       
@@ -153,7 +152,7 @@ The following table shows an example mapping of the Yocto layers to the manifest
 
 .. note::
    
-   - For information on the Yocto layers, see `Qualcomm Linux metadata layers and descriptions <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/platform_software_features.html#qualcomm-linux-metadata-layers-overview>`__.
+   - For more information on the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-27/qualcomm_linux_metadata_layers_overview.html#qualcomm-linux-metadata-layers>`__.
    
    - For information on building the ``meta-qcom-extras`` add-on layer and select firmware sources, see :doc:`Build with GitHub using firmware and extras <build_addn_info>`.
 
@@ -357,7 +356,7 @@ For more details, see `QIRP SDK 2.0 User Guide <https://docs.qualcomm.com/bundle
 
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to kernel and the upstream ``PREEMPT_RT`` patches, based on the kernel version and enables real-time configurations.
+The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to the kernel and the upstream ``PREEMPT_RT`` patches based on the kernel version, and enables real-time configurations.
 
 For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70018-3/features.html#real-time-rt-kernel-overview>`__.
 
