@@ -815,6 +815,8 @@ Build firmware
 
          Create an integrated firmware binary from the individual components that you compiled:
 
+         .. note:: Apply all the changes from the section *Additional information* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250403001134/ReleaseNote.html#additional-information>`__.
+
          .. container:: nohighlight
       
             ::
@@ -822,12 +824,11 @@ Build firmware
                cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/build
                python build.py --imf
 
-         .. note:: 
+         .. note::
             Firmware prebuild is successful if the following zip files are generated in the ``<FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/QCS9100.LE.1.0/common/build/ufs/bin`` directory:
-                     
-            -  ``QCS9100_bootbinaries.zip``
-            -  ``QCS9100_dspso.zip``
-            -  ``QCS9100_fw.zip``
+             -  ``QCS9100_bootbinaries.zip``
+             -  ``QCS9100_dspso.zip``
+             -  ``QCS9100_fw.zip``
 
       .. group-tab:: QCS8275
 

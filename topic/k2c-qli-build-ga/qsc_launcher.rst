@@ -105,6 +105,7 @@ Build and flash default configuration
       1. Device is in :ref:`Emergency Download (EDL) mode <move_to_EDL>`.
       #. :ref:`Provision UFS <provision_ufs>`.
       #. :ref:`Flash CDT <flash_CDT>`.
+      #. :ref:`Flash SAIL <flash_sail>`.
 
    a. Flash the software by selecting the device on which you want to flash the compiled software. If you connected many devices, then select the correct target device.
 

@@ -85,6 +85,7 @@ For Ubuntu 22.04, you may see an issue while installing QUD, where you must enro
    1. Device is in :ref:`Emergency Download (EDL) mode <move_to_EDL>`.
    #. :ref:`Provision UFS <provision_ufs>`.
    #. :ref:`Flash CDT <flash_cdt>`.
+   #. :ref:`Flash SAIL <flash_sail>`.
   
 1. Flash a device.
 

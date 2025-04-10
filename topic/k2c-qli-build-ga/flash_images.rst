@@ -321,6 +321,8 @@ Universal Flash Storage (UFS) provisioning helps to divide the storage into many
 
    .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
+.. _flash_sail:
+
 Flash SAIL
 -----------
 .. note:: Safety Island (SAIL) is applicable only for QCS9075 and QCS8275.
