@@ -36,16 +36,16 @@ For information on the default configurations, see the table *Default values of 
 
       .. image:: ../../media/k2c-qli-build-ga/flash.png
 
-   b. Select :guilabel:`Flash on device`. The page is updated and displays a progress bar as QSC Launcher begins flashing the software. Leave the device connected while you flash the software.
+   #. Select :guilabel:`Flash on device`. The page is updated and displays a progress bar as QSC Launcher begins flashing the software. Leave the device connected while you flash the software.
 
-   c. To view the compilation progress of individual software images, expand the logs panel.
+   #. To view the compilation progress of individual software images, expand the logs panel.
 
       .. image:: ../../media/k2c-qli-build-ga/flash_launcher_logs.png
 
-   d. When the process is complete, the page displays a *Flash Complete* message.
+   #. When the process is complete, the page displays a *Flash Complete* message.
 
       .. image:: ../../media/k2c-qli-build-ga/flash_launcher_flashComplete.png
 
-   e. Select :guilabel:`Done`.
+   #. Select :guilabel:`Done`.
 
       .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/resource/topics/80-70020-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.

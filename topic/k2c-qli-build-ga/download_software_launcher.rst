@@ -63,8 +63,6 @@ Download the software
 
    .. image:: ../../media/k2c-qli-build-ga/software_download_complete.png
    
-   .. note:: You can also track the download progress through the :guilabel:`Downloads` option in the top menu bar.
-
-   You don't have to compile flashable binaries. If you have selected a flashable binary, follow the on-screen instructions to flash to a connected device.
+#. You don't have to compile flashable binaries. If you have selected a flashable binary, follow the on-screen instructions to flash to a connected device.
 
    .. image:: ../../media/k2c-qli-build-ga/prebuilt_compile.png
