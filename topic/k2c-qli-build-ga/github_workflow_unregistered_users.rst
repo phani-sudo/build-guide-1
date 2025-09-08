@@ -5,7 +5,7 @@
 Build with GitHub for unregistered users
 =============================================
 
-The following sections explain how to use GitHub and make a build using the prebuilt proprietary binaries/images.
+Use GitHub and make a build using the prebuilt proprietary binaries/images.
 
 For more details on the hardware SoCs supported in this build method, see the table *Sync and build methods* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
 
@@ -13,4 +13,16 @@ For more details on the hardware SoCs supported in this build method, see the ta
 
 .. include:: host_machine_requirements_reg_unreg.rst
 
-.. include:: build_with_standalone_commands_unreg.rst
+.. include:: setup_ubuntu_host_computer_unreg.rst
+
+.. include:: sync_unreg.rst
+
+.. include:: build_bsp_image_unreg.rst
+
+.. include:: build_qim_sdk_image_unreg.rst
+
+.. include:: build_qir_sdk_unreg.rst
+
+.. include:: build_realtime_image_unreg.rst
+
+.. include:: flash_unreg.rst

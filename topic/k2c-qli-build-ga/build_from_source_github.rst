@@ -202,7 +202,7 @@ The BSP image build has software components for the Qualcomm device support and 
 
 Build Qualcomm IM SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
+The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
 
 1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for the Qualcomm IM SDK build is the same as the BSP build. Clone the Qualcomm IM SDK layer on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
 
@@ -397,10 +397,3 @@ Flash
 ^^^^^^^
 
 To flash the software images to the device, see :ref:`Flash software images <flash_images>`.
-
-Related topics
----------------
-- :ref:`Connect to UART shell <connect_uart>`
-- :ref:`Connect to network <connect_to_network>`
-- :ref:`Sign in using SSH <use-ssh>`
-- :ref:`Troubleshoot sync, build, and flash issues <troubleshoot_sync_build_and_flash>`

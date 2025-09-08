@@ -56,7 +56,7 @@ Download the software
          - For information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_bsp_metadata_layers.html>`__.        
          - For information about the Qualcomm IM and QIR SDKs, see the following guides:
 
-           - `Qualcomm IM SDK Quick Start Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__
+           - `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__
            - `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__
 
 #. To download the selected compilable distribution or flashable binary, select :guilabel:`Download`. After the software download is successful, a *Download complete* status appears.

@@ -69,7 +69,7 @@ For the latest ``<manifest release tag>``, see the section *Build-critical relea
    repo sync
 
 .. note:: 
-   For the steps to set up environment and build software images, see :ref:`Build Qualcomm IM SDK image <build_qimp_sdk_image_unreg>`.
+   For the steps to set up environment and build software images, see :ref:`Build Qualcomm IM SDK image <build_qim_sdk_image_unreg>`.
 
 Download layers for the QIR SDK build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

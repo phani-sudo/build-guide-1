@@ -4,6 +4,8 @@
 Troubleshoot
 ***************
 
+Addresses common issues encountered during the Qualcomm Linux build and flash processes, organized into four categories: Docker, Sync, Build, and Flash.
+
 .. _troubleshoot_docker:
 
 Docker
@@ -482,7 +484,7 @@ Build
    **Solution**
 
    1. Remove the ``build-qcom-wayland`` directory.
-   #. Rerun the commands in :ref:`Build Qualcomm IM SDK image <build_qimp_sdk_image_unreg>`.
+   #. Rerun the commands in :ref:`Build Qualcomm IM SDK image <build_qim_sdk_image_unreg>`.
 
 -  "failed: database disk image is malformed. abort()ing pseudo client by server request"
 

@@ -8,7 +8,7 @@ Compile
 
 For information on the default configurations, see the table *Default values of MACHINE and QCOM_SELECTED_BSP parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
 
-When the download is complete, start the complilation process. Depending on the size of the software and the host computer configuration, the compilation process can take a few hours.
+When the download is complete, start the compilation process. Depending on the size of the software and the host computer configuration, the compilation process can take a few hours.
 
 .. container:: nohighlight
    

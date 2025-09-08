@@ -3,8 +3,7 @@
 Build overview
 ===============
 
-Qualcomm recommends that you read the `Qualcomm Linux Yocto
-Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27>`__ before starting your build. You can do any of the following:
+Qualcomm Linux uses Yocto to build an embedded system software image. Hence, Qualcomm recommends that you read the `Qualcomm Linux Yocto Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27>`__ before starting your build. You can do any of the following:
  
 - Download prebuilt images and flash the software
 - Sync, build, and flash the software
@@ -14,12 +13,12 @@ Download prebuilt images and flash the software
 
 - In the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/ReleaseNote.html#prebuilt-flashable-images-along-with-esdk>`__, go to the *Artifactory links to prebuilt flashable images and eSDK* table to download prebuilt flashable images and the Platform eSDK.
 
-- The Platform eSDK is an installer that let's you sync, change, compile, and install applications and open-source plug-ins in a complete Yocto environment. For more information, see :ref:`Download the Platform eSDK <download_platform_esdk>`.
+.. note:: The Platform eSDK is an installer that allows you to synchronize, modify, compile, and install applications and open-source plug-ins within a complete Yocto environment. For more information, see :ref:`Download the Platform eSDK <download_platform_esdk>`.
 
 - To flash the prebuilt images, see :ref:`Flash software images <flash_images>`.
 
 Sync, build, and flash the software
--------------------------------------
+----------------------------------------------
 
 Unregistered users
 ^^^^^^^^^^^^^^^^^^^
@@ -61,4 +60,4 @@ If you're a registered user, you can use any one of the following three methods 
 .. note:: 
   
    - See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-115/soc.html>`__ that are supported on Qualcomm Linux.
-   - For IQ-615 build instructions, see `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit Quick Start Guide <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293_REV_AA_Qualcomm_Dragonwing_IQ-615_Beta_Evaluation_Kit_Quick_Start_Guide.pdf>`__.
+   - For IQ-615 build instructions, see `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit quickstart <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293_REV_AA_Qualcomm_Dragonwing_IQ-615_Beta_Evaluation_Kit_Quick_Start_Guide.pdf>`__.

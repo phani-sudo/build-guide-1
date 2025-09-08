@@ -5,7 +5,7 @@
 Build with GitHub for registered users
 =========================================
 
-The following sections explain how to create a build using the prebuilt proprietary binaries/images available on GitHub.
+Create a build using the prebuilt proprietary binaries/images available on GitHub.
 
 .. include:: host_machine_requirements_reg_unreg.rst
 
