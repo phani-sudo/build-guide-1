@@ -20,44 +20,42 @@ Download prebuilt images and flash the software
 Sync, build, and flash the software
 ----------------------------------------------
 
-Unregistered users
-^^^^^^^^^^^^^^^^^^^
+- Unregistered users
 
-If you're an unregistered Qualcomm user, you can sync and build Qualcomm Linux. For more information about using firmware components in the form of binary files, see :doc:`Build with GitHub for unregistered users <github_workflow_unregistered_users>`.
+  If you're an unregistered Qualcomm user, you can sync and build Qualcomm Linux. For more information about using firmware components in the form of binary files, see :doc:`Build with GitHub for unregistered users <github_workflow_unregistered_users>`.
+  
+- Registered users
 
-Registered users
-^^^^^^^^^^^^^^^^^
+  .. note:: You must `register with Qualcomm <https://www.qualcomm.com/support/working-with-qualcomm>`__ to sync and build Qualcomm Linux.
 
-.. note:: You must `register with Qualcomm <https://www.qualcomm.com/support/working-with-qualcomm>`__ to sync and build Qualcomm Linux.
+  If you're a registered user, you can use any one of the following three methods to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
 
-If you're a registered user, you can use any one of the following three methods to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
-
-.. list-table:: 
-   :header-rows: 1
-   :align: center
-   :class: longtable
- 
-   * - Launcher
-     - CLI
-     - GitHub
-   * - GUI-based Qualcomm\ :sup:`®` Software Center (QSC) Launcher.
-     - QSC command-line interface (CLI).
-     - A GitHub-based workflow.
-   * - .. centered:: :doc:`Build with QSC Launcher <build_from_source_qsc_gui_intro>` 
-     - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
-     - .. centered:: :doc:`Build with GitHub for registered users <build_from_source_github_intro>`
+  .. list-table:: 
+     :header-rows: 1
+     :align: center
+     :class: longtable
+  
+     * - Launcher
+       - CLI
+       - GitHub
+     * - GUI-based Qualcomm\ :sup:`®` Software Center (QSC) Launcher.
+       - QSC command-line interface (CLI).
+       - A GitHub-based workflow.
+     * - .. centered:: :doc:`Build with QSC Launcher <build_from_source_qsc_gui_intro>` 
+       - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
+       - .. centered:: :doc:`Build with GitHub for registered users <build_from_source_github_intro>`
 
 .. only:: html
- 
+   
    .. figure:: ../../media/k2c-qli-build-ga/explore_QSC_html.svg
       :align: center
 
 .. only:: latex
- 
+   
    .. figure:: ../../media/k2c-qli-build-ga/explore_QSC_pdf.svg
       :align: center
 
 .. note:: 
-  
+   
    - See `Hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-115/soc.html>`__ that are supported on Qualcomm Linux.
    - For IQ-615 build instructions, see `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit quickstart <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293_REV_AA_Qualcomm_Dragonwing_IQ-615_Beta_Evaluation_Kit_Quick_Start_Guide.pdf>`__.

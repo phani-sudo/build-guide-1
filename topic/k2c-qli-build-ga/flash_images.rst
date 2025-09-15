@@ -309,15 +309,31 @@ UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-
 
 #. Download the Qualcomm Device Loader (QDL). QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
    
-   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
-   - Run the following command to download and unzip using CLI:
-     
+   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
+   - Download the latest QDL using CLI based on the required operating system and architecture type:
+   
      .. container:: nohighlight
       
         ::
-     
+            
+           # Linux X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
+           # Windows X64     
            wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
-           unzip latest.zip
+           # Windows ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/ARM64/latest.zip
+           # macOS X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
+           # macOS ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
+
+#. Unzip QDL:
+
+   .. container:: nohighlight
+      
+      ::
+     
+         unzip <qdl_downloaded_file>.zip
 
 #. Run the following command to provide executable permission to QDL:
 
@@ -334,10 +350,8 @@ UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-
       ::
 
          cd <provision_download_path>
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf <Provision file>
-         # Example, <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf provision_1_3.xml
-
-   .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
+         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage ufs prog_firehose_ddr.elf <Provision file>
+         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf provision_1_3.xml
 
 .. _flash_sail:
 
@@ -347,15 +361,31 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
 
 1. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
    
-   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
-   - Run the following command to download and unzip using CLI:
-
+   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
+   - Download the latest QDL using CLI based on the required operating system and architecture type:
+   
      .. container:: nohighlight
-     
-        ::
       
-          wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
-          unzip latest.zip
+        ::
+            
+           # Linux X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
+           # Windows X64     
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
+           # Windows ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/ARM64/latest.zip
+           # macOS X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
+           # macOS ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
+
+#. Unzip QDL:
+
+   .. container:: nohighlight
+      
+      ::
+     
+         unzip <qdl_downloaded_file>.zip
 
 #. Run the following command to provide executable permission to QDL:
 
@@ -375,9 +405,10 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
         # build_path: For DISTRO=qcom-wayland, it's build-qcom-wayland. 
         #             For DISTRO=qcom-robotics-ros2-humble, it's build-qcom-robotics-ros2-humble
         # qdl --storage spinor <prog.mbn> [<program> <patch> ...]
-        # Example: build_path is build-qcom-wayland
+        # Example, build_path is build-qcom-wayland
         cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs9075-rb8-core-kit/qcom-multimedia-image/sail_nor
-        <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
+        <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
+        # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage spinor prog_firehose_ddr.elf rawprogram0.xml patch0.xml
          
 .. _flash_cdt:
 
@@ -402,15 +433,31 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
 
 #. Download the QDL tool. QDL is a software tool that communicates with the Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
    
-   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
-   - Run the following command to download and unzip using CLI:
-     
+   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
+   - Download the latest QDL using CLI based on the required operating system and architecture type:
+   
      .. container:: nohighlight
       
         ::
-     
+            
+           # Linux X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
+           # Windows X64     
            wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
-           unzip latest.zip
+           # Windows ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/ARM64/latest.zip
+           # macOS X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
+           # macOS ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
+
+#. Unzip QDL:
+
+   .. container:: nohighlight
+      
+      ::
+     
+         unzip <qdl_downloaded_file>.zip
 
 #. Run the following command to provide executable permission to QDL:
 
@@ -428,11 +475,11 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
 
          cd <cdt_download_path>
          # For UFS storage
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
+         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
+         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram3.xml patch3.xml
          # For EMMC storage
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
-
-   .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
+         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+         # Example, <qdl_download_path>/QDL_2.3.9_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram*.xml patch*.xml
 
 Flash software using QDL
 ------------------------------------
@@ -453,15 +500,31 @@ Flash software using QDL
   
 #. Download the QDL tool. QDL is a software tool that communicates with Qualcomm USB devices to upload a flash loader and flash software images. Acquire the latest version of the QDL tool using one of the following methods:
    
-   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader and unzip the contents of the downloaded folder.
-   - Run the following command to download and unzip using CLI:
-     
+   - Download the tool from https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Device_Loader.
+   - Download the latest QDL using CLI based on the required operating system and architecture type:
+   
      .. container:: nohighlight
+      
+        ::
+            
+           # Linux X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Linux/Debian/latest.zip
+           # Windows X64     
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
+           # Windows ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/ARM64/latest.zip
+           # macOS X64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/latest.zip
+           # macOS ARM64
+           wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/macOS/ARM64/latest.zip
+
+#. Unzip QDL:
+
+   .. container:: nohighlight
       
       ::
      
-        wget https://softwarecenter.qualcomm.com/api/download/software/tools/Qualcomm_Device_Loader/Windows/latest.zip
-        unzip latest.zip
+         unzip <qdl_downloaded_file>.zip
 
 #. Run the following command to provide executable permission to QDL:
 
@@ -485,10 +548,10 @@ Flash software using QDL
          cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
          # For UFS storage
          cp ./partition_ufs/gpt_main*.bin ./partition_ufs/gpt_backup*.bin ./partition_ufs/rawprogram[0-9].xml ./partition_ufs/patch*.xml ./partition_ufs/zeros_*sectors.bin ./
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
+         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage ufs prog_firehose_ddr.elf rawprogram*.xml patch*.xml
          # For EMMC storage
          cp ./partition_emmc/gpt_main*.bin ./partition_emmc/gpt_backup*.bin ./partition_emmc/rawprogram[0-9].xml ./partition_emmc/patch*.xml ./partition_emmc/zeros_*sectors.bin ./
-         <qdl_download_path>/qdl_<version>/QDL_Linux_x64/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
+         <qdl_download_path>/QDL_<version>_<operating_system>_<architecture_type>/qdl --storage emmc prog_firehose_ddr.elf rawprogram0.xml patch0.xml
 
    .. note:: Use QDL binary based on the host computer architecture. For example, linux_x64 supported qdl binary is ``qdl_<version>/QDL_Linux_x64/qdl``.
 
