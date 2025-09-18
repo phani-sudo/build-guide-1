@@ -631,7 +631,7 @@ Build firmware
       
                ::
 
-                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/DSP.AT.1.0/dsp_proc/build/ms
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/DSP.AT.1.0.1/dsp_proc/build/ms
 
          #. Clean the build:
 
@@ -923,7 +923,7 @@ Build firmware
       
                ::
 
-                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/DSP.AT.1.0/dsp_proc/build/ms
+                  cd <FIRMWARE_ROOT>/qualcomm-linux-spf-1-0_ap_standard_oem_nm-qimpsdk/DSP.AT.1.0.1/dsp_proc/build/ms
 
          #. Clean the build:
 
