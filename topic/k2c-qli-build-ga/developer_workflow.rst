@@ -24,7 +24,7 @@ The migration process depends on the development, branching, and integration wor
       files.
    #. Qualcomm provides git history to all the source repositories.
       You can see a reference list of repositories in the `Release
-      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+      Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
       For the Qualcomm repositories branched and modified at your
       end, perform the following steps:
 
@@ -57,7 +57,7 @@ customizations <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-
 Download layers for the Qualcomm IM SDK build using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
 ::
 
@@ -74,7 +74,7 @@ For the latest ``<manifest release tag>``, see the section *Build-critical relea
 Download layers for the QIR SDK build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
 ::
 
@@ -91,7 +91,7 @@ For the latest ``<manifest release tag>``, see the section *Build-critical relea
 Download layers for the real-time Linux build by using the manifest release tag
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
 ::
 
@@ -132,7 +132,7 @@ commands and already have an existing ``<WORKSPACE DIR>``, follow these steps to
       # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
       # and enters into build-qcom-wayland directory
 
-   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+   .. note:: To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
 3. Build the software image:
 

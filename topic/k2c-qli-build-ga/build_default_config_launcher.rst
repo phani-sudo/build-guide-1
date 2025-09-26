@@ -5,7 +5,7 @@ Build and flash default configuration
 
 .. note:: Skip this section if you want to :ref:`Build your own configuration<launcher_build_own_config>`.
 
-For information on the default configurations, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+For information on the default configurations, see the table *Default values of "MACHINE" and "QCOM_SELECTED_BSP" parameters for QSC* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
 .. _launcher_step1:
 
