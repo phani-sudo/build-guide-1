@@ -115,7 +115,7 @@ Create and build a Yocto Docker image:
          bash docker/docker_run.sh -t qcom-6.6.97-qli.1.6-ver.1.1_22.04 -r qcom-6.6.97-QLI.1.6-Ver.1.1 -M <machine> --build-override <override> --alternate-repo true
          # Example, bash docker/docker_run.sh -t qcom-6.6.97-qli.1.6-ver.1.1_22.04 -r qcom-6.6.97-QLI.1.6-Ver.1.1 -M qcs6490-rb3gen2-vision-kit --build-override custom --alternate-repo true
 
-   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
    The build workspace is available in
    ``<qcom-download-utils download path>/<release>/build-qcom-wayland``.
@@ -174,7 +174,7 @@ Build Qualcomm IM SDK image
             # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
             # and enters into build-qcom-wayland directory.
 
-      For the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+      For the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
    #. Build the software image:
 
@@ -235,7 +235,7 @@ To rebuild after any modifications to the software release, use your existing wo
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250630224842/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
 #. Build the software image:
 

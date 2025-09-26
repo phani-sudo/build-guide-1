@@ -48,4 +48,4 @@ For information on the default configurations, see the table *Default values of 
 
    #. Select :guilabel:`Done`.
 
-      .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+      .. note:: The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.

@@ -84,4 +84,4 @@ The release tag syntax is as follows:
   - 1.1: Milestone release
   - 2.1.1: Patch release associated with the milestone release
 
-For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_bsp_metadata_layers.html>`__.
+For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-27/qualcomm_linux_metadata_layers.html>`__.

@@ -148,13 +148,13 @@ The following table shows an example mapping of the Yocto layers to the manifest
          ``qcom-6.6.97-QLI.1.6-Ver.1.1_robotics-sdk-1.1.xml``
        - ``qcom-robotics-ros2-humble``
 
-For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_bsp_metadata_layers.html>`__.
+For more information about the Yocto layers, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-27/qualcomm_linux_metadata_layers.html>`__.
    
 For information on building the ``meta-qcom-extras`` add-on layer and select firmware sources, see :doc:`Build with GitHub using firmware and extras <build_addn_info>`.
 
 Build a BSP image
 ^^^^^^^^^^^^^^^^^^^^^
-The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits. For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-27/qualcomm_bsp_metadata_layers.html>`__.
+The BSP image build has software components for the Qualcomm device support and software features applicable to the Qualcomm SoCs. This build includes a reference distribution configuration for the Qualcomm development kits. For more details, see `Qualcomm Linux metadata layers <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-27/qualcomm_linux_metadata_layers.html>`__.
 
 1. Download Qualcomm Yocto and the supporting layers. For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
@@ -202,7 +202,7 @@ The BSP image build has software components for the Qualcomm device support and 
 
 Build Qualcomm IM SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-51>`__.
+The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm Neural Processing SDK, Qualcomm AI Engine direct SDK, and LiteRT. This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-51>`__.
 
 1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for the Qualcomm IM SDK build is the same as the BSP build. Clone the Qualcomm IM SDK layer on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
@@ -268,7 +268,7 @@ The Qualcomm IM SDK is a collection of four standalone function SDKs: Qualcomm I
 
 Build QIR SDK image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-265>`__.
+The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-265>`__.
 
 1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layer on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
 
@@ -331,7 +331,7 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
 
 Build real-time Linux image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to the kernel and the upstream ``PREEMPT_RT`` patches based on the kernel version, and enables real-time configurations. For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70020-3/real_time_kernel_overview.html>`__.
+The real-time layer provides recipes and configurations required to run the Qualcomm Linux kernel as a real-time kernel. The real-time kernel runs with preemption fully enabled through a configuration, ``CONFIG_PREEMPT_RT=y``. This layer supports ``linux-kernel-qcom-rt`` recipe that fetches and builds the Qualcomm Linux kernel for the supported machine. This layer appends to the kernel and the upstream ``PREEMPT_RT`` patches based on the kernel version, and enables real-time configurations. For more details, see `Real-time kernel <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-3/real_time_kernel_overview.html>`__.
 
 1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for real-time Linux image is the same as the BSP build. Clone the Real-time Linux on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-250926012339/>`__.
    
