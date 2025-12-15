@@ -94,7 +94,7 @@ To delete a workspace, run the following command:
 
       qsc-cli chip-software delete-workspace --workspace-path <workspace_path>
 
-      # Example, qsc-cli chip-software delete-workspace --workspace-path '/local/mnt/worskspace/Qworkspace_QIMPSDK'
+      # Example, qsc-cli chip-software delete-workspace --workspace-path '/local/mnt/workspace/Qworkspace_QIMPSDK'
 
 Find a Yocto workspace using QSC CLI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -137,7 +137,7 @@ This includes the following steps:
 
 1. Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
 
-#. Download a new release. For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.97-QLI.1.6-Ver.1.2.xml``.
+#. Download a new release. For the ``<manifest release tag>`` information, see the section *Build-critical release tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__. An example ``<manifest release tag>`` is ``qcom-6.6.116-QLI.1.7-Ver.1.0.xml``.
 
    .. container:: nohighlight
       
@@ -155,7 +155,7 @@ This includes the following steps:
          MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
          # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
 
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
 #. Build the software image:
 

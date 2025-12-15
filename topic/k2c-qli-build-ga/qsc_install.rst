@@ -3,7 +3,7 @@ Install QSC Launcher
 
 1. Go to the `Qualcomm Software Center <https://softwarecenter.qualcomm.com/#/catalog/item/Qualcomm_Software_Center>`__, and then select :guilabel:`Download`. The QSC Debian package (``.deb``) downloads to your machine.
 
-2. To install the QSC Debian package using the Ubuntu GNOME GUI, install GDebi first. Run the following command on your Linux host computer to install GDebi:
+2. To install the QSC Debian package using the Ubuntu GNOME GUI, install GDebi first. Run the following commands on your Linux host computer to install GDebi:
 
    ::
 

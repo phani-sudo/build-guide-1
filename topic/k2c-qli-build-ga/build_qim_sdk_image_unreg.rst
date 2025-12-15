@@ -2,9 +2,9 @@
 
 Build Qualcomm IM SDK image
 -----------------------------
-The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and Lite Runtime (LiteRT). This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-51>`__.
+The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four standalone function SDKs: Qualcomm IM SDK, Qualcomm® Neural Processing SDK, Qualcomm® AI Engine direct SDK, and Lite Runtime (LiteRT). This SDK also includes reference applications that you can use to develop use cases. For more details, see `Qualcomm IM SDK quickstart <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-51>`__.
 
-1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for the Qualcomm IM SDK build is the same as the BSP build. Clone the Qualcomm IM SDK layer on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/>`__.
+1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for the Qualcomm IM SDK build is the same as the BSP build. Clone the Qualcomm IM SDK layer on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
    .. container:: nohighlight
       
@@ -14,7 +14,7 @@ The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four stand
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.97-QLI.1.6-Ver.1.2.xml
+         # Example, <manifest release tag> is qcom-6.6.116-QLI.1.7-Ver.1.0.xml
          repo sync
 
 #. Clone the Qualcomm IM SDK layer into the workspace:
@@ -24,7 +24,7 @@ The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four stand
       ::
 
          git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b <meta-qcom-qim-product-sdk release tag> layers/meta-qcom-qim-product-sdk
-         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.97-QLI.1.6-Ver.1.2_qim-product-sdk-2.1.1
+         # Example, <meta-qcom-qim-product-sdk release tag> is qcom-6.6.116-QLI.1.7-Ver.1.0_qim-product-sdk-2.2.0
 
 #. Export the Qualcomm IM SDK layer:
 
@@ -45,7 +45,7 @@ The Qualcomm® Intelligent Multimedia SDK (IM SDK) is a collection of four stand
          # source setup-environment: Sets the environment, creates the build directory build-qcom-wayland,
          # and enters into build-qcom-wayland directory.
 
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/>`__.
+   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
 #. Build the software image:
 

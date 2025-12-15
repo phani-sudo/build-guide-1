@@ -110,15 +110,15 @@ Use ADB
 This procedure applies to the Ubuntu host environment. Use ADB only if the device has a preloaded build. 
 
 1. `Install
-   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-251/faqs.html#install-qud>`__
+   QUD <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-qud>`__
    on the host device.
 
 2. `Install
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-251/faqs.html#install-adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-adb>`__
    on the host device.
 
 3. `Connect
-   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-251/faqs.html#install-adb>`__
+   ADB <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/faqs.html#install-adb>`__
    to the device.
 
 4. Move the device into EDL mode in a terminal on the host computer:
@@ -210,7 +210,7 @@ Manual
 
             .. group-tab:: IQ-9075 EVK
 
-               1. Put the device in EDL mode by turning on the dip switch S2-8.
+               1. Put the device in EDL mode by turning on the dip switch SW2-3.
 
                   .. image:: ../../media/k2c-qli-build-ga/IQ_9075_EVK.png
 
@@ -290,11 +290,11 @@ Provision UFS
 ---------------
 Universal flash storage (UFS) provisioning helps to divide the storage into many LUNs, which stores different types of data separately. This improves access efficiency and system organization.
 
-UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/ReleaseNote.html#release-specific-information>`__.
+UFS is provisioned by default. If there are any changes in LUNs, UFS must be re-provisioned. To download the provision XML file and to check the applicability of UFS provisioning for different SoCs, see the table *UFS Provision* in `Release Specific Information <https://docs.qualcomm.com/doc/80-70023-300/ReleaseNote.html#release-specific-information>`__.
 
 1. Download the provision file.
 
-   Based on the required SoC, download the respective ‘provision’ from the *UFS Provision* table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/ReleaseNote.html#release-specific-information>`__.
+   Based on the required SoC, download the respective ‘provision’ from the *UFS Provision* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/ReleaseNote.html#release-specific-information>`__.
 
    .. container:: nohighlight
       
@@ -399,7 +399,7 @@ Safety Island (SAIL) is applicable only for the Qualcomm Dragonwing™ IQ-9075 a
    
          chmod -R 777 <qdl_download_path>
 
-#. Flash the SAIL.
+#. Flash the SAIL:
 
    .. container:: nohighlight
       
@@ -422,7 +422,7 @@ Configuration data table (CDT) provides platform/device-dependent data such as p
 
 1. Download the CDT binary.
 
-   Based on the required reference kit, download the respective CDT from the *CDT* table of the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/ReleaseNote.html#release-specific-information>`__.
+   Based on the required reference kit, download the respective CDT from the *CDT* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/ReleaseNote.html#release-specific-information>`__.
 
    .. container:: nohighlight
       
@@ -587,7 +587,7 @@ Flash software using QDL
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 .. note:: If flashing fails, perform the following steps and retry the flashing procedure:
 
@@ -705,7 +705,7 @@ Flash software using PCAT
          Bus 002 Device 001: ID 1d6b:0003 Linux Foundation 3.0 root hub
          Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
 
-   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
+   The device reboots after the flashing procedure completes successfully. To verify the updated software version, see `Verify the Qualcomm Linux version <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-251/set_up_the_device.html#verify-the-qualcomm-linux-version>`__.
 
 Related topics
 ---------------

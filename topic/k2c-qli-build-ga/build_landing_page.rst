@@ -3,7 +3,7 @@ Software build documentation
 
 Configure, download, compile, and flash Qualcomm\ :sup:`®` Linux\ :sup:`®` and the associated firmware on supported devices.
 
-Build overview
+Build Overview
 ---------------
 
 .. grid:: 2 2 3 3

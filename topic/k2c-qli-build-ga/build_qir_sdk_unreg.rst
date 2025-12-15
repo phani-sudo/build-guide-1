@@ -2,9 +2,9 @@
 
 Build QIR SDK image
 ---------------------
-The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70022-265>`__.
+The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components that let you develop robotic features on Qualcomm platforms. This SDK is applicable to the Qualcomm Linux releases. For more details, see `QIR SDK 2.0 User Guide <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-265>`__.
 
-1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layers on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/>`__.
+1. Download Qualcomm Yocto and the supporting layers. The ``<manifest release tag>`` for QIR SDK build is the same as the BSP build. Clone the QIR SDK layers on top of the BSP build. For the latest ``<manifest release tag>``, see the section *Build-Critical Release Tags* in the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
    .. container:: nohighlight
       
@@ -14,7 +14,7 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
          mkdir <WORKSPACE_DIR>
          cd <WORKSPACE_DIR>
          repo init -u https://github.com/quic-yocto/qcom-manifest -b qcom-linux-scarthgap -m <manifest release tag>
-         # Example, <manifest release tag> is qcom-6.6.97-QLI.1.6-Ver.1.2.xml
+         # Example, <manifest release tag> is qcom-6.6.116-QLI.1.7-Ver.1.0.xml
          repo sync
 
 #. Download the QIR SDK layers into the BSP build ``<WORKSPACE DIR>`` directory:
@@ -24,10 +24,10 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
       ::
 
          git clone https://github.com/ros/meta-ros -b scarthgap layers/meta-ros && cd layers/meta-ros && git checkout c560699e810e60a9526f4226c2c23f8d877280c8 && cd ../../
-         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.97-QLI.1.6-Ver.1.2_robotics-sdk-1.2 layers/meta-qcom-robotics
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.97-QLI.1.6-Ver.1.2_robotics-sdk-1.2 layers/meta-qcom-robotics-distro
-         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.97-QLI.1.6-Ver.1.2_robotics-sdk-1.2 layers/meta-qcom-robotics-sdk
-         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.97-QLI.1.6-Ver.1.2_qim-product-sdk-2.1.1 layers/meta-qcom-qim-product-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-robotics.git -b qcom-6.6.116-QLI.1.7-Ver.1.0_robotics-sdk-1.0 layers/meta-qcom-robotics
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-distro.git -b qcom-6.6.116-QLI.1.7-Ver.1.0_robotics-sdk-1.0 layers/meta-qcom-robotics-distro
+         git clone https://github.com/quic-yocto/meta-qcom-robotics-sdk.git -b qcom-6.6.116-QLI.1.7-Ver.1.0_robotics-sdk-1.0 layers/meta-qcom-robotics-sdk
+         git clone https://github.com/quic-yocto/meta-qcom-qim-product-sdk -b qcom-6.6.116-QLI.1.7-Ver.1.0_qim-product-sdk-2.2.0 layers/meta-qcom-qim-product-sdk
 
 #. Set up the build environment:
 
@@ -42,7 +42,7 @@ The Qualcomm® Intelligent Robotics (QIR) SDK 2.0 is a collection of components 
          # source setup-robotics-environment: Sets the environment, creates the build directory build-qcom-robotics-ros2-humble,
          # and enters into build-qcom-robotics-ros2-humble directory.
 
-   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/bundle/publicresource/topics/RNO-251013063244/>`__.
+   For various ``<machine>`` and ``<override>`` combinations, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
 
 #. Build the robotics image and the QIR SDK artifacts:
 
