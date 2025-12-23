@@ -46,7 +46,7 @@ Build Qualcomm Linux Software
         :link: build_from_source_qsc_cli
         :link-type: ref
         
-        The QSC CLI is a command line interface (CLI) where you can download, compile, and flash the Qualcomm Linux builds through a command line.
+        QSC CLI is a command line interface (CLI) where you can download, compile, and flash the Qualcomm Linux builds through a command line.
 
     .. grid-item-card::  |icn-book-blue|  Build with GitHub for unregistered users
         :class-card: card-base-line

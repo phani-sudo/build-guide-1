@@ -42,7 +42,7 @@ For information on software image names (``--image``), see the table *QSC-CLI In
 Flash
 '''''''''
 
-.. note:: For the QSC CLI to detect the connected devices and flash the software builds, install the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) on the host computer:
+.. note:: For QSC CLI to detect the connected devices and flash the software builds, install the Qualcomm Product Configuration Assistant Tool (PCAT) and Qualcomm USB Driver (QUD) on the host computer:
 
    .. container:: nohighlight
       

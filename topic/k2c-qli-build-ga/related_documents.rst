@@ -19,7 +19,7 @@ Related documents
      - 80-70023-27
 
    * - `Qualcomm Linux Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__
-     - RNO-251013063244
+     - 80-70023-300
 
    * - `Qualcomm Dragonwing™ IQ-615 Beta Evaluation Kit quickstart <https://docs.qualcomm.com/bundle/80-70020-293/resource/80-70020-293_REV_AA_Qualcomm_Dragonwing_IQ-615_Beta_Evaluation_Kit_Quick_Start_Guide.pdf>`__
      - 80-70020-293   

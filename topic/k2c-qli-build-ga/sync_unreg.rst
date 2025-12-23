@@ -64,7 +64,7 @@ The release tag syntax is as follows:
   For example, the manifest release tag ``qcom-6.6.116-QLI.1.7-Ver.1.0.xml`` denotes the following:
      
   - 6.6.116: Qualcomm Linux kernel
-  - QLI.1.7: Qualcomm Linux v1.6
+  - QLI.1.7: Qualcomm Linux v1.7
   - 1.0: Milestone release
 
 - Additional productization manifest release tag:
@@ -74,7 +74,7 @@ The release tag syntax is as follows:
   For example, the additional productization manifest release tag ``qcom-6.6.116-QLI.1.7-Ver.1.0_qim-product-sdk-2.2.0.xml`` denotes the following:
      
   - 6.6.116: Qualcomm Linux kernel
-  - QLI.1.7: Qualcomm Linux v1.6
+  - QLI.1.7: Qualcomm Linux v1.7
   - qim-product-sdk-2.2.0: Qualcomm IM SDK release on top of QLI.1.7
 
     Other product/customization examples:
