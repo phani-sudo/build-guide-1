@@ -35,11 +35,14 @@ Sync, build, and flash the software
      :align: center
      :class: longtable
   
-     * - CLI
+     * - Manual Build 
+       - CLI
        - Docker
-     * - QSC command-line interface (CLI).
+     * - Build using selective proprietary sources and binaries/libraries. 
+       - QSC command-line interface (CLI).
        - A Docker-based workflow.
-     * - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
+     * - .. centered:: :doc:`Build from Source (with firmware and extras) <build_addn_info>`
+       - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
        - .. centered:: :doc:`Build from Source with Docker <build_from_source_github_intro>`
 
 .. only:: html

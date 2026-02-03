@@ -10,8 +10,19 @@ Install and configure the software tools on the Ubuntu host computer.
       ::
 
          sudo apt update
-         sudo apt install repo gawk wget git diffstat unzip texinfo gcc build-essential chrpath socat cpio python3 python3-pip python3-pexpect xz-utils debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool locales tar python-is-python3 file libxml-opml-simplegen-perl vim whiptail g++ libacl1
+         sudo apt install build-essential chrpath cpio debianutils diffstat file gawk gcc git iputils-ping libacl1 locales python3 python3-git python3-jinja2 python3-pexpect python3-pip python3-subunit socat texinfo unzip wget xz-utils zstd 
          sudo apt-get install lib32stdc++6 libncurses5 checkinstall libreadline-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev curl
+         sudo apt install kas
+
+#. Optionally download the kas-container script. kas is the tool used by Qualcomm Linux to sync and build the Yocto meta layers. The kas package also provides a kas-container script for running kas in a container. If you prefer running the image builds in an isolated evironment, consider using kas-container instead.
+
+   .. container:: nohighlight
+      
+      ::
+
+         # kas-container can be run on any linux distribution with docker installed.
+         wget -qO kas-container https://raw.githubusercontent.com/siemens/kas/refs/tags/5.1/kas-container
+         chmod +x kas-container
 
 #. Add your Qualcomm login ID with PAT to the ``~/.netrc`` file in your home directory:
 
@@ -26,14 +37,6 @@ Install and configure the software tools on the Ubuntu host computer.
          # This command gives output as shown in the following note
          # The last line in this output is the token, which can be used to access
          # Qualcomm Proprietary repositories. This token expires in two weeks.
-
-   .. note::
-
-      .. container:: screenoutput
-
-         | user\@hostname:/local/mnt/workspace$ qsc-cli show-access-token
-         | [Info]: Starting qsc-cli version 0.0.0.9
-         | **5LThNlklb55mMVLB5C2KqUGU2jCF**
 
 #. Use your preferred text editor to edit the ``~/.netrc`` file and add the following entries. Create the ``~/.netrc`` file if it doesn't exist.
 
@@ -107,3 +110,6 @@ Install and configure the software tools on the Ubuntu host computer.
          ln -s /opt/python3/bin/python3  /opt/python3/bin/python
          export PATH=/opt/python3/bin:$PATH
          export PYTHONPATH=/opt/python3/lib:$PYTHONPATH
+
+.. note::
+  The `kas <https://kas.readthedocs.io/en/latest/>`__ tool is used by Qualcomm Linux to sync the meta layers, configure the environment and execute the bitbake commands.
