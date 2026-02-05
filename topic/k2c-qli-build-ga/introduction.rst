@@ -22,7 +22,7 @@ Sync, build, and flash the software
 
 - Unregistered users
 
-  If you're an unregistered Qualcomm user, you can sync and build Qualcomm Linux. For more information about using firmware components in the form of binary files, see :doc:`Build with GitHub for unregistered users <github_workflow_unregistered_users>`.
+  If you're an unregistered Qualcomm user, you can sync and build Qualcomm Linux. For more information about using firmware components in the form of binary files, see :doc:`Build with Source with Docker <build_from_source_github_intro>`.
   
 - Registered users
 
@@ -37,13 +37,11 @@ Sync, build, and flash the software
   
      * - Manual Build 
        - CLI
-       - Docker
      * - Build using selective proprietary sources and binaries/libraries. 
        - QSC command-line interface (CLI).
        - A Docker-based workflow.
      * - .. centered:: :doc:`Build from Source (with firmware and extras) <build_addn_info>`
        - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
-       - .. centered:: :doc:`Build from Source with Docker <build_from_source_github_intro>`
 
 .. only:: html
    
