@@ -46,6 +46,3 @@ Related documents
 
    * - CodeLinaro patch file
      - https://artifacts.codelinaro.org/artifactory/codelinaro-le/0001-fetch2-git-Add-verbose-logging-support.patch
-
-   * - meta-qcom-realtime
-     - https://github.com/quic-yocto/meta-qcom-realtime
