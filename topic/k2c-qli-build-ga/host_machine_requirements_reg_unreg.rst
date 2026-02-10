@@ -16,7 +16,7 @@ Host computer requirements
   - Git 1.8.3.1 or later versions
   - Tar 1.28 or later versions
   - Python 3.10.2 or later versions
-  - GCC 8.0 or later versions
+  - GCC 10.1 or later versions
   - GNU Make 4.0 or later versions
 
 - Permissions 

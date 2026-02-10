@@ -30,14 +30,24 @@ Build Qualcomm Linux Software
     :gutter: 4
     :class-container: get-started-cards
 
-    .. grid-item-card::  |icn-book-blue|  Build with QSC Launcher
+
+    .. grid-item-card::  |icn-book-blue|  Build from Source
         :class-card: card-base-line
         :class-title: font-link
         :class-body: font-gray-60
-        :link: build_from_source_qsc_gui_intro
+        :link: build_from_source_github_intro
         :link-type: ref
 
-        The Qualcomm® Software Center (QSC) launcher is a GUI-based desktop application where you can download, compile, and flash the Qualcomm Linux software builds through a GUI.
+        The build workflow provides a set of instructions to setup the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
+
+    .. grid-item-card::  |icn-book-blue|  Build from Source (with firmware and extras) 
+        :class-card: card-base-line
+        :class-title: font-link
+        :class-body: font-gray-60
+        :link: build_addn_info
+        :link-type: ref
+
+        The build workflow (firmware and extras) for registered users provide a set of instructions to setup the host computer environment, sync, and compile. A few of the firmware components are available as source.
 
     .. grid-item-card::  |icn-book-blue|  Build with QSC CLI
         :class-card: card-base-line
@@ -47,33 +57,6 @@ Build Qualcomm Linux Software
         :link-type: ref
         
         QSC CLI is a command line interface (CLI) where you can download, compile, and flash the Qualcomm Linux builds through a command line.
-
-    .. grid-item-card::  |icn-book-blue|  Build with GitHub for unregistered users
-        :class-card: card-base-line
-        :class-title: font-link
-        :class-body: font-gray-60
-        :link: github_workflow_unregistered_users
-        :link-type: ref
-
-        The GitHub workflow for unregistered users provide a set of instructions to setup the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
-
-    .. grid-item-card::  |icn-book-blue|  Build with GitHub for registered users
-        :class-card: card-base-line
-        :class-title: font-link
-        :class-body: font-gray-60
-        :link: build_from_source_github_intro
-        :link-type: ref
-
-        The GitHub workflow for registered users provide a set of instructions to setup the host computer environment, sync, and compile. Firmware components are available as prebuilt binaries.
-
-    .. grid-item-card::  |icn-book-blue|  Build with GitHub using firmware and extras
-        :class-card: card-base-line
-        :class-title: font-link
-        :class-body: font-gray-60
-        :link: build_addn_info
-        :link-type: ref
-
-        The GitHub workflow (firmware and extras) for registered users provide a set of instructions to setup the host computer environment, sync, and compile. A few of the firmware components are available as source.
 
 Flash Qualcomm Linux Software
 ------------------------------

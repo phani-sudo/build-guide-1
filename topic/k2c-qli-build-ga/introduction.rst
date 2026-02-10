@@ -22,28 +22,26 @@ Sync, build, and flash the software
 
 - Unregistered users
 
-  If you're an unregistered Qualcomm user, you can sync and build Qualcomm Linux. For more information about using firmware components in the form of binary files, see :doc:`Build with GitHub for unregistered users <github_workflow_unregistered_users>`.
+  If you're an unregistered Qualcomm user, you can sync and build Qualcomm Linux. For more information about using firmware components in the form of binary files, see :doc:`Build from Source <build_from_source_github_intro>`.
   
 - Registered users
 
   .. note:: You must `register with Qualcomm <https://www.qualcomm.com/support/working-with-qualcomm>`__ to sync and build Qualcomm Linux.
 
-  If you're a registered user, you can use any one of the following three methods to sync and build Qualcomm Linux. These methods use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
+  If you're a registered user, you can use the following method to sync and build Qualcomm Linux. This method use the Qualcomm Yocto layers and the supporting base Yocto layers. You can access the source of certain firmware components and Qualcomm tools, which lets you build and download the software.
 
   .. list-table:: 
      :header-rows: 1
      :align: center
      :class: longtable
   
-     * - Launcher
+     * - Manual Build 
        - CLI
-       - GitHub
-     * - GUI-based Qualcomm\ :sup:`®` Software Center (QSC) Launcher.
+     * - Build using selective proprietary sources and binaries/libraries. 
        - QSC command-line interface (CLI).
-       - A GitHub-based workflow.
-     * - .. centered:: :doc:`Build with QSC Launcher <build_from_source_qsc_gui_intro>` 
+       - A Docker-based workflow.
+     * - .. centered:: :doc:`Build from Source (with firmware and extras) <build_addn_info>`
        - .. centered:: :doc:`Build with QSC CLI <build_frm_source_qsc_cli>`
-       - .. centered:: :doc:`Build with GitHub for registered users <build_from_source_github_intro>`
 
 .. only:: html
    

@@ -1,18 +1,10 @@
 Workspace view
 -----------------
 
-This section provides sample workspace structures with ``qsc-cli`` and GitHub workflow standalone use cases, for the supported `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-115/soc.html>`__.
+This section provides sample workspace structures with ``qsc-cli`` and source workflow standalone use cases, for the supported `hardware SoCs <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-115/soc.html>`__.
 
 Workspace structure with qsc-cli
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following figure shows the directory structure before the ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK`` distribution build (``LE.QCLINUX.1.0.r1`` has the Yocto workspace):
-
-.. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_1.png
-
-The following figure shows the directory structure after ``Qualcomm_Linux.SPF.1.0|TEST|DEVICE|PB_QIMPSDK`` distribution build:
-
-.. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_2.png
 
 The following figure shows the directory structure before ``Qualcomm_Linux.SPF.1.0|AP|Standard|OEM|NoModem`` distribution build with firmware and extras:
 
@@ -22,16 +14,8 @@ The following figure shows the directory structure after ``Qualcomm_Linux.SPF.1.
 
 .. image:: ../../media/k2c-qli-build-ga/ws_qsc_cli_4.png
 
-Workspace structure with GitHub workflow standalone instructions
+Workspace structure with Source workflow standalone instructions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The following figure shows the directory structure before the GitHub workflow Qualcomm IM SDK standalone build:
-
-.. image:: ../../media/k2c-qli-build-ga/ws_standalone_1.png
-
-The following figure shows the directory structure after the GitHub workflow Qualcomm IM SDK standalone build:
-
-.. image:: ../../media/k2c-qli-build-ga/ws_standalone_2.png
 
 The following figure shows the directory structure after building firmware of ``qualcomm-linux-spf-1-0_ap_standard_oem_nomodem``:
 
@@ -70,7 +54,7 @@ The following table describes the files in the images directory:
      - GUID partition table binaries for the primary partition table
    * - ``gpt_backup*.bin``
      - GUID partition table binaries for the secondary partition table
-   * - ``system.img``
+   * - ``rootfs.img``
      - Rootfs image
    * - ``rawprogram*.xml``
      - Image ``lun`` and start sector ``lba`` values

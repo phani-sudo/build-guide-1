@@ -3,199 +3,91 @@
 Build
 -------
 
+Alternative Build Instrucions via Manifest
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Repo is a tool which can be used to download a list of git repositories from a `manifest <https://github.com/qualcomm-linux/qcom-manifest/>`__. Repo can be used
+for syncing the Yocto meta layers needed for the build.
+
+1. Install these packages in addition to the base system requirements to perform a repo-manifest based build 
+
+   .. container:: nohighlight
+      
+      ::
+
+         sudo apt install repo python3-yaml
+
+#. Download Qualcomm Yocto and supporting layer
+
+   .. container:: nohighlight
+      
+      ::
+
+         # cd to directory where you have 300 GB of free storage space to create your workspaces
+         mkdir <workspace-dir>
+         cd <workspace-dir>
+
+         # Example, <manifest-release-tag> is qcom-6.6.200-QLI.2.0-Ver.1.0.xml
+         repo init -u https://github.com/qualcomm-linux/qcom-manifest -m <manifest-release-tag>.xml
+
+         repo sync
+
+#. Set up the Yocto build environment:
+
+  .. container:: nohighlight
+    
+    ::
+
+        # setup-environment provides a help section for instructions
+        # Run the script with --help to view all supported flags
+        setup-environment --help
+
+        # machine and distro flags refer to machine and distro configuration files present in `meta-qcom/ci` directory.
+        # setup-environment: Sets the environment settings, creates the build directory build,
+        # and enters into build directory.
+        source setup-environment --machine meta-qcom/ci/qcs9100-ride-sx.yml --distro meta-qcom/ci/qcom-distro.yml
+
+#. Build the software image:
+
+  .. container:: nohighlight
+    
+    ::
+
+        # Build required image using bitbake `bitbake qcom-multimedia-image` 
+        bitbake <image-recipe>
+
 Check if the build is complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If your build instruction is ``bitbake qcom-multimedia-image``, check if the ``system.img`` is present in the ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image`` directory:
+#. After a successful build, check that the ``rootfs.img`` file is in the build artifacts:
 
-.. container:: nohighlight
-      
-   ::
+   .. container:: nohighlight
 
-      cd <workspace_path>/build-qcom-wayland/tmp-glibc/deploy/images/qcs6490-rb3gen2-vision-kit/qcom-multimedia-image
-      ls -al system.img
+      ::
+
+         # meta-qcom uses qcomflash IMAGE_FSTYPE to create a single tarball
+         # containing all the relevant files to perform a full clean flash,
+         # including partition metadata, boot firmware, ESP # partition and
+         # the rootfs.
+         cd <workspace-dir>/build/tmp/deploy/images/<MACHINE>/<IMAGE>-<MACHINE>.rootfs-<DATE>.qcomflash/
+         ls -al rootfs.img
 
 .. _how_to_build_generate_sdk:
 
 Generate an eSDK
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Get a Docker shell and shell prompt**
-
-1. List the Docker images:
-
-   .. container:: nohighlight
-      
-      ::
-
-         docker images
-
-   The output for this command is as follows:
-
-   .. container:: screenoutput
-
-      .. line-block::
-
-         REPOSITORY                                                           TAG                         IMAGE ID       CREATED        SIZE
-         032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/ql-tool     20.04.20231220102843864.9   864b345bd707   2 months ago   715MB
-         032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/le.um-k2c   20.04.20231215014450998.7   4678dda58a91   2 months ago   929MB
-
-#. Attach the container:
-
-   .. container:: nohighlight
-      
-      ::
-
-         WORKSPACE=<WORKSPACE_PATH> && SRC_DIR=<SoftwareImage> && docker run --rm  -it -v ~/.qualcomm_launcher_workspace_config:/var/tmp/.docker_qualcomm_launcher_setup/ -v $WORKSPACE:$WORKSPACE -e LOCAL_USER_NAME=`id -u -n` -e LOCAL_USER_ID=`id -u` -e USER=`id -u` -e WORKSPACE=$WORKSPACE -w $WORKSPACE/$SRC_DIR <REPOSITORY:TAG> bash
-
-         # Example
-         WORKSPACE=/local/mnt/workspace/Qworkspace/DEV && SRC_DIR=LE.QCLINUX.1.0.r1 && docker run --rm  -it -v ~/.qualcomm_launcher_workspace_config:/var/tmp/.docker_qualcomm_launcher_setup/ -v $WORKSPACE:$WORKSPACE -e LOCAL_USER_NAME=`id -u -n` -e LOCAL_USER_ID=`id -u` -e USER=`id -u` -e WORKSPACE=$WORKSPACE -w $WORKSPACE/$SRC_DIR 032693710300.dkr.ecr.us-west-2.amazonaws.com/stormchaser/le.um-k2c:20.04.20231215014450998.7 bash
-
-#. Check if you are in a workspace that has ``.repo`` in it.
+^^^^^^^^^^^^^^^^
 
 **Set up the environment and generate eSDK**
 
-1. After building the ``meta-qcom-hwe`` with QSC CLI:
+#. After building from source, run these commands from the same workspace:
 
    .. container:: nohighlight
       
       ::
 
-         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         bitbake -c do_populate_sdk_ext <image>
-         # Example, bitbake -c do_populate_sdk_ext qcom-multimedia-image
+         kas shell -c "bitbake -c do_populate_sdk_ext <image>" meta-qcom/ci/<machine>:meta-qcom/ci/<distro>:meta-qcom/ci/lock.yml
 
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.    
-
-#. After building with ``meta-qcom-extras`` and firmware sources with
-   QSC CLI:
-
-   .. note:: This step isn't applicable for public developers (unregistered).
-
-   .. container:: nohighlight
-      
-      ::
-
-         # Example
-         export EXTRALAYERS="meta-qcom-extras"
-         export CUST_ID="213195"
-         export FWZIP_PATH="/local/mnt/workspace/extras/DEV/QCM6490.LE.1.0/common/build/ufs/bin"
-         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         bitbake -c do_populate_sdk_ext qcom-multimedia-image
-
-#. After building standalone instructions within the same shell (shell
-   where the build is successful):
-
-   .. container:: nohighlight
-      
-      ::
-
-         bitbake -c do_populate_sdk_ext <image>
-
-         # Example
-         bitbake -c do_populate_sdk_ext qcom-multimedia-image
-
-#. After building with standalone instructions and with a new shell
-   (assuming the build workspace exists):
-
-   .. container:: nohighlight
-      
-      ::
-
-         cd <workspace_path>
-         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         bitbake -c do_populate_sdk_ext <image>
-
-         # Example
-         cd /local/mnt/workspace/LE.QCLINUX.1.0.r1
-         MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         bitbake -c do_populate_sdk_ext qcom-multimedia-image
-
-#. After building with standalone instructions using Dockerfile.
-
-   a. Move the control to the workspace directory:
-
-      .. container:: nohighlight
-      
-         ::
-
-            cd /local/mnt/workspace/qcom-download-utils/<release>
-
-            # Example
-            cd /local/mnt/workspace/qcom-download-utils/qcom-6.6.116-QLI.1.7-Ver.1.1
-
-   #. Set up the environment and issue an eSDK build:
-
-      .. container:: nohighlight
-      
-         ::
-
-            MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-            bitbake -c do_populate_sdk_ext <image>
-
-            # Example
-            MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-            bitbake -c do_populate_sdk_ext qcom-multimedia-image
-
-When the eSDK generation is complete, you can see the images in the following directory: ``<workspace_path>/build-qcom-wayland/tmp-glibc/deploy/sdk``.
-
-**Troubleshoot eSDK generation – basehash mismatch**
-
-**Error excerpt**
-
-.. container:: screenoutput
-
-   .. line-block::
-
-      ERROR: When reparsing /local/mnt/workspace/extras/DEV/LE.QCLINUX.1.0.r1/build-qcom-wayland/conf/../../layers/meta-qcom-distro/recipes-products/images/qcom-multimedia-image.bb:do_populate_sdk_ext, the basehash value changed from 7bce27b0510cb666f1bba1d03f055cfef48f9db2eabc17d490e14bbe4c632eba to 48ccd9d7370e0bf2435aa8b5067162932e07a3832adfa6ca037aa0ddb765c8de. The metadata isn't deterministic and this needs to be fixed.
-      ERROR: The following commands may help:
-      ERROR: $ bitbake qcom-multimedia-image -cdo_populate_sdk_ext -Snone
-      ERROR: Then:
-      ERROR: $ bitbake qcom-multimedia-image -cdo_populate_sdk_ext -Sprintdiff
-
-**Solution**
-
-Rebuild the image and generate the eSDK again.
-
-Rebuild using a Docker environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Run the commands to connect to Docker for your environment setup and then use the BitBake commands to rebuild:
-
-   .. container:: nohighlight
-      
-      ::
-
-         cd <workspace_path>/DEV/<softwareimage>
-         # Example, cd /local/mnt/workspace/Qworkspace/DEV/LE.QCLINUX.1.0.r1 for making changes to Yocto layers
-         # Make code changes
-
-#. Get to a Docker shell as mentioned in :ref:`Generate an eSDK <how_to_build_generate_sdk>`.
-
-#. Rebuild using your source changes:
-
-   .. container:: nohighlight
-      
-      ::
-
-         # Rebuild commands
-         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         bitbake qcom-multimedia-image
-
-   To know the ``MACHINE`` parameter values, see `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/>`__.
-
-#. Build image ``qcom-multimedia-test-image``:
-
-   .. container:: nohighlight
-      
-      ::
-
-         MACHINE=<machine> DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         # Example, MACHINE=qcs6490-rb3gen2-vision-kit DISTRO=qcom-wayland QCOM_SELECTED_BSP=custom source setup-environment
-         bitbake qcom-multimedia-test-image
+When the eSDK generation is complete, you can see the images in the following directory: ``<workspace-dir>/build/tmp/deploy/sdk``.
 
 Build a standalone QDL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -265,7 +157,7 @@ Provide an absolute path for ``<TOOLS_DIR>`` in ``qsc-cli`` and export commands 
 
 .. _image_recipes_github_workflow:
 
-Image recipes supported in the GitHub workflow
+Image recipes supported in the Source workflow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. list-table:: 
@@ -279,93 +171,6 @@ Image recipes supported in the GitHub workflow
    * - ``qcom-console-image``   
      - Boot to shell with package group to bring in all the basic packages
    * - ``qcom-multimedia-image``  
-     - Image recipe includes recipes for multimedia software components, such as, audio, Bluetooth\ :sup:`®`, camera, computer vision, display, and video.
-   * - ``qcom-multimedia-test-image`` 
-     - Image recipe that includes tests
-
-.. _download_platform_esdk:
-
-Download the Platform eSDK
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Check the :ref:`host computer requirements <host_machine_req_github_workflow_unregistered_users>`.
-
-2. Set up the :ref:`Ubuntu host <ubuntu_host_setup_github_unreg>`.
-
-3. Download the Platform eSDK.
-
-   Based on the required SoC, download the respective eSDK from the *Artifactory links to pre-built flashable images and eSDK* table of the `Release Notes <https://docs.qualcomm.com/doc/80-70023-300/topic/prebuilt_flashable_images_along_with_esdk.html>`__.
-
-   .. container:: nohighlight
-      
-      ::
-
-         mkdir <esdk_download_path>
-         cd <esdk_download_path>
-         wget <flashable_binaries_download_link>
-         unzip <downloaded_zip_file>
-
-   Example:
-
-   .. container:: nohighlight
-      
-      ::
-
-         mkdir <esdk_download_path>
-         cd <esdk_download_path>
-         wget https://artifacts.codelinaro.org/artifactory/qli-ci/flashable-binaries/qimpsdk/qcs6490-rb3gen2-core-kit/x86-qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.zip
-         unzip x86-qcom-6.6.116-QLI.1.7-Ver.1.1_qim-product-sdk-2.2.1.zip
-
-      After unzipping, you must see the eSDK installer at ``<esdk_download_path>``:
-      
-      |imageunzipESDK|
-
-   If you don't have the necessary write permissions for the directory where you are trying to install the eSDK, the installer alerts you and then terminates. If this occurs, set up the permissions in the directory appropriately by using the following command and rerun the installer:
-
-   .. container:: nohighlight
-      
-      ::
-
-         umask a+rx
-
-4. Run the installer script to install the eSDK. For example:
-
-   .. container:: nohighlight
-      
-      ::
-
-         sh ./qcom-wayland-x86_64-qcom-multimedia-image-armv8-2a-qcs6490-rb3gen2-core-kit-toolchain-ext-1.5-ver.1.0.sh
-
-5. Follow the instructions on the console to install the eSDK in a convenient location on your host computer.
-
-6. Ensure that the eSDK installation is successful.
-
-   After installation, you can see the Qualcomm IM SDK layers under ``<workspace_path>/layers``:
-
-   |imageLayerWorkspace|
-
-   .. note:: Advanced developers can still build their own eSDK by following the steps mentioned in `Advanced procedures <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-51/advanced-procedure.html>`__.
-
-7. Run the following command to set the ``ESDK_ROOT`` variable:
-
-   .. container:: nohighlight
-      
-      ::
-
-         export ESDK_ROOT=<pathofinstallationdirectory>
-
-   For example:
-
-   .. container:: nohighlight
-      
-      ::
-
-         export ESDK_ROOT=/local/mnt/workspace/Platform_eSDK_plus_QIM
-
-The Qualcomm IM SDK installation is now complete. To develop an application for
-the device, see `Develop your first application <https://docs.qualcomm.com/bundle/publicresource/topics/80-70023-51/content-develop-your-first-application.html>`__.
-
-
-
-.. |imageunzipESDK| image:: ../../media/k2c-qli-build-ga/unzip_location.png
-.. |imageLayerWorkspace| image:: ../../media/k2c-qli-build-ga/qimp_sdk_layers.png
+     - Image recipe with upstream multimedia software components
+   * - ``qcom-multimedia-proprietary-image`` 
+     - Image recipe with proprietary multimedia software components
